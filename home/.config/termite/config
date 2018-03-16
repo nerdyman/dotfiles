@@ -1,0 +1,55 @@
+[options]
+scroll_on_output        = false
+scroll_on_keystroke     = true
+audible_bell            = true
+mouse_autohide          = false
+allow_bold              = false
+dynamic_title           = true
+urgent_on_bell          = true
+clickable_url           = true
+font                    = Roboto Mono Medium for Powerline Medium 9.3
+scrollback_lines        = -1
+search_wrap             = true
+cursor_blink            = true
+cursor_shape            = block
+
+[colors]
+# special
+foreground      = #f5f5f5
+foreground_bold = #ffffff
+cursor          = #6c6c89
+background      = #27273f
+
+# black
+color0  = #4f4f6a
+color8  = #6c6c89
+
+# red
+color1  = #ff6666
+color9  = #f15959
+
+# green
+color2  = #c2fa88
+color10 = #baf67c
+
+# yellow
+color3  = #ffe066
+color11 = #ffab66
+
+# blue
+color4  = #72c3fc
+color12 = #7777e4
+
+# magenta
+color5  = #f783ac
+color13 = #e599f7
+
+# cyan
+color6  = #affaff
+color14 = #92eaf0
+
+# white
+color7  = #ffffff
+color15 = #f5f5f5
+
+# vim: ft=dosini

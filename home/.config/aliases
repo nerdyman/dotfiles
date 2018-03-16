@@ -1,0 +1,8 @@
+alias goapps='cd /mnt/software/apps'
+alias goconfig='cd /mnt/dev/config'
+alias godev='cd /mnt/dev'
+alias gogame='cd /mnt/software/games/local'
+alias goproj='cd /mnt/dev/projects'
+alias gosoftware='cd /mnt/software'
+alias gosteam='cd /mnt/software/games/steam/steamapps/common'
+alias govm='cd /mnt/dev/machines'
