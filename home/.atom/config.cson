@@ -1,0 +1,67 @@
+"*":
+  "atom-ide-ui":
+    use:
+      "atom-ide-diagnostics-ui": false
+  "atom-material-ui":
+    colors:
+      abaseColor: "#7777e4"
+      accentColor: "#ffe066"
+    fonts: {}
+    tabs:
+      compactTabs: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "linter-tslint"
+      "w3c-validation"
+    ]
+    excludeVcsIgnoredPaths: false
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "pure-syntax"
+    ]
+  editor:
+    fontFamily: "Roboto Mono Medium for Powerline"
+    fontSize: 15
+    lineHeight: 2
+    preferredLineLength: 100
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softTabs: false
+    tabLength: 4
+    tabType: "auto"
+  "exception-reporting":
+    userId: "d2b3ea9a-fdd9-4443-99e3-b6fc1f5ec1e3"
+  "file-types":
+    "^Dockerfile\\..*$": "source.dockerfile"
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules"
+    ]
+  "git-blame":
+    columnWidth: 239
+  "linter-eslint": {}
+  "linter-stylelint":
+    showIgnored: true
+  "linter-ui-default":
+    panelHeight: 189
+    showPanel: true
+  "markdown-preview": {}
+  minimap: {}
+  "one-dark-ui": {}
+  "open-terminal-here":
+    command: "termite"
+  "pinned-tabs":
+    closeUnpinned: true
+  "tree-view": {}
+  "w3c-validation":
+    cssReportType: "all"
+    hideOnNoErrors: true
+    useFoldModeAsDefault: true
+  welcome:
+    showOnStartup: false
