@@ -2,13 +2,13 @@
 
 Dotfiles for:
 
-- i3wm (gaps)
-- compton
-- gnupg (SSH agent and SSH key timeout)
-- termite
-- xinitrc
-- Xresources
-- zshrc
+-   i3wm (gaps)
+-   compton
+-   gnupg (SSH agent and SSH key timeout)
+-   termite
+-   xinitrc
+-   Xresources
+-   zshrc
 
 ## Import Script
 
@@ -19,7 +19,7 @@ Gets files listed in `files[]` array and puts them in current directory.
 ```
 
 ## Scrots
-![Terminal htop, ls -lah](promo/terminal-scrot.png)
+![Terminal htop, ls -lah](scrot.png)
 
 ## Resources
-- [Roboto Mono for Powerline](https://github.com/powerline/fonts/tree/master/RobotoMono)
+-   [Roboto Mono for Powerline](https://github.com/powerline/fonts/tree/master/RobotoMono)
