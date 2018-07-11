@@ -1,17 +1,22 @@
 [options]
-scroll_on_output        = false
-scroll_on_keystroke     = true
-audible_bell            = true
-mouse_autohide          = false
 allow_bold              = false
-dynamic_title           = true
-urgent_on_bell          = true
+audible_bell            = true
+#browser                 = xdg-open
 clickable_url           = true
-font                    = Roboto Mono Medium for Powerline Medium 9.3
-scrollback_lines        = -1
-search_wrap             = true
 cursor_blink            = true
 cursor_shape            = block
+dynamic_title           = true
+font                    = Roboto Mono Medium for Powerline Medium 9.3
+fullscreen              = true
+geometry                = 680x400
+hyperlinks              = true
+icon_name               = terminal
+mouse_autohide          = false
+scroll_on_keystroke     = true
+scroll_on_output        = false
+scrollback_lines        = -1
+search_wrap             = true
+urgent_on_bell          = true
 
 [colors]
 # special
@@ -52,4 +57,15 @@ color14 = #92eaf0
 color7  = #ffffff
 color15 = #f5f5f5
 
-# vim: ft=dosini
+[hints]
+#active_background       = #3f3f3f
+#active_foreground       = #e68080
+#background              = #3f3f3f
+#border                  = #3f3f3f
+#border_width            = 0.5
+#font                    = Roboto Mono Medium for Powerline Medium 9
+#foreground              = #dcdccc
+padding                 = 4
+roundness               = 2.0
+
+# vim: ft=dosini cms=#%s
