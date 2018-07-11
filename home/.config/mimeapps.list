@@ -1,0 +1,31 @@
+[Added Associations]
+x-scheme-handler/mailto=exo-mail-reader.desktop
+application/x-shellscript=vim.desktop;
+text/html=firefox.desktop;
+application/atom+xml=firefox.desktop;
+application/gml+xml=firefox.desktop;
+application/gpx+xml=firefox.desktop;
+application/mathml+xml=firefox.desktop;
+application/metalink+xml=firefox.desktop;
+application/metalink4+xml=firefox.desktop;
+application/owl+xml=firefox.desktop;
+application/rdf+xml=firefox.desktop;
+application/rss+xml=firefox.desktop;
+application/sieve=firefox.desktop;
+application/smil+xml=firefox.desktop;
+
+[Default Applications]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+text/html=firefox.desktop
+application/atom+xml=firefox.desktop
+application/gml+xml=firefox.desktop
+application/gpx+xml=firefox.desktop
+application/mathml+xml=firefox.desktop
+application/metalink+xml=firefox.desktop
+application/metalink4+xml=firefox.desktop
+application/owl+xml=firefox.desktop
+application/rdf+xml=firefox.desktop
+application/rss+xml=firefox.desktop
+application/sieve=firefox.desktop
+application/smil+xml=firefox.desktop
