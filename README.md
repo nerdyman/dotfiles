@@ -22,4 +22,5 @@ Gets files listed in `files[]` array and puts them in current directory.
 ![Terminal htop, ls -lah](scrot.png)
 
 ## Resources
+-   [Wallpaper](<https://dribbble.com/shots/3847300-Accidental-Wallpaper/attachments/871699>)
 -   [Roboto Mono for Powerline](https://github.com/powerline/fonts/tree/master/RobotoMono)
