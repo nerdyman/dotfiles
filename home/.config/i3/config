@@ -11,15 +11,22 @@
 # zsh> xmodmap
 
 # colors
-set $background #27273f
-set $foreground #f5f5f5
-set $red        #ff6666
-set $green      #c2fa88
-set $yellow     #ffe066
-set $blue       #72c3fc
-set $magento    #7777e4
-set $cyan       #92eaf0
-set $white      #ffffff
+#set $background #353550
+#set $foreground #f5f5f5
+#set $red        #ff6666
+#set $green      #c2fa88
+#set $yellow     #ffe066
+#set $blue       #72c3fc
+#set $magento    #7777e4
+#set $cyan       #92eaf0
+#set $white      #ffffff
+
+set $border                  #7777e4
+set $borderFg                #e5e5f7
+set $borderFocused           #ffe066
+set $borderFocusedFg         #27273f
+set $borderFocusedInactive   #f783ac
+set $borderFocusedInactiveFg #4e3647
 
 set $mod Mod4
 set $alt Mod1
@@ -196,9 +203,9 @@ bindsym $mod+Print exec xfce4-screenshooter
 bindsym Print exec flameshot gui
 
 # window manager colors
-# <class>               border  backgr.     text    indicator
-client.focused          #ffffff #f783ac     #e7e7e7 #
-client.focused_inactive #       #7777e4     #e7e7e7 #
-client.unfocused        #       #353550     #c7c7c7 #
+# <class>               border  backgr.                text                     indicator
+client.focused          #ffffff $borderFocused         $borderFocusedFg         #
+client.focused_inactive #       $borderFocusedInactive $borderFocusedInactiveFg #
+client.unfocused        #       $border                $borderFg                #
 #client.placeholder     #       # # #
 focus_follows_mouse no
