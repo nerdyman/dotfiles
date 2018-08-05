@@ -59,9 +59,3 @@
   "pinned-tabs":
     closeUnpinned: true
   "tree-view": {}
-  "w3c-validation":
-    cssReportType: "all"
-    hideOnNoErrors: true
-    useFoldModeAsDefault: true
-  welcome:
-    showOnStartup: false
