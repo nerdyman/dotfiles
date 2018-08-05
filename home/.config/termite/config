@@ -6,7 +6,7 @@ clickable_url           = true
 cursor_blink            = true
 cursor_shape            = block
 dynamic_title           = true
-font                    = Roboto Mono Medium for Powerline Medium 9.3
+font                    = Roboto Mono Medium for Powerline Medium 10
 fullscreen              = true
 geometry                = 680x400
 hyperlinks              = true
@@ -65,7 +65,7 @@ color15 = #f5f5f5
 #border_width            = 0.5
 #font                    = Roboto Mono Medium for Powerline Medium 9
 #foreground              = #dcdccc
-padding                 = 4
+padding                 = 8
 roundness               = 2.0
 
 # vim: ft=dosini cms=#%s
