@@ -1,4 +1,8 @@
 #!/bin/bash
-# set nvidia fan speed for GPU 0
+
+# Set fan speed for Nvidia GPU
+
+speed=${1:-80}
+
 nvidia-settings -a "[gpu:0]/GPUFanControlState=1"
-nvidia-settings -a "[fan:0]/GPUTargetFanSpeed=80"
+nvidia-settings -a "[fan:0]/GPUTargetFanSpeed=${speed}"
