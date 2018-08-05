@@ -2,7 +2,8 @@
 
 # Set fan speed for Nvidia GPU
 
-speed=${1:-80}
+_default_speed="80"
+_speed=${1:-$_default_speed}
 
 nvidia-settings -a "[gpu:0]/GPUFanControlState=1"
-nvidia-settings -a "[fan:0]/GPUTargetFanSpeed=${speed}"
+nvidia-settings -a "[fan:0]/GPUTargetFanSpeed=${_speed}"
