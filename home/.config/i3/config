@@ -141,6 +141,8 @@ for_window [class="^i3wmForceFloat$"] floating enable
 for_window [window_role="pop-up"] floating enable,move absolute center
 for_window [class="Galculator"] floating enable,move absolute center
 for_window [class="Lxappearance"] floating enable,move absolute center
+for_window [class="Nm-connection-editor"] floating enable,move absolute center
+for_window [class="Xfce4-panel"] floating enable,move absolute center
 
 # disable window borders
 for_window [class="^.*"] border pixel 2
@@ -196,7 +198,7 @@ bindsym $mod+r mode "resize"
 # custom bindings
 bindsym $mod+Shift+t exec termite --class=i3wmForceFloat
 bindsym $mod+Shift+e exec thunar
-bindsym $mod+d exec rofi -show run -lines 10 -width 100 -padding 520 -opacity 90 -bw 0 -font "SFNS Text Medium 18" -separator-style none -hide-scrollbar
+bindsym $mod+d exec rofi -show run -opacity 98 -bw 0 -font "SFNS Text Medium 14" -separator-style none -hide-scrollbar -theme ~/.local/share/rofi/themes/pure.rasi
 bindsym $mod+Shift+l exec i3lock
 bindsym $mod+Shift+d exec i3lock && systemctl suspend
 bindsym $mod+Print exec xfce4-screenshooter
