@@ -49,7 +49,9 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(archlinux colored-man-pages dircycle dirhistory emoji git git-flow)
 
 # User configuration
-export PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:./node_modules/.bin"
+PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+PATH=~/.local/bin:$PATH
+PATH=./node_modules/.bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,7 +77,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export BROWSER=chromium
 export EDITOR=vim
 export NODE_ENV=development
-export NVM_DIR=/usr/share/nvm
+export NVM_DIR=~/.nvm
+export PATH
 export TERM=xterm-256color
 
 ## Termite
