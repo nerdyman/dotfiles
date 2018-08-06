@@ -2,10 +2,14 @@
 
 Dotfiles for:
 
+-   Atom
+-   Compton
+-   Fontconfig (emojis)
 -   i3wm (gaps)
--   compton
--   gnupg (SSH agent and SSH key timeout)
--   termite
+-   GnuPG (SSH agent and SSH key timeout)
+-   GTK 2 & 3
+-   Rofi
+-   Termite
 -   xinitrc
 -   Xresources
 -   zshrc
