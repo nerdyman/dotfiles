@@ -15,7 +15,8 @@ Dotfiles for:
 -   zshrc
 
 ## Scrots
-![Terminal htop, ls -lah](scrot.png)
+![Rofi](scrot-rofi.png)
+![Atom, Termite htop, neofetch](scrot.png)
 
 ## Resources
 -   [Wallpaper](<https://dribbble.com/shots/3847300-Accidental-Wallpaper/attachments/871699>)
