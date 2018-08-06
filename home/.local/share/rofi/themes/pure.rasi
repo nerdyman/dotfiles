@@ -181,4 +181,4 @@
     text-color: @normal-foreground;
 }
 
-# vim: ft=less
+// vim: ft=less
