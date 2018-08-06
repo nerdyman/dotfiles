@@ -10,14 +10,6 @@ Dotfiles for:
 -   Xresources
 -   zshrc
 
-## Import Script
-
-Gets files listed in `files[]` array and puts them in current directory.
-
-```bash
-./import.sh
-```
-
 ## Scrots
 ![Terminal htop, ls -lah](scrot.png)
 
