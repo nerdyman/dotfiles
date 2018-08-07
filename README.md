@@ -19,4 +19,5 @@ Dotfiles for:
 
 ## Resources
 -   [Wallpaper](<https://dribbble.com/shots/3847300-Accidental-Wallpaper/attachments/871699>)
--   [Roboto Mono for Powerline](https://github.com/powerline/fonts/tree/master/RobotoMono)
+-   [SFNS Text](<https://github.com/supermarin/YosemiteSanFranciscoFont/tree/master/Text%20Face%20(alternate%29>)
+-   [Roboto Mono for Powerline](<https://github.com/powerline/fonts/tree/master/RobotoMono>)
