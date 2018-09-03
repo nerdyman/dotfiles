@@ -6,18 +6,19 @@
     colors:
       abaseColor: "#7777e4"
       accentColor: "#ffe066"
-    fonts: {}
+      predefinedColor: "Green"
+    fonts:
+      fontSize: 17
     tabs:
       compactTabs: true
     ui:
       panelContrast: true
       panelShadows: true
+  "autocomplete-modules":
+    babelPluginModuleResolver: true
+    webpack: true
   core:
     autoHideMenuBar: true
-    disabledPackages: [
-      "linter-tslint"
-      "w3c-validation"
-    ]
     excludeVcsIgnoredPaths: false
     telemetryConsent: "limited"
     themes: [
@@ -38,14 +39,19 @@
   "exception-reporting":
     userId: "d2b3ea9a-fdd9-4443-99e3-b6fc1f5ec1e3"
   "file-types":
-    "^Dockerfile\\..*$": "source.dockerfile"
+    ".env.*": "source.dotenv"
+    "Dockerfile.*": "source.dockerfile"
   "fuzzy-finder":
     ignoredNames: [
+      "dist"
       "node_modules"
     ]
   "git-blame":
     columnWidth: 239
   "linter-eslint": {}
+  "linter-shellcheck":
+    enableNotice: true
+    shellcheckExecutablePath: "/bin/shellcheck"
   "linter-stylelint":
     showIgnored: true
   "linter-ui-default":
@@ -55,7 +61,10 @@
   minimap: {}
   "one-dark-ui": {}
   "open-terminal-here":
-    command: "termite"
+    command: "termite --class=\"i3wmForceFloat\""
   "pinned-tabs":
     closeUnpinned: true
+  "spell-check": {}
   "tree-view": {}
+  welcome:
+    showOnStartup: false
