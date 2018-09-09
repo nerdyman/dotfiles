@@ -23,7 +23,7 @@ urgent_on_bell          = true
 foreground      = #f5f5f5
 foreground_bold = #ffffff
 cursor          = #6c6c89
-background      = #27273f
+background      = #27273f #darker #24243a darkest #1e1e31 lighter #323250
 
 # black
 color0  = #4f4f6a
@@ -67,5 +67,3 @@ color15 = #f5f5f5
 #foreground              = #dcdccc
 padding                 = 8
 roundness               = 2.0
-
-# vim: ft=dosini cms=#%s
