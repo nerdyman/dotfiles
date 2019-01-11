@@ -51,7 +51,7 @@ font pango:Roboto Medium 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec termite
+bindsym $mod+t exec alacritty #termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -115,7 +115,7 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace web
 bindsym $mod+2 workspace code
-bindsym $mod+3 workspace design
+bindsym $mod+3 workspace media
 bindsym $mod+4 workspace steam
 bindsym $mod+5 workspace admin
 bindsym $mod+6 workspace vm
@@ -127,7 +127,7 @@ bindsym $mod+0 workspace 10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace web
 bindsym $mod+Shift+2 move container to workspace code
-bindsym $mod+Shift+3 move container to workspace design
+bindsym $mod+Shift+3 move container to workspace media
 bindsym $mod+Shift+4 move container to workspace steam
 bindsym $mod+Shift+5 move container to workspace admin
 bindsym $mod+Shift+6 move container to workspace vm
@@ -137,6 +137,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # window floating
+for_window [instance="i3wmForceFloat"] floating enable, move absolute center
 for_window [class="^i3wmForceFloat$"] floating enable
 for_window [window_role="pop-up"] floating enable,move absolute center
 for_window [class="Galculator"] floating enable,move absolute center
@@ -196,7 +197,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # custom bindings
-bindsym $mod+Shift+t exec termite --class=i3wmForceFloat
+#bindsym $mod+Shift+t exec termite --class=i3wmForceFloat
+bindsym $mod+Shift+t exec alacritty --class=i3wmForceFloat
 bindsym $mod+Shift+e exec thunar
 bindsym $mod+d exec rofi -show run -opacity 98 -bw 0 -font "SFNS Text Medium 14" -separator-style none -hide-scrollbar -theme ~/.local/share/rofi/themes/pure.rasi
 bindsym $mod+Shift+l exec i3lock
