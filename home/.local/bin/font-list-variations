@@ -1,0 +1,4 @@
+#!/bin/bash
+
+exec fc-list -f '%{style[0]}\n' "$1"
+
