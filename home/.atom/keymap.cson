@@ -1,0 +1,3 @@
+'.platform-win32 .editor, .platform-linux atom-text-editor':
+  'ctrl-shift-X': 'markdown-pdf:convert'
+  'ctrl-shift-C': 'unset!'
