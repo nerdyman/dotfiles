@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec colordiff -yW"`tput cols`" "$1" "$2" | bat
