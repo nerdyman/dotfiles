@@ -1,0 +1,8 @@
+#!/bin/bash
+
+_ip=$(source "$(dirname ${BASH_SOURCE[0]})/public-ip")
+_geoip=$(geoiplookup $_ip)
+
+echo "IP   : ${_ip}"
+echo "GeoIP: ${_geoip}"
+
