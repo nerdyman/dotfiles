@@ -39,8 +39,7 @@ window:
   #     - none: Neither borders nor title bar
   decorations: full
 
-  # When true, alacritty starts maximized.
-  start_maximized: false
+  startup_mode: Maximized
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -92,19 +91,19 @@ tabspaces: 4
 font:
   # Normal (roman) font face
   normal:
-    family: Roboto Mono Medium for Powerline
+    family: RobotoMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Medium
 
   # Bold font face
   bold:
-    family: Roboto Mono for Powerline
+    family: RobotoMono Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
-    family: Roboto Mono Medium for Powerline
+    family: RobotoMono Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Medium Italic
 
@@ -123,12 +122,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-# Display the time it takes to redraw each frame.
-render_timer: false
-
-# Keep the log file after quitting Alacritty.
-persistent_logging: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
