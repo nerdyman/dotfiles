@@ -1,13 +1,27 @@
-@font-face {
-	font-family: 'custom-ui-font';
-	font-weight: 500;
-	font-style: normal;
-	src:
-		local('SFNS Text'),
-		local('Roboto')
-	;
+@font-size: .870rem;
+@font-size-small: .825rem;
+
+linter-message *,
+atom-text-editor[mini],
+.tree-view *,
+.tooltip,
+.tab-bar *,
+.find-and-replace .find-meta-container,
+.btn,
+.settings-view,
+.status-bar,
+.list-tree * {
+    -webkit-font-smoothing: antialiased;
+    font-size: @font-size;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight: 500;
 }
 
-atom-workspace {
-	font-family: 'custom-ui-font', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+.config-menu ul li a,
+.pane-item section .section-heading, .pane-item .section .section-heading {
+    font-weight: 600;
+}
+
+.status-bar {
+    font-size: @font-size-small;
 }

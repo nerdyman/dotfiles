@@ -6,65 +6,91 @@
     colors:
       abaseColor: "#7777e4"
       accentColor: "#ffe066"
-      predefinedColor: "Green"
-    fonts:
-      fontSize: 17
     tabs:
       compactTabs: true
     ui:
       panelContrast: true
       panelShadows: true
-  "autocomplete-modules":
-    babelPluginModuleResolver: true
-    webpack: true
   core:
     autoHideMenuBar: true
+    closeEmptyWindows: false
+    disabledPackages: [
+      "language-vue"
+      "language-csharp"
+      "language-c"
+      "language-go"
+      "language-java"
+      "language-objective-c"
+      "markdown-pdf"
+      "atom-import-cost"
+      "linter-markdown"
+    ]
     excludeVcsIgnoredPaths: false
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "pure-syntax"
     ]
+    useTreeSitterParsers: false
   editor:
     fontFamily: "Roboto Mono Medium for Powerline"
     fontSize: 15
     lineHeight: 2
-    preferredLineLength: 100
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     softTabs: false
     tabLength: 4
     tabType: "auto"
+    zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "d2b3ea9a-fdd9-4443-99e3-b6fc1f5ec1e3"
   "file-types":
-    ".env.*": "source.dotenv"
-    "Dockerfile.*": "source.dockerfile"
+    "^Dockerfile\\..*$": "source.dockerfile"
   "fuzzy-finder":
     ignoredNames: [
-      "dist"
       "node_modules"
     ]
+    scoringSystem: "fast"
+    useRipGrep: true
   "git-blame":
     columnWidth: 239
-  "linter-eslint": {}
+  "language-babel":
+    emmetCSSAutocomplete: true
+  "language-elm":
+    autocompleteEnabled: false
+  "linter-eslint":
+    autofix:
+      fixOnSave: true
+  "linter-markdown": {}
+  "linter-sass-lint":
+    noConfigDisable: true
   "linter-shellcheck":
     enableNotice: true
-    shellcheckExecutablePath: "/bin/shellcheck"
   "linter-stylelint":
     showIgnored: true
   "linter-ui-default":
-    panelHeight: 189
-    showPanel: true
+    panelHeight: 300
   "markdown-preview": {}
   minimap: {}
   "one-dark-ui": {}
   "open-terminal-here":
-    command: "termite --class=\"i3wmForceFloat\""
+    command: "termite"
   "pinned-tabs":
     closeUnpinned: true
-  "spell-check": {}
-  "tree-view": {}
+    visualstudio:
+      enable: true
+      minimumWidth: 100
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+      showInStatusBar: true
+    useEslint: true
+    useStylelint: true
+  "spell-check":
+    locales: [
+      "en_GB"
+    ]
   welcome:
     showOnStartup: false
