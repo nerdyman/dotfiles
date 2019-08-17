@@ -6,6 +6,7 @@
     colors:
       abaseColor: "#7777e4"
       accentColor: "#ffe066"
+    fonts: {}
     tabs:
       compactTabs: true
     ui:
