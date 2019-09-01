@@ -1,0 +1,67 @@
+{
+    "workbench.colorTheme": "Moonlight II",
+    "window.menuBarVisibility": "toggle",
+    "editor.fontFamily": "Hasklug Nerd Font Mono",
+    "editor.renderWhitespace": "boundary",
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.autoClosingQuotes": "beforeWhitespace",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.letterSpacing": 0.1,
+    "editor.lineHeight": 32,
+    "editor.smoothScrolling": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.tabCompletion": "on",
+    "editor.fontWeight": "600",
+    "editor.roundedSelection": true,
+    "workbench.list.horizontalScrolling": true,
+    "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+    "workbench.useExperimentalGridLayout": true,
+    "workbench.tree.indent": 12,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "workbench.settings.useSplitJSON": false,
+    "window.restoreWindows": "all",
+    "window.zoomLevel": 0.35,
+    "search.exclude": {
+        "*.ignore": true
+    },
+    "search.location": "panel",
+    "search.showLineNumbers": true,
+    "debug.inlineValues": true,
+    "terminal.explorerKind": "external",
+    "terminal.external.linuxExec": "alacritty",
+    "telemetry.enableTelemetry": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.packageManager": "yarn",
+    "html.format.endWithNewline": true,
+    "markdown.preview.fontFamily": "system-ui,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif",
+    "prettier.requireConfig": true,
+    "editor.fontSize": 13.85,
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#ffffff44",
+        "editor.selectionHighlightBorder": "#ffffff80"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.trailingComma": "es5",
+    "files.exclude": {
+        "**/.git": false
+    },
+    "git.decorations.enabled": true,
+    "explorer.decorations.colors": true,
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.fileHistory.location": "explorer",
+    "gitlens.views.lineHistory.location": "explorer",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "gitlens.statusBar.alignment": "left"
+}
