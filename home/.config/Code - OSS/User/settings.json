@@ -1,9 +1,9 @@
 {
     "workbench.colorTheme": "Moonlight II",
     "window.menuBarVisibility": "toggle",
-    "editor.fontFamily": "Hasklug Nerd Font Mono",
+    "editor.fontFamily": "Hasklig",
     "editor.renderWhitespace": "boundary",
-    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.autoClosingBrackets": "always",
     "editor.autoClosingQuotes": "beforeWhitespace",
     "editor.copyWithSyntaxHighlighting": false,
     "editor.letterSpacing": 0.1,
@@ -23,7 +23,7 @@
     "workbench.editor.highlightModifiedTabs": true,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.formatOnPaste": true,
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
     "workbench.settings.useSplitJSON": false,
     "window.restoreWindows": "all",
@@ -53,9 +53,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "prettier.trailingComma": "es5",
-    "files.exclude": {
-        "**/.git": false
-    },
     "git.decorations.enabled": true,
     "explorer.decorations.colors": true,
     "gitlens.views.repositories.location": "scm",
@@ -63,5 +60,13 @@
     "gitlens.views.lineHistory.location": "explorer",
     "gitlens.views.compare.location": "gitlens",
     "gitlens.views.search.location": "gitlens",
-    "gitlens.statusBar.alignment": "left"
+    "gitlens.statusBar.alignment": "left",
+    "editor.fontLigatures": true,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "editor.autoIndent": false,
+    "search.quickOpen.includeHistory": false,
+    "javascript.suggest.autoImports": false,
+    "editor.find.seedSearchStringFromSelection": false,
+    "explorer.autoReveal": false
 }
