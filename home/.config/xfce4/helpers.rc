@@ -1,0 +1,4 @@
+MailReader=custom-MailReader
+TerminalEmulator=custom-TerminalEmulator
+
+WebBrowser=brave-browser
