@@ -1,0 +1,58 @@
+* {
+    --border-radius: 0.15em;
+    --space-three-quarter: 0.75em;
+    --space-three-half: 0.50em;
+    --color-border: rgba(255, 255, 255, 0.05);
+    --color-body-base: rgba(255, 255, 255, 1);
+    --color-body-base-alt: rgba(255, 255, 255, 0.5);
+    --color-selected-base: rgba(49, 91, 239, 1);
+
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--color-body-base);
+}
+
+#window {
+    padding: var(--space-three-quarter);
+    border-radius: var(--border-radius);
+    background-color: rgba(42, 42, 42, 0.975);
+}
+
+#inputbar {
+    padding: var(--space-three-quarter);
+    margin: 0 0.5em 0 0.5em;
+    border: 0 0 2px solid 0;
+    border-color: var(--color-border);
+}
+
+#prompt {
+    padding: 0 0.5em 0 0;
+}
+
+#listview {
+    padding: var(--space-three-half);
+}
+
+#element {
+    padding: 0.5em 0.35em;
+    border-radius: var(--border-radius);
+}
+
+#element selected {
+  background-color: var(--color-selected-base);
+}
+
+#mode-switcher {
+    padding: 0.75em 0 0;
+    border: 2px solid 0 0 0;
+    border-color: var(--color-border);
+}
+
+#button {
+    color: var(--color-body-base);
+}
+
+#button selected {
+    color: var(--color-selected-base);
+}
+
+/* vim:ft=css

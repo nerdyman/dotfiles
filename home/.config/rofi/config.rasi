@@ -1,0 +1,14 @@
+configuration {
+    combi-modi: "window,drun,ssh";
+    display-drun: ">";
+    display-run: "$";
+    display-window: "🪟";
+    font: "SF Pro Display Medium 16px";
+    icon-theme: "McMojave-circle-dark";
+    modi: "window,run,drun,ssh,combi";
+    show-icons: true;
+    sidebar-mode: true;
+    theme: "mac-os";
+}
+
+/* vim:ft=css */
