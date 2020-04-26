@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app:
+    image: gerbera/gerbera:v1.4.0
+    container_name: gerbera
+    env_file: "./.env"
+    hostname: gerbera
+    network_mode: host
+    volumes:
+      - type: bind
+        source: ${GERBERA_VIDEO_SOURCE_PATH}
+        target: ${GERBERA_VIDEO_TARGET_PATH}
+        read_only: true
+    command:
+      - --add-file
+      - ${GERBERA_VIDEO_TARGET_PATH}
