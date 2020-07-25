@@ -6,7 +6,7 @@
 Dotfiles for:
 
 -   [Atom](./home/.atom)
--   [VSCode](./home/.config/Code\ -\ OSS/User/)
+-   [VSCode](<./home/.config/Code - OSS/User/>)
 -   [Kitty Terminal](./home/.config/kitty)
 -   [Compton](./home/.config/compton)
 -   [i3wm (gaps)](./home/.config/i3)
