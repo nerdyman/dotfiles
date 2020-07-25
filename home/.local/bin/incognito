@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#exec firefox-developer-edition --private
+exec brave --incognito

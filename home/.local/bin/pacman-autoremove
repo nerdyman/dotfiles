@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec pacman -Qdtq | pacman -Rs -

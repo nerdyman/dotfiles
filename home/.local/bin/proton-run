@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#!/bin/sh
+
+if [ -z "$STEAMDIR" ]; then
+  STEAMDIR="$HOME/.steam/steam/steamapps"
+fi
+if [ -z "$PROTON_VERSION" ]; then
+  PROTON_VERSION="Proton 3.16"
+fi
+
+
+PROTON_DIR="${STEAMDIR}/common/${PROTON_VERSION}"
+PROTON_WINE_PATH="${PROTON_DIR}/dist/bin/wine64"
+
+if [ ! -z "$KILL_WINE" ]; then
+  # A bit hardcore, but whatever
+  wineserver -k; killall -9 wine wineserver; for i in `ps ax|egrep "*\.exe"|grep -v 'egrep'|awk '{print $1 }'`;do kill -9 $i;done
+fi
+
+if [ -z "$1" ]; then
+  PROTON_DEF_PFX="${PROTON_DIR}/dist/share/default_pfx"
+  echo -e "\e[32m\e[1mUSING proton default environment\e[0m"
+else
+  PROTON_DEF_PFX="${STEAMDIR}/compatdata/${1}/pfx"
+  echo -e "\e[32m\e[1mUSING app sepcific environment for APPID: $1\e[0m"
+fi
+
+shift
+WINEESYNC=1 env WINEPREFIX="$PROTON_DEF_PFX" WINEPATH="$PROTON_WINE_PATH" "$PROTON_WINE_PATH" "$@"
