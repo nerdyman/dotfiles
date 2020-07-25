@@ -10,36 +10,36 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # zsh> xmodmap
 
-# colors
-#set $background #353550
-#set $foreground #f5f5f5
-#set $red        #ff6666
-#set $green      #c2fa88
-#set $yellow     #ffe066
-#set $blue       #72c3fc
-#set $magento    #7777e4
-#set $cyan       #92eaf0
-#set $white      #ffffff
-
-set $border                  #7777e4
-set $borderFg                #e5e5f7
-set $borderFocused           #ffe066
-set $borderFocusedFg         #27273f
-set $borderFocusedInactive   #f783ac
-set $borderFocusedInactiveFg #4e3647
-
+# Modifier keys
 set $mod Mod4
 set $alt Mod1
+
+# Colors
+set $border                  #7b5adb
+set $borderFg                #f1e7f1
+set $borderFocused           #ffd749
+set $borderFocusedFg         #27273f
+set $borderFocusedInactive   #f17ba5
+set $borderFocusedInactiveFg #58395d
+
+# Window manager colors
+# <class>               border  backgr.                text                     indicator
+client.focused          #deb832 $borderFocused         $borderFocusedFg         #
+client.focused_inactive #da6b92 $borderFocusedInactive $borderFocusedInactiveFg #
+client.unfocused        #674db1 $border                $borderFg                #
+#client.placeholder     #       # # #
+focus_follows_mouse no
 
 # Gaps
 gaps inner 6
 gaps outer 0
+border_radius 1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Roboto Medium 9
+font pango:SF Pro Display Semibold 9.75
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -49,15 +49,14 @@ font pango:Roboto Medium 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
 # start a terminal
-bindsym $mod+t exec alacritty #termite
-
+bindsym $mod+t exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
+#
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
@@ -76,46 +75,39 @@ bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+h split h
-
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout default
 bindsym $mod+Shift+s layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
+# Focus the child container
+bindsym $mod+c focus child
 
-# focus the child container
-#bindsym $mod+d focus child
-
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace web
 bindsym $mod+2 workspace code
-bindsym $mod+3 workspace media
+bindsym $mod+3 workspace term
 bindsym $mod+4 workspace steam
 bindsym $mod+5 workspace admin
 bindsym $mod+6 workspace vm
@@ -124,10 +116,10 @@ bindsym $mod+8 workspace db
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace web
 bindsym $mod+Shift+2 move container to workspace code
-bindsym $mod+Shift+3 move container to workspace media
+bindsym $mod+Shift+3 move container to workspace term
 bindsym $mod+Shift+4 move container to workspace steam
 bindsym $mod+Shift+5 move container to workspace admin
 bindsym $mod+Shift+6 move container to workspace vm
@@ -144,14 +136,33 @@ for_window [class="Galculator"] floating enable,move absolute center
 for_window [class="Lxappearance"] floating enable,move absolute center
 for_window [class="Nm-connection-editor"] floating enable,move absolute center
 for_window [class="Xfce4-panel"] floating enable,move absolute center
+for_window [class="ulauncher"] floating enable, border none
 
-# disable window borders
-for_window [class="^.*"] border pixel 2
-new_window pixel 2
-default_border pixel 2
+# plasma
+# Don’t treat Plasma pop-ups as full-sized windows
+for_window [class="plasmashell"] floating enable
+# Don’t spawn an empty window for the Plasma Desktop
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+for_window [class="Plasma"] floating enable
+for_window [class="krunner"] floating enable
+for_window [class="Kmix"] floating enable
+for_window [class="Klipper"] floating enable
+for_window [class="Plasmoidviewer"] floating enable
+# Don’t let notifications and non-interactive pop-up windows steal focus
+no_focus [class="plasmashell" window_type="notification"]
+#no_focus [class="plasmashell" window_type="on_screen_display"]
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
-# fix conky
-for_window[class="conky"] new_window pixel 0
+# disable window borders (don't show title only 1px border)
+for_window [class="^.*"] border pixel 1
+new_window pixel 1
+default_border pixel 1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -164,52 +175,42 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym XF86AudioRaiseVolume exec "amixer set Master 4%+"
 bindsym XF86AudioLowerVolume exec "amixer set Master 4%-"
 bindsym XF86AudioMute exec "amixer set Master toggle"
-bindsym XF86AudioPlay exec quodlibet --play-pause
-bindsym XF86AudioStop exec quodlibet --stop
-bindsym XF86AudioPrev exec quodlibet --previous
-bindsym XF86AudioNext exec quodlibet --next
+#bindsym XF86AudioPlay exec quodlibet --play-pause
+#bindsym XF86AudioStop exec quodlibet --stop
+#bindsym XF86AudioPrev exec quodlibet --previous
+#bindsym XF86AudioNext exec quodlibet --next
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
 
-	# Pressing down will grow the window’s height.
-        #bindsym j resize shrink width 4 px or 4 ppt
-        #bindsym k resize grow height 4 px or 5 ppt
-        #bindsym l resize shrink height 4 px or 4 ppt
-        #bindsym semicolon resize grow width 4 px or 4 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 4 px or 4 ppt
-        bindsym Down resize grow height 4 px or 4 ppt
-        bindsym Up resize shrink height 4 px or 4 ppt
-        bindsym Right resize grow width 4 px or 4 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 4 px or 4 ppt
+    bindsym k resize grow height 4 px or 5 ppt
+    bindsym l resize shrink height 4 px or 4 ppt
+    bindsym semicolon resize grow width 4 px or 4 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 4 px or 4 ppt
+    bindsym Down resize grow height 4 px or 4 ppt
+    bindsym Up resize shrink height 4 px or 4 ppt
+    bindsym Right resize grow width 4 px or 4 ppt
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
 # custom bindings
-#bindsym $mod+Shift+t exec termite --class=i3wmForceFloat
-bindsym $mod+Shift+t exec alacritty --class=i3wmForceFloat
-bindsym $mod+Shift+e exec thunar
-bindsym $mod+d exec rofi -show run -opacity 98 -bw 0 -font "SFNS Text Medium 14" -separator-style none -hide-scrollbar -theme ~/.local/share/rofi/themes/pure.rasi
-bindsym $mod+Shift+l exec i3lock
-bindsym $mod+Shift+d exec i3lock && systemctl suspend
+bindsym $mod+Shift+t exec kitty --class=i3wmForceFloat
+bindsym $mod+Shift+e exec nautilus
+bindsym $mod+d exec "rofi -modi drun,run,window -show drun"
+bindsym $mod+Shift+l exec xflock
+bindsym $mod+Shift+d exec xflock4 && sleep 1 && systemctl hibernate
 bindsym $mod+Print exec xfce4-screenshooter
 bindsym Print exec flameshot gui
 
-# window manager colors
-# <class>               border  backgr.                text                     indicator
-client.focused          #ffffff $borderFocused         $borderFocusedFg         #
-client.focused_inactive #       $borderFocusedInactive $borderFocusedInactiveFg #
-client.unfocused        #       $border                $borderFg                #
-#client.placeholder     #       # # #
-focus_follows_mouse no
+# vim: set ft=sh:

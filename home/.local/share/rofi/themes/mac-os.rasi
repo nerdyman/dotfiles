@@ -1,24 +1,27 @@
 * {
     --border-radius: 0.15em;
+    --space-two-thirds: 0.66em;
     --space-three-quarter: 0.75em;
     --space-three-half: 0.50em;
-    --color-border: rgba(255, 255, 255, 0.05);
-    --color-body-base: rgba(255, 255, 255, 1);
-    --color-body-base-alt: rgba(255, 255, 255, 0.5);
-    --color-selected-base: rgba(49, 91, 239, 1);
 
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--color-body-base);
+    --color-border: #ffffff0d;
+    --color-body-base: #2a2a2adf;
+    --color-body-contrast: #fafafa;
+    --color-body-base-alt: #ffffff80;
+    --color-selected-base: /*#8b57e6;*/ #315bef;
+
+    background-color: #00000000;
+    color: var(--color-body-contrast);
 }
 
 #window {
-    padding: var(--space-three-quarter);
+    padding: var(--space-two-thirds);
     border-radius: var(--border-radius);
-    background-color: rgba(42, 42, 42, 0.975);
+    background-color: var(--color-body-base);
 }
 
 #inputbar {
-    padding: var(--space-three-quarter);
+    padding: var(--space-two-thirds);
     margin: 0 0.5em 0 0.5em;
     border: 0 0 2px solid 0;
     border-color: var(--color-border);
@@ -42,13 +45,13 @@
 }
 
 #mode-switcher {
-    padding: 0.75em 0 0;
+    padding: 0.66em 0 0;
     border: 2px solid 0 0 0;
     border-color: var(--color-border);
 }
 
 #button {
-    color: var(--color-body-base);
+    color: var(--color-body-contrast);
 }
 
 #button selected {
