@@ -27,7 +27,7 @@ Dotfiles for:
 </details>
 
 ## Resources
--   [Adementary Theme](<https://github.com/hrdwrrsk/adementary-theme>)
+-   [Mojave-gtk-theme](<https://github.com/vinceliuice/Mojave-gtk-theme>)
 -   [Wallpaper](<https://dribbble.com/shots/13806303-Wave-Wallpapers>)
 -   [San-Francisco Pro Fonts](<https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts>)
 -   [Hasklig Monospace Font](<https://github.com/i-tu/Hasklig>)
