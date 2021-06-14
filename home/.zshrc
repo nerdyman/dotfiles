@@ -12,7 +12,7 @@ ZSH=/usr/share/oh-my-zsh/
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="nerdyman"
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 #ZSH_THEME="tjkirch"
 
 # Set list of themes to pick from when loading at random
@@ -75,7 +75,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 ## git-prompt.plugin.zsh
-ZSH_THEME_GIT_PROMPT_CACHE=true
+#ZSH_THEME_GIT_PROMPT_CACHE=true
 ## Exports
 export FZF_BASE=/usr/bin/fzf
 
@@ -98,15 +98,15 @@ plugins=(
 )
 
 # User configuration
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
+#SPACESHIP_PROMPT_ORDER=(
+#  time          # Time stamps section
+#  user          # Username section
+#  dir           # Current directory section
+#  host          # Hostname section
+#  git           # Git section (git_branch + git_status)
 #  hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
-  node          # Node.js section
+#  package       # Package version
+#  node          # Node.js section
 #  ruby          # Ruby section
 #  elixir        # Elixir section
 #  xcode         # Xcode section
@@ -116,8 +116,8 @@ SPACESHIP_PROMPT_ORDER=(
 #  rust          # Rust section
 #  haskell       # Haskell Stack section
 #  julia         # Julia section
-  docker        # Docker section
-  aws           # Amazon Web Services section
+#  docker        # Docker section
+#  aws           # Amazon Web Services section
 #  venv          # virtualenv section
 #  conda         # conda virtualenv section
 #  pyenv         # Pyenv section
@@ -125,14 +125,14 @@ SPACESHIP_PROMPT_ORDER=(
 #  ember         # Ember.js section
 #  kubectl       # Kubectl context section
 #  terraform     # Terraform workspace section
-  exec_time     # Execution time
-  line_sep      # Line break
+#  exec_time     # Execution time
+#  line_sep      # Line break
 #  battery       # Battery level and status
 #  vi_mode       # Vi-mode indicator
 #  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
+#  exit_code     # Exit code section
+#  char          # Prompt character
+#)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -140,13 +140,7 @@ SPACESHIP_PROMPT_ORDER=(
 # export LANG=en_US.UTF-8
 
 export TERM=xterm
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -168,6 +162,9 @@ fi
 source "${HOME}/.config/aliases"
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
+alias ls='grc --colour=auto ls --color=always'
+source /etc/grc.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -194,3 +191,7 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_SHELL=zsh
+eval "$(starship init zsh)"
