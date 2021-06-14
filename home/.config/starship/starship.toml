@@ -1,0 +1,12 @@
+add_newline = false
+
+[character]      # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[time]
+disabled = false
+format = "[$time]($style) "
+time_format = "%T"
+style = "bold blue"
+utc_time_offset = "1"
