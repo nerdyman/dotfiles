@@ -1,6 +1,6 @@
 # dotfiles
 
-[![Desktop and Kitty](./scrots/desktop-kitty.png)](<https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-drun.png>)
+[![Desktop and Kitty](./scrots/desktop-kitty.png)](<https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/desktop-kitty.png>)
 [![Rofi drun](./scrots/rofi-drun.png)](<https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-drun.png>)
 
 Dotfiles for:
