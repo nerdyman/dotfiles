@@ -1,9 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-PATH=~/.local/bin:$PATH
-PATH=./node_modules/.bin:$PATH
-
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
@@ -89,11 +86,11 @@ export FZF_BASE=/usr/bin/fzf
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   dircycle 
-  colored-man-pages 
-  fzf 
-  git 
-  git-flow-avh 
-  npm 
+  colored-man-pages
+  fzf
+  git
+  git-flow-avh
+  npm
   yarn
 )
 
@@ -165,6 +162,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
 alias ls='grc --colour=auto ls --color=always'
 source /etc/grc.zsh
+source /usr/share/nvm/init-nvm.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
