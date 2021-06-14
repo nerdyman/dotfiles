@@ -1,4 +1,4 @@
-add_newline = false
+add_newline = true
 
 [character]      # The name of the module we are configuring is "character"
 success_symbol = "[➜](bold green)"
@@ -10,3 +10,14 @@ format = "[$time]($style) "
 time_format = "%T"
 style = "bold blue"
 utc_time_offset = "1"
+
+[aws]
+format = 'on [$symbol$profile(\($region\))]($style) '
+style = "bold blue"
+symbol = "🅰 "
+
+#[nodejs]
+#format = "via [🤖 $version](bold green) "
+
+[package]
+format = "via [🎁 $version](208 bold) "
