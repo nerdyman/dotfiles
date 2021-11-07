@@ -1,4 +1,4 @@
 alias vim="nvim"
 
 # go to projects directory and allow autocompletions of files and folders
-hash -d pro="${HOME}/Documents/projects"
+hash -d p="${HOME}/Documents/projects"
