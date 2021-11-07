@@ -12,4 +12,4 @@
 [init]
 	defaultBranch = main
 [help]
-	autocorrect = 30
+	autocorrect = 20
