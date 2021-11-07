@@ -1,6 +1,6 @@
 {
-    "window.menuBarVisibility": "toggle",
     "editor.fontFamily": "Hasklig",
+    "editor.fontWeight": "600",
     "editor.renderWhitespace": "boundary",
     "editor.autoClosingBrackets": "always",
     "editor.autoClosingQuotes": "beforeWhitespace",
@@ -9,17 +9,15 @@
     "editor.lineHeight": 32,
     "editor.smoothScrolling": true,
     "editor.rulers": [
-        80
+        100
     ],
     "editor.tabCompletion": "on",
-    "editor.fontWeight": "600",
     "editor.roundedSelection": true,
     "workbench.list.horizontalScrolling": true,
-    "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+    "workbench.startupEditor": "welcomePage",
     "workbench.tree.indent": 12,
     "workbench.editor.closeOnFileDelete": true,
     "workbench.editor.highlightModifiedTabs": true,
-    "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "alt",
     "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
@@ -32,16 +30,25 @@
     "debug.inlineValues": true,
     "terminal.explorerKind": "external",
     "terminal.external.linuxExec": "kitty",
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "eslint.alwaysShowStatus": true,
     "eslint.packageManager": "yarn",
     "html.format.endWithNewline": true,
     "markdown.preview.fontFamily": "system-ui",
     "prettier.requireConfig": true,
-    "workbench.iconTheme": "moxer-icons",
     "workbench.colorCustomizations": {
+        "editorError.background": "#dd00004a",
+        "editorWarning.background": "#ffd0004f",
         "editor.selectionBackground": "#ffffff44",
-        "editor.selectionHighlightBorder": "#ffffff80"
+        "editor.selectionHighlightBorder": "#ffffff80",
+        "editorCursor.foreground": "#f783ac",
+        "terminalCursor.foreground": "#f783ac",
+        "[Cryptic]": {
+            "editorIndentGuide.activeBackground": "#f783ac66",
+            "editor.lineHighlightBackground": "#eb83f711",
+            "editorIndentGuide.background": "#f783ac22",
+            "editor.lineHighlightBorder": "#ff000000"
+        },
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -49,33 +56,24 @@
     "prettier.trailingComma": "es5",
     "git.decorations.enabled": true,
     "explorer.decorations.colors": true,
-    "gitlens.views.repositories.location": "scm",
-    "gitlens.views.fileHistory.location": "explorer",
-    "gitlens.views.lineHistory.location": "explorer",
-    "gitlens.views.compare.location": "gitlens",
-    "gitlens.views.search.location": "gitlens",
     "gitlens.statusBar.alignment": "left",
     "editor.fontLigatures": true,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "search.quickOpen.includeHistory": false,
     "javascript.suggest.autoImports": false,
-    "editor.find.seedSearchStringFromSelection": false,
+    "typescript.suggest.autoImports": false,
+    "editor.find.seedSearchStringFromSelection": "never",
     "explorer.autoReveal": false,
     "files.insertFinalNewline": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.fontFamily": "RobotoMono Nerd Font",
-    "markdown.preview.scrollEditorWithPreview": false,
-    "markdown.preview.scrollPreviewWithEditor": false,
-    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "terminal.integrated.fontFamily": "Hasklig",
     "svgPreview.autoOpen": false,
-    "window.zoomLevel": 0.35,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "editor.fontSize": 13.85,
-    "workbench.colorTheme": "Moonlight II Italic",
+    "editor.fontSize": 14,
     "colorize.languages": [
         "css",
         "sass",
@@ -91,5 +89,31 @@
         "javascriptreact",
         "typescript",
         "typescriptreact"
-    ]
+    ],
+    "workbench.sideBar.location": "right",
+    "workbench.editor.untitled.hint": "hidden",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "search.mode": "newEditor",
+    "terminal.integrated.fontSize": 14,
+    "redhat.telemetry.enabled": false,
+    "window.zoomLevel": 0.25,
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Cryptic",
+    "workbench.productIconTheme": "fluent-icons",
+    "files.associations": {
+        "*.ejs": "html"
+    },
+    "files.enableTrash": false,
+    "emmet.includeLanguages": {
+        "ejs": "html"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
+    "markdown.links.openLocation": "beside",
 }

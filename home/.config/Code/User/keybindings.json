@@ -1,0 +1,31 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "shift+cmd+a",
+        "command": "workbench.action.addRootFolder"
+    },
+    {
+        "key": "shift+cmd+\\",
+        "command": "search.action.revealInSideBar"
+    },
+    {
+        "key": "shift+cmd+w",
+        "command": "workbench.action.removeRootFolder"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "alt+cmd+\\",
+        "command": "-workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    }
+]
