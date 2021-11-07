@@ -2,8 +2,8 @@
 
 Dotfiles for Linux and macOS.
 
-[![Desktop and Kitty](./scrots/desktop-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/desktop-kitty.png)
-[![VSCode](./scrots/vs-code.jpg)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-drun.png)
+[![Desktop and Kitty](./scrots/desktop-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/desktop-kitty.png)
+[![VSCode](./scrots/vs-code.jpg)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vs-code.jpg)
 
 Dotfiles for:
 
@@ -21,12 +21,12 @@ Dotfiles for:
 
 <details>
 
-<summary>Click to expand</summary>
+<summary>View more screenshots</summary>
 
-[![Rofi drun](./scrots/rofi-drun.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-drun.png)
-[![Rofi run](./scrots/rofi-run.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-run.png)
-[![Rofi window](./scrots/rofi-window.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-window.png)
-[![VSCode + Kitty](./scrots/vscode-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/vscode-kitty.png)
+[![Rofi drun](./scrots/rofi-drun.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/rofi-drun.png)
+[![Rofi run](./scrots/rofi-run.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/rofi-run.png)
+[![Rofi window](./scrots/rofi-window.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/rofi-window.png)
+[![VSCode + Kitty](./scrots/vscode-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vscode-kitty.png)
 
 </details>
 
