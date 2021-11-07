@@ -71,6 +71,7 @@
     },
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontFamily": "Hasklig",
+    "terminal.integrated.fontWeight": "600",
     "svgPreview.autoOpen": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.fontSize": 14,
