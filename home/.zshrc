@@ -95,6 +95,9 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 export FZF_BASE="${__FZF_BASE__}"
 
+## nvm
+NVM_AUTOLOAD=1
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -109,6 +112,7 @@ plugins=(
   git
   git-flow-avh
   npm
+  nvm
   yarn
 )
 
@@ -128,32 +132,6 @@ alias ls="grc --colour=auto ls --color=always"
 autoload -U add-zsh-hook
 autoload bashcompinit
 bashcompinit
-
-## nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 ## starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
