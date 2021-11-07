@@ -11,7 +11,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   # custom definitions
   __FZF_BASE="/opt/homebrew/bin/fzf"
   __ZSH__="/Users/me/.oh-my-zsh"
-  __ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  __ZSH_SYNTAX_HIGHLIGHTING__="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
   # os definitions
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
@@ -117,7 +117,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $__ZSH_SYNTAX_HIGHLIGHTING
+source $__ZSH_SYNTAX_HIGHLIGHTING__
 
 ## aliases and environment variables
 [[ -f "${HOME}/.config/aliases" ]] && source "${HOME}/.config/aliases"
