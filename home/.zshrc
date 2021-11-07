@@ -1,22 +1,29 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+## custom variables to determine which settings to use (defaults presume we're on Arch)
+__FZF_BASE__="/usr/bin/fzf"
+__ZSH__="/usr/share/oh-my-zsh/"
+__ZSH_SYNTAX_HIGHLIGHTING__="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# change config for macos
+if [[ "$(uname)" == "Darwin" ]]; then
+  # custom definitions
+  __FZF_BASE="/opt/homebrew/bin/fzf"
+  __ZSH__="/Users/me/.oh-my-zsh"
+  __ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+  # os definitions
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+  FPATH="/opt/homebrew/Cellar/grc/1.13_1/share/zsh/site-functions/_grc:/opt/homebrew/Cellar/gh/2.2.0/share/zsh/site-functions/_gh:$FPATH"
+fi
+
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+export ZSH="${__ZSH__}"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="nerdyman"
-#ZSH_THEME="spaceship"
-#ZSH_THEME="tjkirch"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -62,7 +69,22 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
-# Custom
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+# default os exports
+export TERM=xterm
+export EDITOR=nvim
+export CLICOLOR=1
+
 ## fzf
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -71,13 +93,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
-## git-prompt.plugin.zsh
-#ZSH_THEME_GIT_PROMPT_CACHE=true
-## Exports
-export FZF_BASE=/usr/bin/fzf
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+export FZF_BASE="${__FZF_BASE__}"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -87,88 +103,37 @@ export FZF_BASE=/usr/bin/fzf
 plugins=(
   dircycle 
   colored-man-pages
+  extract
   fzf
+  grc
   git
   git-flow-avh
   npm
   yarn
 )
 
-# User configuration
-#SPACESHIP_PROMPT_ORDER=(
-#  time          # Time stamps section
-#  user          # Username section
-#  dir           # Current directory section
-#  host          # Hostname section
-#  git           # Git section (git_branch + git_status)
-#  hg            # Mercurial section (hg_branch  + hg_status)
-#  package       # Package version
-#  node          # Node.js section
-#  ruby          # Ruby section
-#  elixir        # Elixir section
-#  xcode         # Xcode section
-#  swift         # Swift section
-#  golang        # Go section
-#  php           # PHP section
-#  rust          # Rust section
-#  haskell       # Haskell Stack section
-#  julia         # Julia section
-#  docker        # Docker section
-#  aws           # Amazon Web Services section
-#  venv          # virtualenv section
-#  conda         # conda virtualenv section
-#  pyenv         # Pyenv section
-#  dotnet        # .NET section
-#  ember         # Ember.js section
-#  kubectl       # Kubectl context section
-#  terraform     # Terraform workspace section
-#  exec_time     # Execution time
-#  line_sep      # Line break
-#  battery       # Battery level and status
-#  vi_mode       # Vi-mode indicator
-#  jobs          # Background jobs indicator
-#  exit_code     # Exit code section
-#  char          # Prompt character
-#)
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-export TERM=xterm
-export EDITOR=vim
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-source "${HOME}/.config/aliases"
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
-alias ls='grc --colour=auto ls --color=always'
-source /etc/grc.zsh
-source /usr/share/nvm/init-nvm.sh
+source $__ZSH_SYNTAX_HIGHLIGHTING
 
+## aliases and environment variables
+[[ -f "${HOME}/.config/aliases" ]] && source "${HOME}/.config/aliases"
+[[ -f "${HOME}/.config/aliases.private" ]] && source "${HOME}/.config/aliases.private"
+[[ -f "${HOME}/.config/env.private" ]] && source "${HOME}/.config/env.private"
+
+## grc
+# ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
+alias ls="grc --colour=auto ls --color=always"
+
+## hooks
+autoload -U add-zsh-hook
+autoload bashcompinit
+bashcompinit
+
+## nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
@@ -190,6 +155,9 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+## starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_SHELL=zsh
+
+## run
 eval "$(starship init zsh)"
