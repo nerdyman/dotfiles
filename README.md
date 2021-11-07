@@ -2,8 +2,8 @@
 
 Dotfiles for Linux and macOS.
 
-[![Desktop and Kitty](./scrots/desktop-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/desktop-kitty.png)
-[![VSCode](./scrots/vs-code.jpg)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vs-code.jpg)
+[![Kitty](./scrots/kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/kitty.png)
+[![VS Code](./scrots/vs-code.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vs-code.png)
 
 Dotfiles for:
 
