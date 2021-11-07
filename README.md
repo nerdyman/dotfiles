@@ -3,7 +3,7 @@
 Dotfiles for Linux and macOS.
 
 [![Desktop and Kitty](./scrots/desktop-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/desktop-kitty.png)
-[![Rofi drun](./scrots/rofi-drun.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-drun.png)
+[![VSCode](./scrots/vs-code.jpg)](https://raw.githubusercontent.com/nerdyman/dotfiles/master/scrots/rofi-drun.png)
 
 Dotfiles for:
 
@@ -14,7 +14,7 @@ Dotfiles for:
 -   [Rofi](./home/.local/share/rofi/themes)
 -   [Starship](./home/.config/starship)
 -   [tmux](./home/.tmux.conf)
--   [VSCode](./home/.config/Code)
+-   [VS Code](./home/.config/Code)
 -   [zshrc](./home/.zshrc)
 
 ## More Scrots
