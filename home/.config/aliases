@@ -1,5 +1,4 @@
 alias vim="nvim"
 
 # go to projects directory and allow autocompletions of files and folders
-goproj() { cd ~/Documents/projects/$1; }
-compctl -W ~/Documents/projects/ -/ goproj
+hash -d goproj="${HOME}/Documents/projects"
