@@ -2,16 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ## custom variables to determine which settings to use (defaults presume we're on Arch)
-__FZF_BASE__="/usr/bin/fzf"
-__ZSH__="/usr/share/oh-my-zsh/"
-__ZSH_SYNTAX_HIGHLIGHTING__="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+__FZF_BASE="/usr/bin/fzf"
+__ZSH="/usr/share/oh-my-zsh/"
+__ZSH_SYNTAX_HIGHLIGHTING="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # change config for macos
 if [[ "$(uname)" == "Darwin" ]]; then
   # custom definitions
   __FZF_BASE="/opt/homebrew/bin/fzf"
-  __ZSH__="/Users/me/.oh-my-zsh"
-  __ZSH_SYNTAX_HIGHLIGHTING__="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  __ZSH="/Users/me/.oh-my-zsh"
+  __ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
   # os definitions
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
@@ -19,7 +19,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="${__ZSH__}"
+export ZSH="${__ZSH}"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -93,7 +93,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
-export FZF_BASE="${__FZF_BASE__}"
+export FZF_BASE="${__FZF_BASE}"
 
 ## nvm
 NVM_AUTOLOAD=1
@@ -117,7 +117,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $__ZSH_SYNTAX_HIGHLIGHTING__
+source $__ZSH_SYNTAX_HIGHLIGHTING
 
 ## aliases and environment variables
 [[ -f "${HOME}/.config/aliases" ]] && source "${HOME}/.config/aliases"
