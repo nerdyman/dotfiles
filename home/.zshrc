@@ -15,7 +15,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   # os definitions
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-  FPATH="/opt/homebrew/Cellar/grc/1.13_1/share/zsh/site-functions/_grc:/opt/homebrew/Cellar/gh/2.2.0/share/zsh/site-functions/_gh:$FPATH"
+  FPATH="/opt/homebrew/share/zsh/site-functions/_grc:/opt/homebrew/share/zsh/site-functions/_gh:$FPATH"
 fi
 
 # Path to your oh-my-zsh installation.
