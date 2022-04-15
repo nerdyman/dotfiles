@@ -2,15 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ## custom variables to determine which settings to use (defaults presume we're on Arch)
-__FZF_BASE="/usr/bin/fzf"
 __ZSH="/usr/share/oh-my-zsh/"
 __ZSH_SYNTAX_HIGHLIGHTING="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # change config for macos
 if [[ "$(uname)" == "Darwin" ]]; then
   # custom definitions
-  __FZF_BASE="/opt/homebrew/bin/fzf"
-  __ZSH="/Users/me/.oh-my-zsh"
+  __ZSH="/Users/$(whoami)/.oh-my-zsh"
   __ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
   # os definitions
@@ -93,7 +91,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
-export FZF_BASE="${__FZF_BASE}"
+export FZF_BASE="$(which fzf)"
 
 ## nvm
 NVM_AUTOLOAD=1
@@ -113,7 +111,7 @@ plugins=(
   git-flow-avh
   npm
   nvm
-  yarn
+  zsh-yarn-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -137,5 +135,9 @@ bashcompinit
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_SHELL=zsh
 
+## autocompletion
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
 ## run
 eval "$(starship init zsh)"
+
