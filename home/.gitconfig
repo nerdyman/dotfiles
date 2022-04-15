@@ -1,15 +1,32 @@
 [user]
-	name = nerdyman
-	email = averynerdyman@gmail.com
+  name = nerdyman
+  email = averynerdyman@gmail.com
 [core]
-	editor = nvim
+  editor = nvim
+  pager = delta
 [alias]
-	diff-prev = diff HEAD~1..HEAD
-	history = log --follow -p --
-	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	lg = !"git lg1"
+  diff-prev = diff HEAD~1..HEAD
+  history = log --follow -p --
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [help]
-	autocorrect = 20
+  autocorrect = 20
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[includeIf "gitdir:~/Documents/projects/work/"]
+  path = ~/.work.gitconfig
+

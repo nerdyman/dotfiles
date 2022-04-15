@@ -17,10 +17,12 @@ runtime! archlinux.vim
 " do not load defaults if ~/.vimrc is missing
 "let skip_defaults_vim=1
 filetype indent off
-set tabstop=4
+set tabstop=2
 set cursorline
+set ignorecase
 set incsearch
 set hlsearch
+set noswapfile
 set number
 set showcmd
 set showmatch
