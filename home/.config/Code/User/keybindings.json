@@ -1,31 +1,68 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+    // Markdown preview
+    {
+        "key": "ctrl+shift+m",
+        "command": "markdown.showPreviewToSide"
+    },
+    // Disable `+` and `-` zoom
+    {
+        "key": "cmd+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "cmd+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    // Change document language prompt.
+    {
+        "when": "isMac",
+        "key": "shift+cmd+l",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "shift+ctrl+l",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+
+    // Workspace management.
+    {
+        "when": "isMac",
+        "key": "shift+cmd+a",
+        "command": "workbench.action.addRootFolder"
+    },
+    {
+        "when": "isMac",
+        "key": "shift+cmd+w",
+        "command": "workbench.action.removeRootFolder"
+    },
     {
         "key": "shift+cmd+a",
         "command": "workbench.action.addRootFolder"
     },
     {
-        "key": "shift+cmd+\\",
-        "command": "search.action.revealInSideBar"
+        "when": "isLinux",
+        "key": "shift+ctrl+a",
+        "command": "workbench.action.addRootFolder"
     },
     {
-        "key": "shift+cmd+w",
+        "when": "isLinux",
+        "key": "shift+ctrl+w",
         "command": "workbench.action.removeRootFolder"
+    },
+
+    // Sidebar.
+    {
+        "when": "isMac",
+        "key": "shift+cmd+\\",
+        "command": "search.action.revealInSideBar"
     },
     {
         "key": "ctrl+shift+\\",
         "command": "workbench.files.action.showActiveFileInExplorer"
     },
     {
-        "key": "alt+cmd+\\",
-        "command": "-workbench.files.action.showActiveFileInExplorer"
-    },
-    {
         "key": "ctrl+\\",
         "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "cmd+\\",
-        "command": "-workbench.action.toggleSidebarVisibility"
     }
 ]
