@@ -1,0 +1,1 @@
+{"title":"Open a new terminal","rules":[{"description":"Open a new terminal","manipulators":[{"type":"basic","from":{"modifiers":{"mandatory":["left_alt","left_shift"]},"key_code":"t"},"to":[{"shell_command":"open -n -a kitty"}]}]}]}
