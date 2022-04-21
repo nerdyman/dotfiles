@@ -1,8 +1,18 @@
-add_newline = true
+add_newline = false
+
+# A minimal left prompt
+#format = """$character"""
+
+# move the rest of the prompt to the right
+#right_format = """$all"""
 
 [character]      # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"
+success_symbol = "[✓](bold green)"
 error_symbol = "[✗](bold red)"
+
+[cmd_duration]
+min_time = 500
+format = "⏳[$duration](bold yellow)"
 
 [time]
 disabled = false
@@ -12,12 +22,24 @@ style = "bold blue"
 utc_time_offset = "1"
 
 [aws]
-format = 'on [$symbol$profile(\($region\))]($style) '
+disabled = false
+format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = "bold blue"
 symbol = "🅰 "
 
-#[nodejs]
-#format = "via [🤖 $version](bold green) "
+[docker_context]
+disabled = false
+format = "[🐋 $context](blue bold) "
+
+[git_commit]
+disabled = false
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[nodejs]
+format = "[⬢ $version](bold green) "
 
 [package]
-format = "via [🎁 $version](208 bold) "
+disabled = false
+format = "[🎁 $version](208 bold) "
+
