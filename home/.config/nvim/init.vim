@@ -1,0 +1,22 @@
+syntax on
+
+set mouse=
+set autoindent
+set cursorline
+set formatoptions-=cro
+set incsearch
+set ignorecase
+set hlsearch
+set magic
+set modeline
+set nobackup
+set nospell
+set noswapfile
+set number
+set ruler
+set shiftwidth=2
+set showcmd
+set showmatch
+set showmode
+set textwidth=0
+set wildmenu
