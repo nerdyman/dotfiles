@@ -5,7 +5,6 @@ alias grep="rg"
 # go to projects directory and allow autocompletions of files and folders
 hash -d p="${HOME}/Documents/projects"
 
-
 function killport () {
   echo "Killing port ${1}"
   kill -9 $(lsof -ti:$1)
