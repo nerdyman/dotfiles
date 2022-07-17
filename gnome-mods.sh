@@ -1,25 +1,21 @@
 #!/bin/bash
 
 # Unbind defaults.
-gsettings set org.gnome.mutter.keybindings switch-monitor						[]
-gsettings set org.gnome.shell.keybindings switch-to-application-1		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-2		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-3		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-4		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-5		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-6		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-7		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-8		[]
-gsettings set org.gnome.shell.keybindings switch-to-application-9		[]
-
-# Window Placement.
-gsettings set org.gnome.shell.keybindings auto-maximize	true
-gsettings set org.gnome.shell.keybindings center-new-windows	true
+gsettings set org.gnome.mutter.keybindings switch-monitor						"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-1		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-2		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-3		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-4		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-5		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-6		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-7		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-8		"[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-9		"[]"
 
 # Set up workspaces.
-gsettings set org.gnome.desktop.wm.preferences num-workspaces					10
-gsettings set org.gnome.mutter dynamic-workspaces 										false
-gsettings set org.gnome.shell.keybindings workspaces-only-on-primary	true
+gsettings set org.gnome.desktop.wm.preferences num-workspaces	10
+gsettings set org.gnome.mutter dynamic-workspaces 						false
+gsettings set org.gnome.mutter workspaces-only-on-primary			true
 
 # Switch to workspace.
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1	"['<Super>1']"
@@ -45,8 +41,10 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8	"['<Super><Sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9	"['<Super><Shift>9']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><Shift>0']"
 
-# i3...ish bindings
-gsettings set org.gnome.desktop.wm.keybindings always-on-top					"['<Shift><Super>a']"
-gsettings set org.gnome.desktop.wm.keybindings close									"['<Shift><Super>q']"
-gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen			"['<Shift><Super>f']"
-gsettings set org.gnome.desktop.wm.keybindings toggle-maximized				"['<Super>f']"
+# Window Placement.
+gsettings set org.gnome.mutter auto-maximize											true
+gsettings set org.gnome.mutter center-new-windows									true
+gsettings set org.gnome.desktop.wm.keybindings always-on-top			"['<Shift><Super>a']"
+gsettings set org.gnome.desktop.wm.keybindings close							"['<Shift><Super>q']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen	"['<Shift><Super>f']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-maximized		"['<Super>f']"
