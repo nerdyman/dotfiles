@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-## custom variables to determine which settings to use (defaults presume we're on Arch)
-__ZSH="/usr/share/oh-my-zsh/"
-__ZSH_SYNTAX_HIGHLIGHTING="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+## custom variables to determine which settings to use (defaults presume we're using homebrew on Linux)
+__ZSH="$HOME/.oh-my-zsh/"
+__ZSH_SYNTAX_HIGHLIGHTING="/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # change config for macos
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -93,9 +93,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 export FZF_BASE="$(which fzf)"
 
-## nvm
-NVM_AUTOLOAD=1
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -110,8 +107,7 @@ plugins=(
   git
   git-flow-avh
   npm
-  nvm
-  zsh-yarn-completions
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -141,3 +137,7 @@ export STARSHIP_SHELL=zsh
 ## run
 eval "$(starship init zsh)"
 
+
+# fnm
+export PATH=/home/me/.fnm:$PATH
+eval "$(fnm env --use-on-cd)"
