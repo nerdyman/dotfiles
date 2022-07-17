@@ -24,7 +24,7 @@ Configs and scripts for:
 ## Install Dependencies
 
 [Homebrew](https://brew.sh/) is used to install dependencies. Run the following to install CLI tools
-on Linux and CLI tools and some apps on macOS.
+on Linux and CLI tools and apps on macOS.
 
 ```sh
 bash install-deps.sh
