@@ -8,6 +8,7 @@ Dotfiles for Linux and macOS.
 Configs and scripts for:
 
 - [git](./home/.gitconfig)
+- [Gnome mods](./gnome-mods.sh)
 - [i3wm (gaps)](./home/.config/i3)
 - [Kitty](./home/.config/kitty)
 - [Karabiner](./home/.config/karabiner/karabiner.json)
