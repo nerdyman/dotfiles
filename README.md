@@ -5,34 +5,31 @@ Dotfiles for Linux and macOS.
 [![Kitty](./scrots/kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/kitty.png)
 [![VS Code](./scrots/vs-code.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vs-code.png)
 
-Dotfiles for:
+Configs and scripts for:
 
--   [Atom](./home/.atom)
--   [Compton](./home/.config/compton)
--   [i3wm (gaps)](./home/.config/i3)
--   [Kitty Terminal](./home/.config/kitty)
--   [Rofi](./home/.local/share/rofi/themes)
--   [Starship](./home/.config/starship)
--   [tmux](./home/.tmux.conf)
--   [VS Code](./home/.config/Code)
--   [zshrc](./home/.zshrc)
+- [git](./home/.gitconfig)
+- [i3wm (gaps)](./home/.config/i3)
+- [Kitty](./home/.config/kitty)
+- [Karabiner](./home/.config/karabiner/karabiner.json)
+- [macOS tweaks](./home/.bin/macos-tweaks)
+- [Starship](./home/.config/starship)
+- [tmux](./home/.tmux.conf)
+- [Visual Studio Code](./home/.config/Code)
+- [zsh](./home/.zshrc)
+  - [fnm 🡭](https://github.com/Schniz/fnm)
+  - [fzf 🡭](https://github.com/junegunn/fzf)
+  - [grc 🡭](https://github.com/garabik/grc)
+  - [zsh-syntax-highlighting 🡭](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-## More Scrots
+## Install Dependencies
 
-<details>
+[Homebrew](https://brew.sh/) is used to install dependencies. Run the following to install CLI tools
+on Linux and CLI tools and some apps on macOS.
 
-<summary>View more screenshots</summary>
+```sh
+bash install-deps.sh
+```
 
-[![Rofi drun](./scrots/rofi-drun.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/rofi-drun.png)
-[![Rofi run](./scrots/rofi-run.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/rofi-run.png)
-[![Rofi window](./scrots/rofi-window.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/rofi-window.png)
-[![VSCode + Kitty](./scrots/vscode-kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vscode-kitty.png)
+## Fonts
 
-</details>
-
-## Resources
-
--   [Mojave-gtk-theme](https://github.com/vinceliuice/Mojave-gtk-theme)
--   [Wallpaper](https://dribbble.com/shots/13806303-Wave-Wallpapers)
--   [San-Francisco Pro Fonts](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)
--   [Hasklig Monospace Font](https://github.com/i-tu/Hasklig)
+- [Hasklig Monospace Font](https://github.com/i-tu/Hasklig)
