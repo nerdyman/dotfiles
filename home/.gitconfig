@@ -13,7 +13,7 @@
 [init]
   defaultBranch = main
 [help]
-  autocorrect = 20
+  autocorrect = 10
 
 [interactive]
   diffFilter = delta --color-only
