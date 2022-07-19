@@ -12,7 +12,7 @@ Configs and scripts for:
 - [i3wm (gaps)](./home/.config/i3)
 - [Kitty](./home/.config/kitty)
 - [Karabiner](./home/.config/karabiner/karabiner.json)
-- [macOS tweaks](./home/.bin/macos-tweaks)
+- [macOS mods](./macos-mods.sh)
 - [Starship](./home/.config/starship)
 - [tmux](./home/.tmux.conf)
 - [Visual Studio Code](./home/.config/Code)
