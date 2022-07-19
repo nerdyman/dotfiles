@@ -45,6 +45,6 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><S
 gsettings set org.gnome.mutter auto-maximize											true
 gsettings set org.gnome.mutter center-new-windows									true
 gsettings set org.gnome.desktop.wm.keybindings always-on-top			"['<Shift><Super>a']"
-gsettings set org.gnome.desktop.wm.keybindings close							"['<Shift><Super>q']"
+gsettings set org.gnome.desktop.wm.keybindings close							"['<Shift><Super>q','<Super>q']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen	"['<Shift><Super>f']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized		"['<Super>f']"
