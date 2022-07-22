@@ -14,6 +14,7 @@
         "key": "cmd+-",
         "command": "-workbench.action.zoomOut"
     },
+
     // Change document language prompt.
     {
         "when": "isMac",
@@ -23,6 +24,18 @@
     {
         "key": "shift+ctrl+l",
         "command": "workbench.action.editor.changeLanguageMode"
+    },
+
+    // Line manipulation.
+    {
+        "when": "isLinux",
+        "key": "win+alt+down",
+        "command": "editor.action.copyLinesDownAction"
+    },
+    {
+        "when": "isLinux",
+        "key": "win+alt+up",
+        "command": "editor.action.copyLinesUpAction"
     },
 
     // Workspace management.
@@ -35,10 +48,6 @@
         "when": "isMac",
         "key": "shift+cmd+w",
         "command": "workbench.action.removeRootFolder"
-    },
-    {
-        "key": "shift+cmd+a",
-        "command": "workbench.action.addRootFolder"
     },
     {
         "when": "isLinux",
