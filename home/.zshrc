@@ -5,21 +5,26 @@
 __ZSH="$HOME/.oh-my-zsh/"
 __ZSH_SYNTAX_HIGHLIGHTING="/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# Change config for macOS.
+# change config for macos
 if [[ "$(uname)" == "Darwin" ]]; then
-	# Custom definitions.
-	__ZSH="/Users/$(whoami)/.oh-my-zsh"
-	__ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  # custom definitions
+  __ZSH="/Users/$(whoami)/.oh-my-zsh"
+  __ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-	# OS definitions.
-	# Use gnu utils instead of macOS/BSD.
-	PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-	# Add grc.
-	FPATH="/opt/homebrew/share/zsh/site-functions/_grc:/opt/homebrew/share/zsh/site-functions/_gh:$FPATH"
+  # os definitions
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+  FPATH="/opt/homebrew/share/zsh/site-functions/_grc:/opt/homebrew/share/zsh/site-functions/_gh:$FPATH"
 fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="${__ZSH}"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -37,6 +42,9 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
 
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -45,6 +53,11 @@ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -62,7 +75,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
-	mkdir $ZSH_CACHE_DIR
+  mkdir $ZSH_CACHE_DIR
 fi
 
 # default os exports
@@ -86,14 +99,15 @@ export FZF_BASE="$(which fzf)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	dircycle
-	colored-man-pages
-	extract
-	fzf
-	grc
-	git
-	npm
-	yarn
+  dircycle 
+  colored-man-pages
+  extract
+  fzf
+  grc
+  git
+  git-flow-avh
+  npm
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,19 +122,21 @@ source $__ZSH_SYNTAX_HIGHLIGHTING
 # ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
 alias ls="grc --colour=auto ls --color=always"
 
-## Hooks
+## hooks
 autoload -U add-zsh-hook
 autoload bashcompinit
 bashcompinit
 
-## Starship
+## starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_SHELL=zsh
 
 ## autocompletion
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
+## run
 eval "$(starship init zsh)"
+
 
 # fnm
 export PATH=/home/me/.fnm:$PATH
