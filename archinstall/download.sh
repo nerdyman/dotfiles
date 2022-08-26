@@ -1,7 +1,10 @@
 #!/bin/bash
 
-mkdir -p /tmp/archinstall-configs
-pushd /tmp/archinstall-configs
+TARGET_DIR="/tmp/archinstall-configs"
+
+rm -rf $TARGET_DIR
+mkdir -p $TARGET_DIR
+pushd $TARGET_DIR
 curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_configuration.json -O
 curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_credentials.json -O
 curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_disk_layout.json -O
