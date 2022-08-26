@@ -24,7 +24,7 @@ defaults write com.apple.finder "QuitMenuItem" -bool "true"
 # show all file extensions
 defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 # show hidden files
-defaults write com.apple.Finder "AppleShowAllFiles" -bool "true"
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 # do not show warning when changing file extensions
 defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
 # do not use iCloud as default file storage destination
