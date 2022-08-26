@@ -1,6 +1,7 @@
 {
 	"additional_repositories": ["multilib"],
 	"archinstall-language": "English",
+	"audio": "pipewire",
 	"bootloader": "systemd-bootctl",
 	"config_version": "2.5.0",
 	"debug": false,
