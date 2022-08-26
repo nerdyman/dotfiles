@@ -13,6 +13,7 @@
 		"linux",
 		"linux-zen"
 	],
+	"keyboard-layout": "uk",
 	"packages": [
 		"adobe-source-han-sans-otc-fonts",
 		"adobe-source-han-sans-cn-fonts",
