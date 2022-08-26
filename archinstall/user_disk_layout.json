@@ -1,0 +1,41 @@
+{
+	"/dev/sda": {
+		"partitions": [
+			{
+				"boot": true,
+				"encrypted": false,
+				"filesystem": {
+					"format": "fat32"
+				},
+				"mountpoint": "/boot",
+				"size": "203Mib",
+				"start": "3Mib",
+				"type": "primary",
+				"wipe": "true"
+			},
+			{
+				"btrfs": {
+					"subvolumes": {
+						"@": "/",
+						"@.snapshots": "./snapshots",
+						"@home": "/home",
+						"@log": "/var/log",
+						"@pkg": "/var/cache/packman/pkg"
+					}
+				},
+				"encrypted": false,
+				"filesystem": {
+					"format": "btrfs",
+					"mount_options": [
+						"compress=zstd"
+					]
+				},
+				"mountpoint": null,
+				"size": "100%",
+				"start": "206MiB",
+				"type": "primary",
+				"wipe": true
+			}
+		]
+	}
+}
