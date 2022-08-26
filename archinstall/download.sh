@@ -2,7 +2,7 @@
 
 mkdir -p /tmp/archinstall-configs
 cd /tmp/archinstall-configs || echo "unable to go to target directory" && exit
-curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_configuration.json
-curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_credentials.json
-curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_disk_layout.json
+curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_configuration.json > user_configuration.json
+curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_credentials.json > user_credentials.json
+curl -fsSL https://raw.githubusercontent.com/nerdyman/dotfiles/main/archinstall/user_disk_layout.json > user_disk_layout.json
 echo "edit $(pwd)/user_credentials.json to change password, then run bash ./install.sh"
