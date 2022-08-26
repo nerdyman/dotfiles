@@ -148,6 +148,7 @@
 		"rm \"yay.tar.gz\"",
 		"cd yay",
 		"su me -c \"makepkg -csi --noconfirm\"",
-		"[[ -d \"/tmp/yay-install\" ]] && rm -rf \"/tmp/yay-install\""
+		"[[ -d \"/tmp/yay-install\" ]] && rm -rf \"/tmp/yay-install\"",
+		"yay install nvidia-470xx-dkms"
 	]
 }
