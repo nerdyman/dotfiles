@@ -81,6 +81,8 @@
 		"perl-file-mimeinfo",
 		"p7zip",
 		"pantheon",
+		"pipwire",
+		"lib32-pipwire",
 		"pkgstats",
 		"qt5-base",
 		"qt5-wayland",
