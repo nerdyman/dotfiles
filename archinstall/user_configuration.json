@@ -8,13 +8,20 @@
 	"desktop-environment": null,
 	"gfx-driver": null,
 	"gfx-driver-packages": null,
-	"harddrives": ["/dev/sda"],
+	"harddrives": ["/dev/vda"],
 	"hostname": "abox",
 	"kernels": [
 		"linux",
 		"linux-zen"
 	],
 	"keyboard-layout": "uk",
+	"nic": {
+		"dhcp": true,
+		"dns": null,
+		"gateway": null,
+		"iface": null,
+		"type": "nm"
+	},
 	"packages": [
 		"adobe-source-han-sans-otc-fonts",
 		"adobe-source-han-sans-cn-fonts",
