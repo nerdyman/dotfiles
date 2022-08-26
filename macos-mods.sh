@@ -2,6 +2,7 @@
 
 setopt VERBOSE
 
+# @see https://daiderd.com/nix-darwin/manual/index.html
 # @see https://gist.github.com/romanhaa/9804183f242991007b316a59c4ba5e5a
 
 # Reset to defaults using `defaults delete -g <FEATURE>`
