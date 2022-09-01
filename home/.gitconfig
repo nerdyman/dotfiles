@@ -30,3 +30,5 @@
 [includeIf "gitdir:~/Documents/projects/work/"]
   path = ~/.work.gitconfig
 
+[push]
+	autoSetupRemote = true
