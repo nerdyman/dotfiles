@@ -8,7 +8,7 @@
 	"desktop-environment": null,
 	"gfx-driver": null,
 	"gfx-driver-packages": null,
-	"harddrives": ["/dev/vda"],
+	"harddrives": ["/dev/sda"],
 	"hostname": "abox",
 	"kernels": [
 		"linux",
@@ -20,6 +20,7 @@
 		"dns": null,
 		"gateway": null,
 		"iface": null,
+		"ip": "null",
 		"type": "nm"
 	},
 	"packages": [
@@ -32,6 +33,7 @@
 		"aws-cli",
 		"bash-completion",
 		"bat",
+		"base-devel",
 		"bc",
 		"ccze",
 		"checksec",
@@ -48,6 +50,7 @@
 		"f2fs-tools",
 		"firewalld",
 		"fuse",
+		"git",
 		"gnutls",
 		"gst-plugins-bad",
 		"gst-plugins-base",
@@ -142,7 +145,9 @@
 		"zsh-syntax-highlighting"
 	],
 	"plugin": null,
-	"profile": null,
+	"profile": {
+		"path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
+	},
 	"script": "guided",
 	"silent": false,
 	"sys-language": "en_GB.UTF-8",
@@ -156,6 +161,6 @@
 		"cd yay",
 		"su me -c \"makepkg -csi --noconfirm\"",
 		"[[ -d \"/tmp/yay-install\" ]] && rm -rf \"/tmp/yay-install\"",
-		"yay install nvidia-470xx-dkms"
+		"yay install --noconfirm nvidia-470xx-dkms"
 	]
 }

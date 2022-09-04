@@ -1,5 +1,5 @@
 {
-	"/dev/vda": {
+	"/dev/sda": {
 		"partitions": [
 			{
 				"boot": true,
@@ -8,8 +8,8 @@
 					"format": "fat32"
 				},
 				"mountpoint": "/boot",
-				"size": "203Mib",
-				"start": "3Mib",
+				"size": "512Mib",
+				"start": "1Mib",
 				"type": "primary",
 				"wipe": "true"
 			},
@@ -17,7 +17,7 @@
 				"btrfs": {
 					"subvolumes": {
 						"@": "/",
-						"@.snapshots": "./snapshots",
+						"@.snapshots": "/.snapshots",
 						"@home": "/home",
 						"@log": "/var/log",
 						"@pkg": "/var/cache/packman/pkg"
@@ -32,7 +32,7 @@
 				},
 				"mountpoint": null,
 				"size": "100%",
-				"start": "206MiB",
+				"start": "513MiB",
 				"type": "primary",
 				"wipe": true
 			}
