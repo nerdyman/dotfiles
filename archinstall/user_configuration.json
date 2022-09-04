@@ -148,7 +148,6 @@
 	"timezone": "Europe/London",
 	"version": "2.5.0",
 	"custom-commands": [
-		"systemctl enable lightdm",
 		"mkdir -p /tmp/yay-install",
 		"curl -o \"yay.tar.gz\" \"https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz\"",
 		"tar -zxf \"yay.tar.gz\"",
