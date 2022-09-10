@@ -6,7 +6,7 @@
 	"config_version": "2.5.0",
 	"debug": false,
 	"desktop-environment": null,
-	"gfx-driver": null,
+	"gfx_driver": "All open-source (default)",
 	"gfx-driver-packages": null,
 	"harddrives": ["/dev/sda"],
 	"hostname": "abox",
@@ -148,13 +148,10 @@
 	"timezone": "Europe/London",
 	"version": "2.5.0",
 	"custom-commands": [
-		"mkdir -p /tmp/yay-install",
-		"curl -o \"yay.tar.gz\" \"https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz\"",
-		"tar -zxf \"yay.tar.gz\"",
-		"rm \"yay.tar.gz\"",
-		"cd yay",
-		"makepkg -csi --noconfirm",
-		"[[ -d \"/tmp/yay-install\" ]] && rm -rf \"/tmp/yay-install\"",
+		"git clone https://aur.archlinux.org/yay.git /tmp/yay",
+		"cd $_",
+		"makepkg -si --noconfirm",
+		"rm -rf /tmp/yay",
 		"yay install --noconfirm nvidia-470xx-dkms"
 	]
 }
