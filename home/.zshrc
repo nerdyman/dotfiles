@@ -14,6 +14,14 @@ if [[ "$(uname)" == "Darwin" ]]; then
   # os definitions
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
   FPATH="/opt/homebrew/share/zsh/site-functions/_grc:/opt/homebrew/share/zsh/site-functions/_gh:$FPATH"
+
+  # alt + arrow left/right bindings
+  bindkey '[C' forward-word
+  bindkey '[D' backward-word
+
+  # cmd + arrow left/right bindings
+  bindkey "^[[1;9D" beginning-of-line
+  bindkey "^[[1;9C" end-of-line
 fi
 
 # Path to your oh-my-zsh installation.
