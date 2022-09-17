@@ -166,10 +166,11 @@
 		"mkhomedir_helper me",
 		"usermod -aG sudo,wheel,users -s /bin/zsh me",
 		"echo \"Installing yay\"",
-		"git clone https://aur.archlinux.org/yay.git /tmp/yay",
-		"cd /tmp/yay",
+		"git clone https://aur.archlinux.org/yay.git /yay",
+		"ls -al /yay",
+		"cd /yay",
 		"makepkg -si --noconfirm",
-		"rm -rf /tmp/yay",
+		"rm -rf /yay",
 		"echo \"Installing AUR packages\"",
 		"sudo -H -u me yay install -S --needed --noconfirm nvidia-470xx-dkms swtichboard-plug-pantheon-tweaks-git"
 	]
