@@ -149,7 +149,7 @@
 		"switchboard-plug-network",
 		"switchboard-plug-notifications",
 		"switchboard-plug-power",
-		"swtichboard-plug-security-privacy"
+		"switchboard-plug-security-privacy"
 	],
 	"plugin": null,
 	"profile": {
