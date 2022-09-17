@@ -6,7 +6,7 @@
 	"config_version": "2.5.0",
 	"debug": false,
 	"desktop-environment": null,
-	"gfx_driver": "All open-source (default)",
+	"gfx_driver": null,
 	"gfx-driver-packages": null,
 	"harddrives": ["/dev/sda"],
 	"hostname": "abox",
@@ -49,7 +49,7 @@
 		"expac",
 		"f2fs-tools",
 		"firewalld",
-		"fuse",
+		"fuse3",
 		"git",
 		"gnutls",
 		"gst-plugins-bad",
@@ -149,7 +149,7 @@
 	"version": "2.5.0",
 	"custom-commands": [
 		"git clone https://aur.archlinux.org/yay.git /tmp/yay",
-		"cd $_",
+		"cd /tmp/yay",
 		"makepkg -si --noconfirm",
 		"rm -rf /tmp/yay",
 		"yay install --noconfirm nvidia-470xx-dkms"
