@@ -52,6 +52,7 @@
 		"fuse3",
 		"git",
 		"gnutls",
+		"go",
 		"gst-plugins-bad",
 		"gst-plugins-base",
 		"gst-plugins-good",
@@ -71,8 +72,6 @@
 		"icoutils",
 		"jq",
 		"kitty",
-		"lightdm",
-		"lightdm-pantheon-greeter",
 		"linux-headers",
 		"linux-zen-headers",
 		"lynis",
@@ -90,7 +89,6 @@
 		"ntfs-3g",
 		"perl-file-mimeinfo",
 		"p7zip",
-		"pantheon",
 		"pipewire",
 		"lib32-pipewire",
 		"pkgstats",
@@ -136,7 +134,22 @@
 		"zsh-syntax-highlighting",
 		"vim",
 		"zsh",
-		"zsh-syntax-highlighting"
+		"zsh-syntax-highlighting",
+
+		"lightdm",
+		"lightdm-pantheon-greeter",
+		"pantheon",
+		"switchboard-plug-about",
+		"switchboard-plug-applications",
+		"switchboard-plug-datetime",
+		"switchboard-plug-desktop",
+		"switchboard-plug-display",
+		"switchboard-plug-keyboard",
+		"switchboard-plug-locale",
+		"switchboard-plug-network",
+		"switchboard-plug-notifications",
+		"switchboard-plug-power",
+		"swtichboard-plug-security-privacy"
 	],
 	"plugin": null,
 	"profile": {
@@ -148,10 +161,16 @@
 	"timezone": "Europe/London",
 	"version": "2.5.0",
 	"custom-commands": [
+		"echo \"Configuring sudo and user (archinstall isn't doing this for some reason)\"",
+		"groupadd sudo",
+		"mkhomedir_helper me",
+		"usermod -aG sudo,wheel,users -s /bin/zsh me",
+		"echo \"Installing yay\"",
 		"git clone https://aur.archlinux.org/yay.git /tmp/yay",
 		"cd /tmp/yay",
 		"makepkg -si --noconfirm",
 		"rm -rf /tmp/yay",
-		"yay install --noconfirm nvidia-470xx-dkms"
+		"echo \"Installing AUR packages\"",
+		"sudo -H -u me yay install -S --needed --noconfirm nvidia-470xx-dkms swtichboard-plug-pantheon-tweaks-git"
 	]
 }
