@@ -1,10 +1,10 @@
 add_newline = false
 
 # A minimal left prompt
-#format = """$character"""
+format = """$all"""
 
 # move the rest of the prompt to the right
-#right_format = """$all"""
+right_format = """$time"""
 
 [character]      # The name of the module we are configuring is "character"
 success_symbol = "[✓](bold green)"
@@ -18,7 +18,7 @@ format = "⏳[$duration](bold yellow)"
 disabled = false
 format = "[$time]($style) "
 time_format = "%T"
-style = "bold blue"
+style = "bold black"
 utc_time_offset = "1"
 
 [aws]
@@ -33,8 +33,11 @@ format = "[🐋 $context](blue bold) "
 
 [git_commit]
 disabled = false
-commit_hash_length = 4
+commit_hash_length = 8
 tag_symbol = "🔖 "
+
+[git_status]
+conflicted = "⚔️ "
 
 [nodejs]
 format = "[⬢ $version](bold green) "
