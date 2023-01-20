@@ -4,7 +4,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/me/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install awscli bat bat-extras coreutils fnm fzf gnu-tar grc git git-delta htop jq neovim prettier ripgrep shellcheck starship tree zsh zsh-syntax-highlighting zstd
+brew install awscli bat bat-extras coreutils fnm fzf gnu-tar grc git git-delta htop inetutils jq neovim prettier ripgrep shellcheck starship tree zsh zsh-syntax-highlighting zstd
 
 # macOS
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -14,7 +14,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	brew install yulrizka/tap/pushtotalk
 	ln -s /opt/homebrew/opt/pushtotalk/PushToTalk.app /Applications/PushToTalk.app
 
-	brew install rustup-init
+	brew install iproute2mac rustup-init
 
 	softwareupdate --install-rosetta
 	sudo scutil --set HostName ricbook
