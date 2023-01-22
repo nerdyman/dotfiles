@@ -130,6 +130,10 @@ source $__ZSH_SYNTAX_HIGHLIGHTING
 # ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
 alias ls="grc --colour=auto ls --color=always"
 
+## zsh options
+#unsetopt SHARE_HISTORY
+#setopt NO_SHARE_HISTORY
+
 ## hooks
 autoload -U add-zsh-hook
 autoload bashcompinit

@@ -1,36 +1,54 @@
-# dotfiles
+<div align="center">
 
-Dotfiles for Linux and macOS.
+<h1>dotfiles</h1>
 
-[![Kitty](./scrots/kitty.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/kitty.png)
-[![VS Code](./scrots/vs-code.png)](https://raw.githubusercontent.com/nerdyman/dotfiles/main/scrots/vs-code.png)
+Dotfiles and scripts for macOS and Linux.
 
-Configs and scripts for:
+[![Kitty](./scrots/banner.png)](./home/.config/kitty/)
+
+</div>
+
+## macOS & Linux
 
 - [git](./home/.gitconfig)
-- [Gnome mods](./gnome-mods.sh)
-- [i3wm (gaps)](./home/.config/i3)
 - [Kitty](./home/.config/kitty)
-- [Karabiner](./home/.config/karabiner/karabiner.json)
-- [macOS mods](./macos-mods.sh)
 - [Starship](./home/.config/starship)
 - [tmux](./home/.tmux.conf)
 - [Visual Studio Code](./home/.config/Code)
-- [zsh](./home/.zshrc)
-  - [fnm 🡭](https://github.com/Schniz/fnm)
-  - [fzf 🡭](https://github.com/junegunn/fzf)
-  - [grc 🡭](https://github.com/garabik/grc)
-  - [zsh-syntax-highlighting 🡭](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [.zshrc](./home/.zshrc)
+  - [fnm ↗](https://github.com/Schniz/fnm)
+  - [fzf ↗](https://github.com/junegunn/fzf)
+  - [grc ↗](https://github.com/garabik/grc)
+  - [zsh-syntax-highlighting ↗](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+## macOS
+
+- [Karabiner](./home/.config/karabiner/karabiner.json)
+- [macOS mods](./macos-mods.sh)
+
+## Linux
+
+- [Arch Linux Pantheon archinstall](./archinstall/)
+- [Gnome mods](./gnome-mods.sh)
+- [i3wm (gaps)](./home/.config/i3)
 
 ## Install Dependencies
 
 [Homebrew](https://brew.sh/) is used to install dependencies. Run the following to install CLI tools
 on Linux and CLI tools and apps on macOS.
 
+### Fonts
+
+- [Hasklig Monospace Font](https://github.com/i-tu/Hasklig)
+
 ```sh
 bash install-deps.sh
 ```
 
-## Fonts
+## Screenshots
 
-- [Hasklig Monospace Font](https://github.com/i-tu/Hasklig)
+[![VS Code](./scrots/vs-code.png)](./home/.config/Code/User/)
+
+## Old Stuff
+
+- [💀 Atom](./home/.atom)
