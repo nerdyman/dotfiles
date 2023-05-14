@@ -156,8 +156,3 @@ eval "$(starship init zsh)"
 # fnm
 export PATH=/home/me/.fnm:$PATH
 eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
-
-# pnpm
-export PNPM_HOME="$HOME/.cache/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
