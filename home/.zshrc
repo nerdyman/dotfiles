@@ -118,6 +118,7 @@ plugins=(
   grc
   git
   npm
+  pnpm-shell-completion
   yarn
 )
 
