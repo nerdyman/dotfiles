@@ -12,8 +12,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
   __ZSH_SYNTAX_HIGHLIGHTING="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
   # os definitions
-  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-  FPATH="/opt/homebrew/share/zsh/site-functions/_grc:/opt/homebrew/share/zsh/site-functions/_gh:$FPATH"
+  PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+  PATH="$HOMEBREW_PREFIX/make/libexec/gnubin:$PATH"
+  FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions/_grc:/opt/homebrew/share/zsh/site-functions/_gh:$FPATH"
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
   # alt + arrow left/right bindings
   bindkey '[C' forward-word
@@ -107,13 +109,14 @@ export FZF_BASE="$(which fzf)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  dircycle 
+  aws
+  dircycle
+  docker
   colored-man-pages
   extract
   fzf
   grc
   git
-  git-flow-avh
   npm
   yarn
 )
@@ -152,4 +155,9 @@ eval "$(starship init zsh)"
 
 # fnm
 export PATH=/home/me/.fnm:$PATH
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
+
+# pnpm
+export PNPM_HOME="~/.cache/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
