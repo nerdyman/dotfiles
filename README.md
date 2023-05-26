@@ -15,6 +15,7 @@ Configs and scripts for macOS and Linux.
   - [↗ Delta](https://github.com/dandavison/delta)
 - [Kitty](./home/.config/kitty)
   - [kitty.conf](./home/.config/kitty/kitty.conf)
+  - [nerdyman kitty theme](./home/.config/kitty/themes/nerdyman.conf)
   - [↗ Kitty Kitten Search](https://github.com/trygveaa/kitty-kitten-search)
 - [Starship](./home/.config/starship)
   - [starship.toml](./home/.config/starship/starship.toml)
