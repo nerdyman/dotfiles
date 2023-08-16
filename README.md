@@ -49,13 +49,13 @@ Configs and scripts for macOS and Linux.
 [Homebrew](https://brew.sh/) is used to install dependencies. Run the following to install CLI tools
 on Linux and CLI tools and apps on macOS.
 
-### Fonts
-
-- [Hasklig Monospace Font↗](https://github.com/i-tu/Hasklig)
-
 ```sh
 bash install-deps.sh
 ```
+
+### Fonts
+
+- [Hasklig Monospace Font↗](https://github.com/i-tu/Hasklig)
 
 ## Screenshots
 
