@@ -12,11 +12,11 @@ Configs and scripts for macOS and Linux.
 
 - [Git](./home/.gitconfig)
   - [.gitconfig](./home/.gitconfig)
-  - [↗ Delta](https://github.com/dandavison/delta)
+  - [Delta↗](https://github.com/dandavison/delta)
 - [Kitty](./home/.config/kitty)
   - [kitty.conf](./home/.config/kitty/kitty.conf)
   - [nerdyman kitty theme](./home/.config/kitty/themes/nerdyman.conf)
-  - [↗ Kitty Kitten Search](https://github.com/trygveaa/kitty-kitten-search)
+  - [Kitty Kitten Search↗](https://github.com/trygveaa/kitty-kitten-search)
 - [Starship](./home/.config/starship)
   - [starship.toml](./home/.config/starship/starship.toml)
 - [tmux](./home/.tmux.conf)
@@ -26,16 +26,17 @@ Configs and scripts for macOS and Linux.
 - [zsh](./home/.zshrc)
   - [.zshrc](./home/.zshrc)
   - [aliases](./home/.config/aliases)
-  - [↗ fnm](https://github.com/Schniz/fnm)
-  - [↗ fzf](https://github.com/junegunn/fzf)
-  - [↗ grc](https://github.com/garabik/grc)
-  - [↗ zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  - [fnm↗](https://github.com/Schniz/fnm)
+  - [fzf↗](https://github.com/junegunn/fzf)
+  - [grc↗](https://github.com/garabik/grc)
+  - [zsh-syntax-highlighting↗](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [Custom Scripts](./home/.local/bin/)
 
 ## macOS
 
 - [Karabiner](./home/.config/karabiner/karabiner.json)
 - [macOS mods](./macos-mods.sh)
+- Uses [GNU coreutils↗](https://formulae.brew.sh/formula/coreutils)
 
 ## Linux
 
@@ -50,7 +51,7 @@ on Linux and CLI tools and apps on macOS.
 
 ### Fonts
 
-- [↗ Hasklig Monospace Font](https://github.com/i-tu/Hasklig)
+- [Hasklig Monospace Font↗](https://github.com/i-tu/Hasklig)
 
 ```sh
 bash install-deps.sh
