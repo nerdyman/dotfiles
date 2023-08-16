@@ -117,6 +117,7 @@ plugins=(
   fzf
   grc
   git
+  git-flow-avh
   npm
   pnpm-shell-completion
   yarn
@@ -152,7 +153,6 @@ export STARSHIP_SHELL=zsh
 
 ## run
 eval "$(starship init zsh)"
-
 
 # fnm
 export PATH=/home/me/.fnm:$PATH
