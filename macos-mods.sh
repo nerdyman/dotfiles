@@ -9,7 +9,7 @@ setopt VERBOSE
 
 # dock
 # position
-defaults write com.apple.dock "orientation" -string "right"
+defaults write com.apple.dock "orientation" -string "bottom"
 # icon size
 defaults write com.apple.dock "tilesize" -int "64"
 # show recents
@@ -177,8 +177,8 @@ sudo mdutil -i off -d /
 ## ---
 
 # Disable font smoothing (looks bad on regular HD displays)
-defaults write -g AppleFontSmoothing -int 0
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool YES
+defaults write -g AppleFontSmoothing -int 1
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 # Disable mouse acceleration
 defaults write .GlobalPreferences com.apple.mouse.scaling -1
