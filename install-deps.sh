@@ -4,7 +4,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/me/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install awscli bash-completion bat bat-extras coreutils fnm fzf gnu-tar grc git git-delta htop inetutils jq neovim prettier progress ripgrep shellcheck starship tree zsh zsh-syntax-highlighting zstd
+brew install awscli bash-completion bat bat-extras coreutils fnm fx fzf gnu-tar grc git git-delta htop inetutils jq neovim prettier progress ripgrep shellcheck starship tree zsh zsh-syntax-highlighting zstd
 
 # macOS
 if [[ "$(uname)" == "Darwin" ]]; then
