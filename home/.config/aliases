@@ -1,5 +1,8 @@
+# ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
+alias ls="grc --colour=auto ls --color=always"
 alias l="ls -lah --group-directories-first"
 alias vim="nvim"
+alias nuke-opensearch="curl -XDELETE 'http://localhost:9200/*' -u admin:admin --insecure --silent | batl -l json"
 alias batl="bat --style=plain"
 alias prettybatl="prettybat --style=plain"
 alias load-rbenv='eval "$(rbenv init - zsh)"'

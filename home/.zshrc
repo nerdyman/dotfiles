@@ -24,6 +24,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
   # cmd + arrow left/right bindings
   bindkey "^[[1;9D" beginning-of-line
   bindkey "^[[1;9C" end-of-line
+
+  alias ls="gls"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -130,10 +132,6 @@ source $__ZSH_SYNTAX_HIGHLIGHTING
 [[ -f "${HOME}/.config/aliases" ]] && source "${HOME}/.config/aliases"
 [[ -f "${HOME}/.config/aliases.private" ]] && source "${HOME}/.config/aliases.private"
 [[ -f "${HOME}/.config/env.private" ]] && source "${HOME}/.config/env.private"
-
-## grc
-# ls alias needed for grc to highlight dir listings correctly https://github.com/garabik/grc/issues/36
-alias ls="grc --colour=auto ls --color=always"
 
 ## zsh options
 #unsetopt SHARE_HISTORY
