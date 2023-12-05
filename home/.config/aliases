@@ -5,7 +5,6 @@ alias vim="nvim"
 alias nuke-opensearch="curl -XDELETE 'http://localhost:9200/*' -u admin:admin --insecure --silent | batl -l json"
 alias batl="bat --style=plain"
 alias prettybatl="prettybat --style=plain"
-alias load-rbenv='eval "$(rbenv init - zsh)"'
 alias grep="rg"
 alias yeet="rm -rf"
 

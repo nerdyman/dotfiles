@@ -122,6 +122,7 @@ plugins=(
   git-flow-avh
   npm
   pnpm-shell-completion
+  rbenv
   yarn
 )
 
