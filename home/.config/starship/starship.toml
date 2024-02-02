@@ -46,6 +46,9 @@ format = "[⬢ $version](bold green) "
 disabled = false
 format = "[🎁 $version](208 bold) "
 
+[python]
+disabled = false
+
 [status]
 disabled = false
 format = "[$status]($style) "

@@ -112,6 +112,7 @@ export FZF_BASE="$(which fzf)"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   aws
+  direnv
   dircycle
   docker
   colored-man-pages
