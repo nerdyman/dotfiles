@@ -134,7 +134,7 @@
 	"timezone": "Europe/London",
 	"version": "2.5.0",
 	"custom-commands": [
-		"mkdir -p /home/me && chown -R me:me /home/me",
+		"sudo -H -u me xdg-user-dirs-update",
 		"echo \"Installing yay\"",
 		"git clone https://aur.archlinux.org/yay.git ./yay",
 		"ls -al ./yay",
