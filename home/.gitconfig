@@ -31,7 +31,7 @@
   colorMoved = default
 
 [includeIf "gitdir:~/Documents/projects/work/"]
-  path = ~/.work.gitconfig
+  path = ~/.gitconfig.work
 
 [push]
 	autoSetupRemote = true
