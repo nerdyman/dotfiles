@@ -10,7 +10,6 @@ Configs and scripts for macOS and Linux.
 
 ## macOS & Linux
 
-- [AeroSpace](./home/.config/aerospace)
 - [Git](./home/.gitconfig)
   - [.gitconfig](./home/.gitconfig)
   - [Delta↗](https://github.com/dandavison/delta)
@@ -35,6 +34,7 @@ Configs and scripts for macOS and Linux.
 
 ## macOS
 
+- [AeroSpace](./home/.config/aerospace/aerospace.toml)
 - [Karabiner](./home/.config/karabiner/karabiner.json)
 - [macOS mods](./macos-mods.sh)
 - Uses [GNU coreutils↗](https://formulae.brew.sh/formula/coreutils)
