@@ -10,6 +10,7 @@ Configs and scripts for macOS and Linux.
 
 ## macOS & Linux
 
+- [AeroSpace](./home/.config/aerospace)
 - [Git](./home/.gitconfig)
   - [.gitconfig](./home/.gitconfig)
   - [Delta↗](https://github.com/dandavison/delta)
