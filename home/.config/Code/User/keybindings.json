@@ -2,8 +2,15 @@
 [
     // Markdown preview
     {
+        "when": "editorTextFocus && editorLangId != 'svg'",
         "key": "ctrl+shift+m",
         "command": "markdown.showPreviewToSide"
+    },
+    // SVG Preview
+    {
+        "when": "editorTextFocus && editorLangId == 'svg'",
+        "key": "ctrl+shift+m",
+        "command": "svg.showSvg"
     },
     // Disable `+` and `-` zoom
     {
@@ -36,6 +43,16 @@
         "when": "isLinux",
         "key": "win+alt+up",
         "command": "editor.action.copyLinesUpAction"
+    },
+    // Go to start of line with `ctrl+left arrow`
+    {
+        "key": "ctrl+left",
+        "command": "cursorHome"
+    },
+    // Go to end of line with `ctrl+right arrow`
+    {
+        "key": "ctrl+right",
+        "command": "cursorEnd"
     },
 
     // Workspace management.
