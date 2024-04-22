@@ -6,6 +6,7 @@ alias nuke-opensearch="curl -XDELETE 'http://localhost:9200/*' -u admin:admin --
 alias batl="bat --style=plain"
 alias prettybatl="prettybat --style=plain"
 alias grep="rg"
+alias icat="kitten icat"
 alias yeet="rm -rf"
 
 # go to projects directory and allow autocompletions of files and folders
