@@ -1,8 +1,13 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
-
--- This will hold the configuration.
 local config = wezterm.config_builder()
+
+-- Meta
+config.automatically_reload_config = true
+
+-- Rendering
+config.freetype_load_flags = 'NO_HINTING'
+config.freetype_load_target = "Light"
+config.front_end = "WebGpu"
 
 -- Window
 config.window_decorations = "RESIZE|MACOS_FORCE_DISABLE_SHADOW"
@@ -24,17 +29,14 @@ config.inactive_pane_hsb = {
 }
 
 -- Fonts
-config.freetype_load_flags = 'NO_HINTING'
-config.freetype_interpreter_version = 40
-config.freetype_load_target = 'Normal'
-config.font = wezterm.font('Hasklig', { weight = 'Medium' })
+config.font = wezterm.font('Hasklig', { weight = 'DemiBold' })
 config.font_size = 14.75
 config.line_height = 1.25
 config.font_rules = {
   {
     italic = false,
     intensity = 'Normal',
-    font = wezterm.font('Hasklig', { weight = 'Medium' })
+    font = wezterm.font('Hasklig', { weight = 'DemiBold' })
   },
   {
     italic = false,
@@ -69,7 +71,7 @@ config.colors = {
   }
 }
 
-config.color_scheme = 'Duotone Dark'
+--config.color_scheme = 'Duotone Dark'
 
 -- Keybindings
 config.enable_kitty_keyboard = true
