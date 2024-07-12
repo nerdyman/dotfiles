@@ -17,5 +17,29 @@
     "bindings": {
       "ctrl-shift-m": "markdown::OpenPreviewToTheSide"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-r": "pane::RevealInProjectPanel"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-c": "terminal::Copy"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-v": "terminal::Paste"
+    }
   }
 ]

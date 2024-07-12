@@ -9,8 +9,11 @@
 {
   "base_keymap": "VSCode",
   "buffer_font_family": "Hasklig",
-  "buffer_font_size": 15.25,
+  "buffer_font_size": 15,
   "buffer_font_weight": 500,
+  "buffer_line_height": {
+    "custom": 2.15
+  },
   "current_line_highlight": "all",
   "ensure_final_newline_on_save": true,
   "format_on_save": "on",
@@ -22,9 +25,6 @@
     "background_coloring": "disabled"
   },
   "linked_edits": true,
-  "buffer_line_height": {
-    "custom": 2.25
-  },
   "preferred_line_length": 110,
   "preview_tabs": {
     "enable_preview_from_code_navigation": true,
