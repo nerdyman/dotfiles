@@ -1,0 +1,45 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "shift-cmd-a": "workspace::AddFolderToProject"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // https://github.com/zed-industries/zed/discussions/14195
+      "shift-cmd-w": "workspace::RemoveFolderFromWorkspace"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-m": "markdown::OpenPreviewToTheSide"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-r": "pane::RevealInProjectPanel"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-c": "terminal::Copy"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-v": "terminal::Paste"
+    }
+  }
+]
