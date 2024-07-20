@@ -6,8 +6,8 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -n /Applications/kitty.app'
 
-alt-x = 'focus left  --boundaries workspace --boundaries-action stop'
-alt-c = 'focus right --boundaries workspace --boundaries-action stop'
+alt-x = 'focus left  --boundaries workspace --boundaries-action wrap-around-the-workspace'
+alt-c = 'focus right --boundaries workspace --boundaries-action wrap-around-the-workspace'
 alt-k = 'focus down'
 alt-l = 'focus up'
 
