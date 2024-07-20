@@ -5,6 +5,7 @@
 [core]
   editor = nvim
   pager = delta
+  ignorecase = false
 
 [alias]
   diff-prev = diff HEAD~1..HEAD
