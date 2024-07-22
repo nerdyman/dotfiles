@@ -53,7 +53,18 @@
     "font_weight": 500,
     "font_size": 14,
     "font_features": {
+      "liga": true,
       "calt": true
+    },
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [".env", ".env.local", "env", ".venv", "venv"],
+        // Can also be `csh`, `fish`, and `nushell`
+        "activate_script": "default"
+      }
     }
   },
   "theme": {

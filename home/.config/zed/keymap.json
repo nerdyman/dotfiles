@@ -25,6 +25,12 @@
     }
   },
   {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-t": "workspace::NewCenterTerminal"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "ctrl-shift-t": "workspace::NewTerminal"
