@@ -20,8 +20,8 @@ defaults write com.apple.dock "mineffect" -string "genie"
 killall Dock
 
 # finder
-# show "Quit" menu item
-defaults write com.apple.finder "QuitMenuItem" -bool "true"
+# show "Quit" menu item - disabled, aerospace handles 'soft' closing finder pretty well
+# defaults write com.apple.finder "QuitMenuItem" -bool "true"
 # show all file extensions
 defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 # show hidden files
