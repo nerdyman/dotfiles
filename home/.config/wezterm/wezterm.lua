@@ -206,6 +206,12 @@ config.keys = {
     mods = 'SHIFT|CTRL',
     action = act{CloseCurrentTab={confirm=false}},
   },
+  -- Show command menu
+  {
+    key = 'P',
+    mods = 'SHIFT|CTRL',
+    action = wezterm.action.ActivateCommandPalette,
+  },
 }
 
 return config
