@@ -23,6 +23,7 @@ Configs and scripts for macOS and Linux.
 - [Visual Studio Code](./home/.config/Code)
   - [keybindings.json](./home/.config/Code/User/keybindings.json)
   - [settings.json](./home/.config/Code/User/settings.json)
+- [WezTerm](./home/.config/wezterm/wezterm.lua)
 - [Zed](./home/.config/zed)
   - [keymap.json](./home/.config/zed/keymap.json)
   - [settings.json](./home/.config/zed/settings.json)
