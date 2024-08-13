@@ -25,8 +25,8 @@ config.tab_max_width = 40
 config.hide_tab_bar_if_only_one_tab = false
 config.show_new_tab_button_in_tab_bar = false
 config.inactive_pane_hsb = {
-  saturation = 0.9,
-  brightness = 0.8,
+  saturation = 0.85,
+  brightness = 0.85,
 }
 
 -- Fonts
@@ -78,7 +78,25 @@ config.colors = {
   }
 }
 
--- Keybindings
+-- Mouse bindings
+config.mouse_bindings = {
+  -- Change the default click behavior so that it only selects
+  -- text and doesn't open hyperlinks
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'NONE',
+    action = act.CompleteSelection 'ClipboardAndPrimarySelection',
+  },
+
+  -- and make CTRL-Click open hyperlinks
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'CTRL',
+    action = act.OpenLinkAtMouseCursor,
+  },
+}
+
+-- Key bindings
 config.enable_kitty_keyboard = true
 config.leader = { key = 'r', mods = 'CTRL' }
 config.keys = {
