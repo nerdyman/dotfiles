@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 local config = wezterm.config_builder()
 
 -- Meta
@@ -29,87 +30,166 @@ config.inactive_pane_hsb = {
 }
 
 -- Fonts
-config.font = wezterm.font('Hasklig', { weight = 'DemiBold' })
-config.font_size = 14.75
-config.line_height = 1.25
+config.font = wezterm.font('Hasklig', { weight = 'Medium' })
+config.font_size = 14.5
+config.line_height = 1.15
 config.font_rules = {
   {
     italic = false,
     intensity = 'Normal',
-    font = wezterm.font('Hasklig', { weight = 'DemiBold' })
+    font = wezterm.font('Hasklig', { weight = 'Medium' })
   },
   {
     italic = false,
     intensity = 'Bold',
-    font = wezterm.font('Hasklig', { weight = 'Bold' })
+    font = wezterm.font('Hasklig', { weight = 'DemiBold' })
   },
   {
     italic = true,
     intensity = 'Normal',
-    font = wezterm.font('Hasklig', { weight = 'DemiBold' })
+    font = wezterm.font('Hasklig', { weight = 'Medium' })
    }
 }
 
+-- Cursor
+config.cursor_blink_ease_in = 'Linear'
+config.cursor_blink_ease_out = 'Linear'
+config.cursor_blink_rate = 800
+
 -- Colours
+config.color_scheme = 'Duotone Dark'
 config.colors = {
   tab_bar = {
     inactive_tab_edge = 'rgba(0% 0% 0% 0%)',
     background = 'rgba(0% 0% 0% 20%)',
     active_tab = {
-      bg_color = '#c2fa88',
-      fg_color = '#464669',
+      bg_color = '#b3a7fe',
+      fg_color = '#5c4669',
       italic = true
     },
     inactive_tab = {
       bg_color = 'rgba(0% 0% 0% 25%)',
-      fg_color = '#505050'
+      fg_color = '#56507a'
     },
     new_tab = {
       bg_color = 'rgba(0% 0% 0% 25%)',
-      fg_color = '#808080'
+      fg_color = '#5c4669'
     }
   }
 }
 
---config.color_scheme = 'Duotone Dark'
-
 -- Keybindings
 config.enable_kitty_keyboard = true
+config.leader = { key = 'r', mods = 'CTRL' }
 config.keys = {
+  {
+    key = 'H',
+    mods = 'LEADER',
+    action = act.AdjustPaneSize { 'Left', 5 },
+  },
+  {
+    key = 'J',
+    mods = 'LEADER',
+    action = act.AdjustPaneSize { 'Down', 5 },
+  },
+  {
+    key = 'K',
+    mods = 'LEADER',
+    action = act.AdjustPaneSize { 'Up', 5 }
+  },
+  {
+    key = 'L',
+    mods = 'LEADER',
+    action = act.AdjustPaneSize { 'Right', 5 },
+  },
+
   -- Make Home go to the start of the line
   {
     key = "Home",
     mods = "NONE",
-    action = wezterm.action{ SendString="\x1b[H" }
+    action = act{ SendString="\x1b[H" }
   },
   -- Make End go to the end of the line
   {
     key = "End",
     mods = "NONE",
-    action = wezterm.action{ SendString = "\x1b[F" }
+    action = act{ SendString = "\x1b[F" }
   },
    -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
   {
     key = "LeftArrow",
     mods = "OPT",
-    action = wezterm.action{ SendString = "\x1bb" }
+    action = act{ SendString = "\x1bb" }
   },
    -- Make Option-Right equivalent to Alt-f; forward-word
   {
     key = "RightArrow",
     mods = "OPT",
-    action = wezterm.action{ SendString = "\x1bf" }
+    action = act{ SendString = "\x1bf" }
   },
+  -- Set tab title
+  {
+    key = 'E',
+    mods = 'CTRL|SHIFT',
+    action = act.PromptInputLine {
+      description = 'Set tab name:',
+      action = wezterm.action_callback(function(window, pane, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end),
+    },
+  },
+  -- Open new pane
   {
     key = 'Enter',
     mods = 'SHIFT|CTRL',
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    action = act.SplitVertical{ domain = 'CurrentPaneDomain' },
   },
   {
     key = 'Enter',
     mods = 'SHIFT',
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' },
+  },
+	{
+    key = 'F1',
+    action = act.TogglePaneZoomState,
+  },
+  -- Cycle pane forward
+  {
+    key = '}',
+    mods = 'SHIFT|CTRL',
+    action = act{ActivatePaneDirection="Next"},
+  },
+  -- Cycle pane backwards
+  {
+    key = '{',
+    mods = 'SHIFT|CTRL',
+    action = act{ActivatePaneDirection="Prev"},
+  },
+  -- Cycle tab forward
+  {
+    key = 'RightArrow',
+    mods = 'SHIFT|CTRL',
+    action = act{ActivateTabRelative=1},
+  },
+  -- Cycle tab backwards
+  {
+    key = 'LeftArrow',
+    mods = 'SHIFT|CTRL',
+    action = act{ActivateTabRelative=-1},
+  },
+  -- Quit tab
+  {
+    key = 'q',
+    mods = 'SHIFT|CTRL',
+    action = act{CloseCurrentTab={confirm=false}},
   },
 }
 
 return config
+
+-- vim: set expandtab shiftwidth=2 softtabstop=2:
