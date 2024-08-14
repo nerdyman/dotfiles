@@ -30,10 +30,16 @@ config.inactive_pane_hsb = {
 }
 
 -- Fonts
+config.harfbuzz_features = { 'zero', 'calt=1', 'clig=1', 'liga=1' }
 config.font = wezterm.font('Hasklig', { weight = 'Medium' })
 config.font_size = 14.5
 config.line_height = 1.15
 config.font_rules = {
+  {
+    italic = false,
+    intensity = 'Half',
+    font = wezterm.font('Hasklig', { weight = 'Regular' })
+  },
   {
     italic = false,
     intensity = 'Normal',
@@ -209,7 +215,7 @@ config.keys = {
   {
     key = 'P',
     mods = 'SHIFT|CTRL',
-    action = wezterm.action.ActivateCommandPalette,
+    action = act.ActivateCommandPalette,
   },
 }
 
