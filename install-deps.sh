@@ -8,13 +8,12 @@ brew install awscli bandwhich bash-completion bat bat-extras coreutils ctop eza 
 
 # macOS
 if [[ "$(uname)" == "Darwin" ]]; then
-	brew install --cask nikitabobko/tap/aerospace flameshot hiddenbar kap kitty raycast
+	brew install --cask nikitabobko/tap/aerospace flameshot hiddenbar kap raycast wezterm
 	brew install --cask linearmouse --no-quarantine
 
 	brew install iproute2mac rustup-init
 
 	softwareupdate --install-rosetta
-	sudo scutil --set HostName ricbook
 fi
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
