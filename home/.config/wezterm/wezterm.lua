@@ -120,18 +120,17 @@ config.keys = {
     mods = 'LEADER',
     action = act.AdjustPaneSize { 'Right', 5 },
   },
-
-  -- Make Home go to the start of the line
+  -- Make cmd arrow left go to start of the line
   {
-    key = "Home",
-    mods = "NONE",
-    action = act{ SendString="\x1b[H" }
+    key = 'LeftArrow',
+    mods = 'CMD',
+    action = wezterm.action { SendString = "\x1bOH" },
   },
-  -- Make End go to the end of the line
+  -- Make cmd arrow right go to start of line
   {
-    key = "End",
-    mods = "NONE",
-    action = act{ SendString = "\x1b[F" }
+    key = 'RightArrow',
+    mods = 'CMD',
+    action = wezterm.action { SendString = "\x1bOF" },
   },
    -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
   {
