@@ -4,7 +4,7 @@ enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
 [mode.main.binding]
-alt-enter = 'exec-and-forget open -n /Applications/kitty.app'
+alt-enter = 'exec-and-forget wezterm start'
 
 alt-x = 'focus left  --boundaries workspace --boundaries-action wrap-around-the-workspace'
 alt-c = 'focus right --boundaries workspace --boundaries-action wrap-around-the-workspace'
