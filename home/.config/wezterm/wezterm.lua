@@ -104,7 +104,7 @@ config.mouse_bindings = {
 
 -- Key bindings
 config.enable_kitty_keyboard = true
-config.leader = { key = 'r', mods = 'CTRL' }
+config.leader = { key = 'a', mods = 'CTRL' }
 config.keys = {
   {
     key = 'H',
@@ -207,7 +207,7 @@ config.keys = {
   },
   -- Quit tab
   {
-    key = 'q',
+    key = 'Q',
     mods = 'SHIFT|CTRL',
     action = act{CloseCurrentTab={confirm=false}},
   },
