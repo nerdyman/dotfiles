@@ -12,6 +12,8 @@ config.front_end = "WebGpu"
 
 -- Window
 config.window_decorations = "RESIZE|MACOS_FORCE_DISABLE_SHADOW"
+config.window_background_opacity = 0.975
+config.macos_window_background_blur = 20
 
 -- Layout
 config.initial_rows = 50
