@@ -9,6 +9,12 @@ config.automatically_reload_config = true
 config.freetype_load_flags = 'NO_HINTING'
 config.freetype_load_target = "Light"
 config.front_end = "WebGpu"
+config.max_fps = 144
+config.webgpu_preferred_adapter = {
+  backend = 'Metal',
+  device_type= "IntegratedGpu",
+  name= "Apple M3 Pro",
+}
 
 -- Window
 config.window_decorations = "RESIZE|MACOS_FORCE_DISABLE_SHADOW"
