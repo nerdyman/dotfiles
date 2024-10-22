@@ -71,7 +71,8 @@ config.cursor_blink_ease_out = 'Linear'
 config.cursor_blink_rate = 800
 
 -- Colours
-config.color_scheme = 'Duotone Dark'
+config.color_scheme_dirs = { '$HOME/.config/wezterm/colors' }
+config.color_scheme = 'nerdyman'
 config.colors = {
   tab_bar = {
     inactive_tab_edge = 'rgba(0% 0% 0% 0%)',
