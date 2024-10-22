@@ -3,40 +3,42 @@ name = "nerdyman"
 author = "nerdyman"
 origin_url = "https://github.com/nerdyman/dotfiles/tree/main/home/.config/wezterm/colors/nerdyman.toml"
 
+# Colours are based on #a794ff
+
 [colors]
-foreground = "#ead8ff"
-background = "#21182b"
-cursor_bg = "#f783ac"
-cursor_border = "#f783ac"
+foreground = "#c9bdff"
+background = "#171424"
+cursor_bg = "#ea94ff"
+cursor_border = "#ea94ff"
 cursor_fg = "#1f1b2a"
-selection_bg = "#f783ac"
+selection_bg = "#ea94ff"
 selection_fg = "#1a172e"
 
 ansi = [
-	"#523c69",
-	"#ff5462",
-	"#bdff7b",
-	"#ffda54",
-	"#b3b3ff",
-	"#e599f7",
-	"#60f7ff",
-	"#e1e1e6",
+	"#534d6f",
+	"#ff6e7a",
+	"#9bff7f",
+	"#ffe571",
+	"#b8a8ff",
+	"#ea94ff",
+	"#83eeff",
+	"#e1dbff",
 ]
 
 brights = [
-	"#8c6ca0",
-	"#fb5858",
+	"#8a7cc9",
+	"#ff7d8c",
 	"#abf160",
 	"#ffe066",
 	"#a794ff",
-	"#f783ac",
+	"#ea94ff",
 	"#87edf3",
 	"#ffffff",
 ]
 
-# [colors.indexed]
-# 16 = "#d685af"
-# 17 = "#d7827e"
+[colors.indexed]
+16 = "#f00"
+17 = "#00f"
 
 [colors.tab_bar]
 background = "rgba(0% 0% 0% 20%)"
@@ -53,7 +55,7 @@ underline = "None"
 
 [colors.tab_bar.inactive_tab]
 bg_color = "rgba(0% 0% 0% 25%)"
-fg_color = "#b3b3ff"
+fg_color = "#b8a8ff"
 intensity = "Normal"
 italic = false
 strikethrough = false
@@ -69,7 +71,7 @@ underline = "None"
 
 [colors.tab_bar.new_tab]
 bg_color = "rgba(0% 0% 0% 25%)"
-fg_color = "#b3b3ff"
+fg_color = "#b8a8ff"
 intensity = "Normal"
 italic = false
 strikethrough = false
