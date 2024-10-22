@@ -25,6 +25,7 @@ Configs and scripts for macOS and Linux.
   - [settings.json](./home/.config/Code/User/settings.json)
 - [WezTerm](./home/.config/wezterm)
   - [wezterm.lua](./home/.config/wezterm/wezterm.lua)
+  - [colors/nerdyman.toml](./home/.config/wezterm/colors/nerdyman.toml)
 - [Zed](./home/.config/zed)
   - [keymap.json](./home/.config/zed/keymap.json)
   - [settings.json](./home/.config/zed/settings.json)
