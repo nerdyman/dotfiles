@@ -4,8 +4,8 @@ author = "nerdyman"
 origin_url = "https://github.com/nerdyman/dotfiles/tree/main/home/.config/wezterm/themes/nerdyman.toml"
 
 [colors]
-foreground = "#ddcaff"
-background = "#1f1b2a"
+foreground = "#e1c7ff"
+background = "#21182b"
 cursor_bg = "#f783ac"
 cursor_border = "#f783ac"
 cursor_fg = "#1f1b2a"
@@ -13,17 +13,6 @@ selection_bg = "#f783ac"
 selection_fg = "#1a172e"
 
 ansi = [
-	"#464669",
-	"#fb5858",
-	"#abf160",
-	"#ffe066",
-	"#9e89fd",
-	"#f783ac",
-	"#87edf3",
-	"#ffffff",
-]
-
-brights = [
 	"#50507a",
 	"#ff5e5e",
 	"#c7fc91",
@@ -34,30 +23,41 @@ brights = [
 	"#e1e1e6",
 ]
 
+brights = [
+	"#464669",
+	"#fb5858",
+	"#abf160",
+	"#ffe066",
+	"#9e89fd",
+	"#f783ac",
+	"#87edf3",
+	"#ffffff",
+]
+
 # [colors.indexed]
 # 16 = "#d685af"
 # 17 = "#d7827e"
 
-# [colors.tab_bar]
-# background = "#ebe5df"
-# inactive_tab_edge = "#ebe5df"
-# inactive_tab_edge_hover = "#ebe0df"
+[colors.tab_bar]
+background = "rgba(0% 0% 0% 20%)"
+inactive_tab_edge = "#ebe5df"
+inactive_tab_edge_hover = "#ebe0df"
 
-# [colors.tab_bar.active_tab]
-# bg_color = "#a8a3b3"
-# fg_color = "#faf4ed"
-# intensity = "Normal"
-# italic = false
-# strikethrough = false
-# underline = "None"
+[colors.tab_bar.active_tab]
+bg_color = "#b3a7fe"
+fg_color = "#5c4669"
+intensity = "Normal"
+italic = true
+strikethrough = false
+underline = "None"
 
-# [colors.tab_bar.inactive_tab]
-# bg_color = "#ebe0df"
-# fg_color = "#625c87"
-# intensity = "Normal"
-# italic = false
-# strikethrough = false
-# underline = "None"
+[colors.tab_bar.inactive_tab]
+bg_color = "rgba(0% 0% 0% 25%)"
+fg_color = "#56507a"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
 
 # [colors.tab_bar.inactive_tab_hover]
 # bg_color = "#ebdfe4"
@@ -67,13 +67,13 @@ brights = [
 # strikethrough = false
 # underline = "None"
 
-# [colors.tab_bar.new_tab]
-# bg_color = "#faf4ed"
-# fg_color = "#625c87"
-# intensity = "Normal"
-# italic = false
-# strikethrough = false
-# underline = "None"
+[colors.tab_bar.new_tab]
+bg_color = "rgba(0% 0% 0% 25%)"
+fg_color = "#5c4669"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
 
 # [colors.tab_bar.new_tab_hover]
 # bg_color = "#ebdfe4"

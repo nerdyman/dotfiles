@@ -73,25 +73,6 @@ config.cursor_blink_rate = 800
 -- Colours
 config.color_scheme_dirs = { '$HOME/.config/wezterm/colors' }
 config.color_scheme = 'nerdyman'
-config.colors = {
-  tab_bar = {
-    inactive_tab_edge = 'rgba(0% 0% 0% 0%)',
-    background = 'rgba(0% 0% 0% 20%)',
-    active_tab = {
-      bg_color = '#b3a7fe',
-      fg_color = '#5c4669',
-      italic = true
-    },
-    inactive_tab = {
-      bg_color = 'rgba(0% 0% 0% 25%)',
-      fg_color = '#56507a'
-    },
-    new_tab = {
-      bg_color = 'rgba(0% 0% 0% 25%)',
-      fg_color = '#5c4669'
-    }
-  }
-}
 
 -- Mouse bindings
 config.mouse_bindings = {
