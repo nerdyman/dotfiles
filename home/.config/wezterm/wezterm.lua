@@ -33,8 +33,8 @@ config.tab_max_width = 40
 config.hide_tab_bar_if_only_one_tab = false
 config.show_new_tab_button_in_tab_bar = false
 config.inactive_pane_hsb = {
-  saturation = 0.85,
-  brightness = 0.85,
+  saturation = 0.8,
+  brightness = 0.8,
 }
 
 -- Fonts

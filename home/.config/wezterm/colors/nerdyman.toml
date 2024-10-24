@@ -37,8 +37,8 @@ brights = [
 ]
 
 [colors.indexed]
-16 = "#f00"
-17 = "#00f"
+16 = "rgba(0, 0, 0, 0)"
+17 = "#f00"
 
 [colors.tab_bar]
 background = "rgba(0% 0% 0% 20%)"
