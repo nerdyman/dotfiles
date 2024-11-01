@@ -4,7 +4,7 @@
 
 Configs and scripts for macOS and Linux.
 
-[![Kitty](./scrots/banner.png)](./home/.config/kitty/)
+[![Wezterm](./scrots/wezterm.png)](./home/.config/wezterm/)
 
 </div>
 
@@ -25,7 +25,7 @@ Configs and scripts for macOS and Linux.
   - [settings.json](./home/.config/Code/User/settings.json)
 - [WezTerm](./home/.config/wezterm)
   - [wezterm.lua](./home/.config/wezterm/wezterm.lua)
-  - [colors/nerdyman.toml](./home/.config/wezterm/colors/nerdyman.toml)
+  - [colors/nerdyman.toml](./home/.config/wezterm/colors/nerdyman.toml) My WezTerm theme
 - [Zed](./home/.config/zed)
   - [keymap.json](./home/.config/zed/keymap.json)
   - [settings.json](./home/.config/zed/settings.json)
