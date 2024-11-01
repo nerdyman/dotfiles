@@ -45,6 +45,7 @@ Configs and scripts for macOS and Linux.
 - [Karabiner](./home/.config/karabiner/karabiner.json)
 - [macOS mods](./macos-mods.sh)
 - Uses [GNU coreutils↗](https://formulae.brew.sh/formula/coreutils)
+- [Actual working UK keyboard layouts](./Library/Keyboard%20Layouts) (taken from [http://liyang.hu/osx-british.xhtml](http://liyang.hu/osx-british.xhtml))
 
 ## Linux
 
