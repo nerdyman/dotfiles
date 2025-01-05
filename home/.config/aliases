@@ -5,7 +5,6 @@ alias l="ls -lah"
 alias vim="nvim"
 alias batl="bat --style=plain"
 alias prettybatl="prettybat --style=plain"
-alias grep="rg"
 alias icat="kitten icat"
 alias yeet="rm -rf"
 

@@ -8,10 +8,11 @@ brew install awscli bandwhich bash-completion bat bat-extras coreutils ctop eza 
 
 # macOS
 if [[ "$(uname)" == "Darwin" ]]; then
+	brew tap FelixKratz/formulae
 	brew install --cask nikitabobko/tap/aerospace flameshot hiddenbar kap raycast wezterm
 	brew install --cask linearmouse --no-quarantine
 
-	brew install iproute2mac rustup-init
+	brew install borders iproute2mac rustup-init
 
 	softwareupdate --install-rosetta
 fi

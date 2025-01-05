@@ -3,18 +3,28 @@
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
+after-startup-command = [
+  'exec-and-forget borders'
+]
+
 [mode.main.binding]
 alt-enter = 'exec-and-forget wezterm start'
 
+# Monitor focusing
+alt-shift-slash = 'focus-monitor --wrap-around next'
+
+# Window focusing
 alt-x = 'focus left  --boundaries workspace --boundaries-action wrap-around-the-workspace'
 alt-c = 'focus right --boundaries workspace --boundaries-action wrap-around-the-workspace'
 alt-k = 'focus down'
 alt-l = 'focus up'
 
+# Window movement
 alt-shift-j = 'move left'
 alt-shift-k = 'move down'
 alt-shift-l = 'move up'
 alt-shift-semicolon = 'move right'
+alt-shift-comma = 'move-node-to-monitor --wrap-around --focus-follows-window next'
 
 alt-h = 'split horizontal'
 alt-v = 'split vertical'
@@ -77,8 +87,8 @@ enter = 'mode main'
 esc = 'mode main'
 
 [gaps]
-inner.horizontal = 2
-inner.vertical =   2
+inner.horizontal = 3
+inner.vertical =   3
 outer.left =       4
 outer.bottom =     4
 outer.top =        4
