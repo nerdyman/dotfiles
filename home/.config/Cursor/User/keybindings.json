@@ -1,0 +1,117 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    // Markdown preview
+    {
+        "when": "editorTextFocus && editorLangId != 'svg'",
+        "key": "ctrl+shift+m",
+        "command": "markdown.showPreviewToSide"
+    },
+    // SVG Preview
+    {
+        "when": "editorTextFocus && editorLangId == 'svg'",
+        "key": "ctrl+shift+m",
+        "command": "svg.showSvg"
+    },
+    // Disable `+` and `-` zoom
+    {
+        "key": "cmd+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "cmd+-",
+        "command": "-workbench.action.zoomOut"
+    },
+
+    // Change document language prompt.
+    {
+        "when": "isMac",
+        "key": "shift+cmd+l",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "shift+ctrl+l",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+
+    // Line manipulation.
+    {
+        "when": "isLinux",
+        "key": "win+alt+down",
+        "command": "editor.action.copyLinesDownAction"
+    },
+    {
+        "when": "isLinux",
+        "key": "win+alt+up",
+        "command": "editor.action.copyLinesUpAction"
+    },
+    // Go to start of line with `ctrl+left arrow`
+    {
+        "key": "ctrl+left",
+        "command": "cursorHome"
+    },
+    // Go to end of line with `ctrl+right arrow`
+    {
+        "key": "ctrl+right",
+        "command": "cursorEnd"
+    },
+
+    // Workspace management.
+    {
+        "when": "isMac",
+        "key": "shift+cmd+a",
+        "command": "workbench.action.addRootFolder"
+    },
+    {
+        "when": "isMac",
+        "key": "shift+cmd+w",
+        "command": "workbench.action.removeRootFolder"
+    },
+    {
+        "when": "isLinux",
+        "key": "shift+ctrl+a",
+        "command": "workbench.action.addRootFolder"
+    },
+    {
+        "when": "isLinux",
+        "key": "shift+ctrl+w",
+        "command": "workbench.action.removeRootFolder"
+    },
+
+    {
+        "key": "alt+1",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+
+    {
+        "key": "alt+2",
+        "command": "workbench.action.chat.openInSidebar",
+        "when": "chatPanelParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view'"
+    },
+
+    {
+        "key": "alt+3",
+        "command": "workbench.action.chat.openEditSession",
+        "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+    },
+
+    {
+        "key": "alt+3",
+        "command": "workbench.action.chat.openEditSession",
+        "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+    },
+
+    // Sidebar.
+    {
+        "when": "isMac",
+        "key": "shift+cmd+\\",
+        "command": "search.action.revealInSideBar"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.toggleSidebarVisibility"
+    }
+]
