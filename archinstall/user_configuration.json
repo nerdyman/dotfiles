@@ -63,7 +63,7 @@
 		"htop",
 		"inter-font",
 		"jq",
-		"kitty",
+		"linux-firmware",
 		"linux-headers",
 		"linux-zen-headers",
 		"lynis",
@@ -108,6 +108,7 @@
 		"xclip",
 		"xdg-user-dirs",
 		"xdotool",
+		"xwayland",
 		"unzip",
 		"xorg",
 		"xterm",
@@ -117,12 +118,15 @@
 		"zsh-completions",
 		"zsh-syntax-highlighting",
 
-		"lightdm",
-		"lightdm-pantheon-greeter",
-		"pantheon",
-		"switchboard-plug-desktop",
-		"switchboard-plug-locale",
-		"switchboard-plug-security-privacy"
+		"vulkan-radeon",
+		"lib32-vulkan-radeon",
+		"lib32-vulkan-radeon",
+		"mesa",
+		"lib32-mesa",
+
+		"sddm",
+		"plasma-desktop",
+		"xdg-desktop-portal-kde"
 	],
 	"plugin": null,
 	"profile": {
