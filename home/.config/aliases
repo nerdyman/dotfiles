@@ -9,6 +9,7 @@ alias icat="kitten icat"
 alias yeet="rm -rf"
 
 # go to projects directory and allow autocompletions of files and folders
+hash -d b="${HOME}/.local/bin"
 hash -d p="${HOME}/Documents/projects"
 
 function killport () {
