@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Check if an argument was provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <path_to_application>"
+    echo "Example: $0 '/Applications/MyApp.app'"
+    exit 1
+fi
+
+# Get the first argument
+app_path="$1"
+
+# Check if the path exists
+if [ ! -e "$app_path" ]; then
+    echo "Error: '$app_path' does not exist"
+    exit 1
+fi
+
+# Remove quarantine attribute
+echo "Removing quarantine from: $app_path"
+xattr -rd com.apple.quarantine "$app_path"
+
+if [ $? -eq 0 ]; then
+    echo "Quarantine removed successfully"
+else
+    echo "Error: Failed to remove quarantine"
+    exit 1
+fi
