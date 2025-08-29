@@ -27,8 +27,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-shift-[": "workspace::ActivateNextPane",
-      "ctrl-shift-]>": "workspace::ActivatePreviousPane",
+      "alt-shift-]": "workspace::ActivateNextPane",
+      "ctrl-shift-[": "workspace::ActivatePreviousPane",
       "shift-alt-s": "workspace::ActivatePaneDown",
       "shift-alt-w": "workspace::ActivatePaneUp",
       "f1": "workspace::ToggleZoom",
