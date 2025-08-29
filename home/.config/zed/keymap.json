@@ -9,43 +9,30 @@
     "context": "Editor",
     "bindings": {
       // https://github.com/zed-industries/zed/discussions/14195
-      "shift-cmd-w": "workspace::RemoveFolderFromWorkspace"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-shift-m": "markdown::OpenPreviewToTheSide"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "cmd-shift-r": "pane::RevealInProjectPanel"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
+      // "shift-cmd-w": "workspace::RemoveFolderFromWorkspace"
+      "shift-alt-a": "agent::ToggleFocus",
+      "ctrl-shift-m": "markdown::OpenPreviewToTheSide",
+      "cmd-shift-r": "pane::RevealInProjectPanel",
       "ctrl-shift-t": "workspace::NewCenterTerminal"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-shift-t": "workspace::NewTerminal"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-shift-c": "terminal::Copy"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
+      "ctrl-shift-c": "terminal::Copy",
+      "ctrl-shift-t": "workspace::NewTerminal",
       "ctrl-shift-v": "terminal::Paste"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-[": "workspace::ActivateNextPane",
+      "ctrl-shift-]>": "workspace::ActivatePreviousPane",
+      "shift-alt-s": "workspace::ActivatePaneDown",
+      "shift-alt-w": "workspace::ActivatePaneUp",
+      "f1": "workspace::ToggleZoom",
+      "shift-alt-z": "workspace::ToggleZoom"
     }
   }
 ]

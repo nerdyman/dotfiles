@@ -7,6 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent": {
+    "default_profile": "ask",
+    "dock": "left",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    }
+  },
   "base_keymap": "VSCode",
   "buffer_font_family": "Hasklig",
   "buffer_font_size": 15,
@@ -14,9 +22,35 @@
   "buffer_line_height": {
     "custom": 2.15
   },
+  "collaboration_panel": {
+    "button": false
+  },
   "current_line_highlight": "all",
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
+    },
+    "inline": {
+      "enabled": false,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
+  "edit_predictions": {
+    "mode": "eager"
+  },
   "ensure_final_newline_on_save": true,
+  "extend_comment_on_newline": false,
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "format_on_save": "on",
+  "icon_theme": "Catppuccin Frappé",
   "indent_guides": {
     "active_line_width": 2,
     "enabled": true,
@@ -25,6 +59,14 @@
     "background_coloring": "disabled"
   },
   "linked_edits": true,
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "javascript": { "tsserver": { "maxTsServerMemory": 10240 } },
+        "typescript": { "tsserver": { "maxTsServerMemory": 10240 } }
+      }
+    }
+  },
   "preferred_line_length": 110,
   "preview_tabs": {
     "enable_preview_from_code_navigation": true,
@@ -39,17 +81,23 @@
     "file_icons": true,
     "folder_icons": false,
     "git_status": true,
-    "indent_size": 8
+    "indent_size": 8,
+    "show_diagnostics": "errors"
   },
   "show_whitespaces": "boundary",
   "soft_wrap": "editor_width",
+  "selection_highlight": true,
   "tabs": {
     "close_position": "right",
-    "git_status": true
+    "show_diagnostics": "errors",
+    "file_icons": true,
+    "git_status": true,
+    "show_close_button": "hover"
   },
   "terminal": {
     "dock": "right",
     "font_family": "Hasklig",
+    "blinking": "on",
     "font_weight": 500,
     "font_size": 14,
     "font_features": {
@@ -72,8 +120,16 @@
     "light": "One Light",
     "dark": "Catppuccin Mocha"
   },
+  "title_bar": {
+    "show_sign_in": false,
+    "show_user_picture": false
+  },
+  "toolbar": {
+    // "breadcrumbs": false,
+    "quick_actions": false
+  },
   "ui_font_size": 16,
-  "ui_font_family": "Microsoft Sans Serif",
+  "ui_font_family": ".SystemUIFont",
   "ui_font_weight": 500,
   "use_autoclose": true
 }
