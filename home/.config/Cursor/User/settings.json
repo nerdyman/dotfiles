@@ -95,7 +95,9 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
   "workbench.list.horizontalScrolling": true,
   "workbench.settings.useSplitJSON": false,
   "workbench.startupEditor": "welcomePage",
@@ -135,7 +137,8 @@
     "never-keyword",
     "type-predicate",
     "nonnullable-utility-type",
-    "parameters-utility-type"
+    "parameters-utility-type",
+    "awaited-utility-type"
   ],
   "search.searchEditor.defaultNumberOfContextLines": 5,
   "markdown.preview.fontSize": 18,
@@ -179,13 +182,13 @@
     "!Split",
     "!Split sequence"
   ],
-  "aws.telemetry": false,
   "shellcheck.ignorePatterns": {
     "**/.env": true,
     "**/.env.*": true
   },
   "workbench.sideBar.location": "right",
   "cursor.cpp.disabledLanguages": [
+    "markdown",
     "plaintext",
     "scminput"
   ],
@@ -194,5 +197,15 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "window.commandCenter": 1,
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.saturation": 0.85,
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.files.color": "#554e6e",
+  "material-icon-theme.folders.color": "#5b5573",
+  "material-icon-theme.rootFolders.color": "#5b5573",
+  "workbench.iconTheme": "catppuccin-latte",
+  "terminal.integrated.scrollback": 100000
 }
