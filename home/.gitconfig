@@ -4,14 +4,22 @@
 
 [core]
   editor = nvim
-  pager = delta
   ignorecase = false
+  pager = delta
 
 [alias]
+  addp = !git add --intent-to-add "$@" && git add --patch "$@"
+  chekcout = checkout
+  checout = checkout
+  ck = checkout
+  psh = push
   diff-prev = diff HEAD~1..HEAD
+  fetcharoo = fetch
   history = log --follow -p --
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
   lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  undo = reset --soft HEAD^
+  unpushed = "log @{u}.."
 
 [init]
   defaultBranch = main
@@ -19,11 +27,25 @@
 [help]
   autocorrect = 10
 
+[column]
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = version:refname
+
 [interactive]
   diffFilter = delta --color-only
 
 [delta]
   navigate = true  # use n and N to move between diff sections
+
+[log]
+  date = iso-local
+
+[commit]
+  verbose = true
 
 [merge]
   conflictstyle = diff3
@@ -31,14 +53,21 @@
 [diff]
   colorMoved = default
 
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+
+[rerere]
+  enabled = true
+
+
+
+[push]
+  autoSetupRemote = true
+
+# Conditionally include work config
 [includeIf "gitdir:~/Documents/projects/work/"]
   path = ~/.gitconfig.work
 
-[push]
-	autoSetupRemote = true
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+# vim: ts=2 sw=2 et
