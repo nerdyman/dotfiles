@@ -129,7 +129,7 @@
     "quick_actions": false
   },
   "ui_font_size": 16,
-  "ui_font_family": ".SystemUIFont",
+  "ui_font_family": "Hubot Sans",
   "ui_font_weight": 500,
   "use_autoclose": true
 }
