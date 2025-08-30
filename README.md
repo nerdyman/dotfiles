@@ -62,7 +62,7 @@ bash install-deps.sh
 ### Fonts
 
 - [Hasklig Monospace↗](https://github.com/i-tu/Hasklig)
-- [Hubot Sans↗](https://github.com/github/hubot-sans)
+- [Mona Sans↗](https://github.com/github/mona-sans)
 
 ## Screenshots
 
