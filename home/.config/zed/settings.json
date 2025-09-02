@@ -11,10 +11,11 @@
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     }
   },
+  "agent_font_size": 17,
   "base_keymap": "VSCode",
   "buffer_font_family": "Hasklig",
   "buffer_font_size": 15,
@@ -81,7 +82,7 @@
     "file_icons": true,
     "folder_icons": false,
     "git_status": true,
-    "indent_size": 8,
+    "indent_size": 10,
     "show_diagnostics": "errors"
   },
   "show_whitespaces": "boundary",
