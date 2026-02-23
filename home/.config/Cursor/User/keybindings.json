@@ -103,6 +103,11 @@
     // Sidebar.
     {
         "when": "isMac",
+        "key": "shift+cmd+r",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "when": "isMac",
         "key": "shift+cmd+\\",
         "command": "search.action.revealInSideBar"
     },
@@ -115,12 +120,28 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "cmd+i",
+        "key": "shift+alt+cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "shift+alt+a",
         "command": "composerMode.agent"
     },
     {
         "key": "shift+cmd+s",
         "command": "-workbench.action.openAgentsView",
         "when": "!isInBackgroundComposerWindow"
+    },
+    {
+        "key": "shift+alt+cmd+i",
+        "command": "composer.newAgentChat"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "-composer.newAgentChat"
+    },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.chat"
     }
 ]

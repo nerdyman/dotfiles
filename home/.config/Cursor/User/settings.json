@@ -58,6 +58,7 @@
   "markdown.preview.fontFamily": "system-ui",
   "redhat.telemetry.enabled": false,
   "search.exclude": {
+    ".next": true,
     "*.ignore": true,
     ".env": false
   },
@@ -207,5 +208,21 @@
   "material-icon-theme.folders.color": "#5b5573",
   "material-icon-theme.rootFolders.color": "#5b5573",
   "workbench.iconTheme": "catppuccin-latte",
-  "terminal.integrated.scrollback": 100000
+  "terminal.integrated.scrollback": 100000,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "workbench.externalBrowser": "chrome",
+  "vitest.cliArguments": "--browser.headless"
 }
