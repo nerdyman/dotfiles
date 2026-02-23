@@ -33,6 +33,7 @@ Configs and scripts for macOS and Linux.
   - [.zshrc](./home/.zshrc)
   - [aliases](./home/.config/aliases)
   - fnm [↗](https://github.com/Schniz/fnm)
+  - pnpm-shell-completion [↗](https://github.com/g-plane/pnpm-shell-completion)
   - zsh-syntax-highlighting [↗](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [Custom Scripts](./home/.local/bin/)
 
