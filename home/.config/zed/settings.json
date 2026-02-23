@@ -46,6 +46,7 @@
   },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
+  "file_scan_inclusions": [".env", ".env.*"],
   "format_on_save": "on",
   "icon_theme": "Catppuccin Frappé",
   "indent_guides": {
