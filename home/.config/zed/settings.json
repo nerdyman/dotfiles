@@ -11,20 +11,21 @@
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
-    }
+      "provider": "copilot_chat",
+      "model": "gpt-4.1",
+    },
   },
-  "agent_font_size": 17,
+  "agent_ui_font_size": 15,
+  "agent_buffer_font_size": 15,
   "base_keymap": "VSCode",
   "buffer_font_family": "Hasklig",
   "buffer_font_size": 15,
   "buffer_font_weight": 500,
   "buffer_line_height": {
-    "custom": 2.15
+    "custom": 2.15,
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "current_line_highlight": "all",
   "diagnostics": {
@@ -32,24 +33,21 @@
     "include_warnings": true,
     "lsp_pull_diagnostics": {
       "enabled": true,
-      "debounce_ms": 50
+      "debounce_ms": 50,
     },
     "inline": {
       "enabled": false,
       "update_debounce_ms": 150,
       "padding": 4,
       "min_column": 0,
-      "max_severity": null
-    }
+      "max_severity": null,
+    },
   },
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "subtle",
   },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
-  "features": {
-    "edit_prediction_provider": "copilot"
-  },
   "format_on_save": "on",
   "icon_theme": "Catppuccin Frappé",
   "indent_guides": {
@@ -57,22 +55,36 @@
     "enabled": true,
     "line_width": 1,
     "coloring": "indent_aware",
-    "background_coloring": "disabled"
+    "background_coloring": "disabled",
+  },
+  "languages": {
+    "JavaScript": {
+      "format_on_save": "on",
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+    },
+    "Python": {
+      "format_on_save": "on",
+    },
+    "Rust": {
+      "format_on_save": "on",
+    },
   },
   "linked_edits": true,
   "lsp": {
     "vtsls": {
       "settings": {
         "javascript": { "tsserver": { "maxTsServerMemory": 10240 } },
-        "typescript": { "tsserver": { "maxTsServerMemory": 10240 } }
-      }
-    }
+        "typescript": { "tsserver": { "maxTsServerMemory": 10240 } },
+      },
+    },
   },
+  // "on_last_window_closed": "platform_default",
   "preferred_line_length": 110,
   "preview_tabs": {
-    "enable_preview_from_code_navigation": true,
-    "enable_preview_from_file_finder": true,
-    "enabled": true
+    "enable_preview_from_file_finder": false,
+    "enabled": true,
   },
   "project_panel": {
     "auto_fold_dirs": true,
@@ -83,8 +95,11 @@
     "folder_icons": false,
     "git_status": true,
     "indent_size": 10,
-    "show_diagnostics": "errors"
+    "show_diagnostics": "errors",
   },
+  "confirm_quit": true,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "restore_on_startup": "last_session",
   "show_whitespaces": "boundary",
   "soft_wrap": "editor_width",
   "selection_highlight": true,
@@ -93,7 +108,7 @@
     "show_diagnostics": "errors",
     "file_icons": true,
     "git_status": true,
-    "show_close_button": "hover"
+    "show_close_button": "hover",
   },
   "terminal": {
     "dock": "right",
@@ -103,7 +118,7 @@
     "font_size": 14,
     "font_features": {
       "liga": true,
-      "calt": true
+      "calt": true,
     },
     "detect_venv": {
       "on": {
@@ -112,25 +127,28 @@
         // in your project's settings, rather than globally.
         "directories": [".env", ".env.local", "env", ".venv", "venv"],
         // Can also be `csh`, `fish`, and `nushell`
-        "activate_script": "default"
-      }
-    }
+        "activate_script": "default",
+      },
+    },
   },
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Catppuccin Mocha",
+  },
+  "theme_overrides": {
+    // "editor.document_highlight.bracket_background": { "background": "#f00f00" },
   },
   "title_bar": {
     "show_sign_in": false,
-    "show_user_picture": false
+    "show_user_picture": false,
   },
   "toolbar": {
     // "breadcrumbs": false,
-    "quick_actions": false
+    "quick_actions": false,
   },
   "ui_font_size": 16,
   "ui_font_family": "Mona Sans",
   "ui_font_weight": 500,
-  "use_autoclose": true
+  "use_autoclose": true,
 }

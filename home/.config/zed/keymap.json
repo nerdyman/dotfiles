@@ -1,30 +1,39 @@
 [
+  // Disable cmd+w to prevent app from closing.
+  {
+    "bindings": {
+      "cmd-w": null,
+      "cmd-shift-w": null,
+    },
+  },
   {
     "context": "Editor",
     "bindings": {
-      "shift-cmd-a": "workspace::AddFolderToProject"
-    }
+      "shift-cmd-a": "workspace::AddFolderToProject",
+      "shift-cmd-w": "workspace::RemoveFolderFromProject",
+    },
   },
   {
     "context": "Editor",
     "bindings": {
       // https://github.com/zed-industries/zed/discussions/14195
       // "shift-cmd-w": "workspace::RemoveFolderFromWorkspace"
+      "cmd-w": "pane::CloseActiveItem",
       "cmd-shift-f": "project_search::SearchInNew",
       "cmd-shift-r": "pane::RevealInProjectPanel",
       "shift-alt-a": "agent::ToggleFocus",
       "ctrl-shift-m": "markdown::OpenPreviewToTheSide",
       "ctrl-alt-m": "svg::OpenPreviewToTheSide",
-      "ctrl-shift-t": "workspace::NewCenterTerminal"
-    }
+      "ctrl-shift-t": "workspace::NewCenterTerminal",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
       "ctrl-shift-c": "terminal::Copy",
       "ctrl-shift-t": "workspace::NewTerminal",
-      "ctrl-shift-v": "terminal::Paste"
-    }
+      "ctrl-shift-v": "terminal::Paste",
+    },
   },
   {
     "context": "Workspace",
@@ -34,7 +43,8 @@
       "shift-alt-s": "workspace::ActivatePaneDown",
       "shift-alt-w": "workspace::ActivatePaneUp",
       "f1": "workspace::ToggleZoom",
-      "shift-alt-z": "workspace::ToggleZoom"
-    }
-  }
+      "shift-alt-z": "workspace::ToggleZoom",
+      "cmd-w": "pane::CloseActiveItem",
+    },
+  },
 ]
