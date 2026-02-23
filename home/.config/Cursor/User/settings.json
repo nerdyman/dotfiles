@@ -1,4 +1,5 @@
 {
+
   "files.trimTrailingWhitespace": true,
   "svg.completion.showAdvanced": true,
   "workbench.editor.empty.hint": "hidden",
@@ -18,7 +19,7 @@
   "editor.fontWeight": "500",
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
-  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.enabled": false,
   "editor.letterSpacing": 0.1,
   "editor.lineHeight": 32,
   "editor.selectionHighlight": true,
