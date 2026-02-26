@@ -1,48 +1,61 @@
 {
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
   "schemes" : [
     {
+      "buttons" : {
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x342",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x5ac"
+        }
+      },
       "pointer" : {
         "acceleration" : 0.6,
         "speed" : 0.06
       },
-      "if" : {
-        "device" : {
-          "vendorID" : "0x5ac",
-          "productName" : "Apple Internal Keyboard \/ Trackpad",
-          "productID" : "0x342",
-          "category" : "trackpad"
-        }
-      },
       "scrolling" : {
         "distance" : "auto"
-      },
-      "buttons" : {
-        "universalBackForward" : true
       }
     },
     {
-      "scrolling" : {
-        "reverse" : true,
-        "distance" : 1
-      },
       "buttons" : {
         "universalBackForward" : true
       },
       "if" : {
         "device" : {
-          "productID" : "0xc08b",
-          "serialNumber" : "111111111111",
           "category" : "mouse",
-          "vendorID" : "0x46d",
-          "productName" : "G502 HERO Gaming Mouse"
+          "productID" : "0xc08b",
+          "productName" : "G502 HERO Gaming Mouse",
+          "serialNumber" : "1180395A3438",
+          "vendorID" : "0x46d"
         }
       },
       "pointer" : {
+        "acceleration" : 0.7068,
         "disableAcceleration" : false,
-        "speed" : 0.1549,
-        "acceleration" : 0.7068
+        "speed" : 0.1549
+      },
+      "scrolling" : {
+        "distance" : 1,
+        "reverse" : true
+      }
+    },
+    {
+      "buttons" : {
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
+        }
       }
     }
-  ],
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5"
+  ]
 }
