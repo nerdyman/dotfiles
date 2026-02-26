@@ -57,7 +57,7 @@
   },
   "languages": {
     "TypeScript": {
-      "language_servers": ["tsgo", "vtsls"],
+      "language_servers": ["tsgo", "vtsls", "tailwindcss-language-server"],
     },
   },
   "linked_edits": true,
@@ -65,6 +65,14 @@
     "biome": {
       "settings": {
         "require_config_file": true,
+      },
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["cva", "cx", "cn"],
+        "experimental": {
+          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"],
+        },
       },
     },
     "vtsls": {
@@ -77,8 +85,8 @@
   "lsp_document_colors": "inlay",
   "preferred_line_length": 110,
   "preview_tabs": {
-    "enable_keep_preview_on_code_navigation": true,
-    "enable_preview_from_file_finder": true,
+    "enable_keep_preview_on_code_navigation": false,
+    "enable_preview_from_file_finder": false,
     "enabled": true,
   },
   "project_panel": {

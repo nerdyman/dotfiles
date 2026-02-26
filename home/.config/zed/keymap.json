@@ -10,14 +10,8 @@
     "context": "Editor",
     "bindings": {
       "shift-cmd-a": "workspace::AddFolderToProject",
-      "shift-cmd-w": "workspace::RemoveFolderFromProject",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
       // https://github.com/zed-industries/zed/discussions/14195
-      // "shift-cmd-w": "workspace::RemoveFolderFromWorkspace"
+      // "shift-cmd-w": "workspace::RemoveFolderFromProject",
       "cmd-w": "pane::CloseActiveItem",
       "cmd-shift-f": "project_search::SearchInNew",
       "cmd-shift-r": "pane::RevealInProjectPanel",
