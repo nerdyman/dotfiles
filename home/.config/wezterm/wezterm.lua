@@ -140,6 +140,23 @@ config.keys = {
     mods = "OPT",
     action = act{ SendString = "\x1bf" }
   },
+  -- Make cmd w close the current pane
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
+  -- Make cmd shift w split the current pane horizontally and close the original pane
+  {
+    key = 'w',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action_callback(function(window, pane)
+      -- split off the current pane, creating a fresh sibling
+      window:perform_action(act.SplitHorizontal { domain = 'CurrentPaneDomain' }, pane)
+      -- close the ORIGINAL pane (targeted), so the new pane expands to fill it
+      window:perform_action(act.CloseCurrentPane { confirm = false }, pane)
+    end),
+  },
   -- Set tab title
   {
     key = 'E',
