@@ -1,5 +1,4 @@
 {
-
   "files.trimTrailingWhitespace": true,
   "svg.completion.showAdvanced": true,
   "workbench.editor.empty.hint": "hidden",
@@ -108,7 +107,7 @@
   "terminal.external.osxExec": "Kitty.app",
   "editor.stickyScroll.enabled": true,
   "prettier.requireConfig": true,
-  "workbench.colorTheme": "Cryptic",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "markdown.preview.scrollPreviewWithEditor": false,
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": true,
@@ -208,7 +207,7 @@
   "material-icon-theme.files.color": "#554e6e",
   "material-icon-theme.folders.color": "#5b5573",
   "material-icon-theme.rootFolders.color": "#5b5573",
-  "workbench.iconTheme": "catppuccin-latte",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "terminal.integrated.scrollback": 100000,
   "[dockercompose]": {
     "editor.insertSpaces": true,
