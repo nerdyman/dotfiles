@@ -7,13 +7,62 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "mode": "subtle",
+    "provider": "ollama",
+    "ollama": {
+      "prompt_format": "zeta2_1",
+      "model": "hf.co/mradermacher/zeta-2.1-i1-GGUF:Q4_K_M",
+      "api_url": "http://localhost:11434"
+    }
+  },
+  "cli_default_open_behavior": "existing_window",
+  "outline_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "prettier": {
+    "allowed": false,
+  },
+  "context_servers": {
+    // "mcp-server-context7": {
+    //   "enabled": true,
+    //   "remote": false,
+    //   "settings": {}
+    // }
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "claude-acp-local": {
+      "type": "custom",
+      "command": "node",
+      "args": [
+        "/Users/me/Documents/projects/nerdyman/claude-agent-acp/dist/index.js"
+      ]
+    },
+    "cursor": {
+      "type": "registry",
+    },
+  },
   "agent": {
+    "thinking_display": "preview",
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5",
+      "provider": "claude-acp",
+      "model": "claude-opus-4-6",
     },
+    "inline_alternatives": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-6"
+      }
+    ]
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Hasklig",
@@ -23,6 +72,7 @@
     "custom": 2.15,
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "current_line_highlight": "all",
@@ -41,9 +91,25 @@
       "max_severity": null,
     },
   },
-  "edit_predictions": {
-    "mode": "eager",
-  },
+  // "edit_predictions": {
+  //   "provider": "open_ai_compatible_api",
+  //   "open_ai_compatible_api": {
+  //     "api_url": "http://localhost:8080/v1/completions",
+  //     "model": "zeta-2.1",
+  //     "prompt_format": "zeta2_1",
+  //     "max_output_tokens": 512
+  //   }
+  // },
+  // "edit_predictions": {
+  //   "provider": "ollama",
+  //   "mode": "subtle",
+  //   "ollama": {
+  //     "api_url": "http://localhost:11434",
+  //     "model": "qwen2.5-coder:32b",
+  //     "prompt_format": "qwen",
+  //     "max_output_tokens": 64
+  //   }
+  // },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
   "format_on_save": "on",
@@ -57,7 +123,11 @@
   },
   "languages": {
     "TypeScript": {
-      "language_servers": ["tsgo", "vtsls", "tailwindcss-language-server"],
+      "language_servers": [
+        "tsgo",
+        "vtsls",
+        "tailwindcss-language-server"
+      ],
     },
   },
   "linked_edits": true,
@@ -69,16 +139,30 @@
     },
     "tailwindcss-language-server": {
       "settings": {
-        "classFunctions": ["cva", "cx", "cn"],
+        "classFunctions": [
+          "cva",
+          "cx",
+          "cn"
+        ],
         "experimental": {
-          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"],
+          "classRegex": [
+            "[cls|className]\\s\\:\\=\\s\"([^\"]*)"
+          ],
         },
       },
     },
     "vtsls": {
       "settings": {
-        "javascript": { "tsserver": { "maxTsServerMemory": 10240 } },
-        "typescript": { "tsserver": { "maxTsServerMemory": 10240 } },
+        "javascript": {
+          "tsserver": {
+            "maxTsServerMemory": 10240
+          }
+        },
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 10240
+          }
+        },
       },
     },
   },
@@ -103,7 +187,7 @@
   "restore_on_file_reopen": true,
   "restore_on_startup": "last_session",
   "show_whitespaces": "boundary",
-  "soft_wrap": "editor_width",
+  "soft_wrap": "none",
   "selection_highlight": true,
   "tabs": {
     "close_position": "right",
@@ -127,7 +211,13 @@
         // Default directories to search for virtual environments, relative
         // to the current working directory. We recommend overriding this
         // in your project's settings, rather than globally.
-        "directories": [".env", ".env.local", "env", ".venv", "venv"],
+        "directories": [
+          ".env",
+          ".env.local",
+          "env",
+          ".venv",
+          "venv"
+        ],
         // Can also be `csh`, `fish`, and `nushell`
         "activate_script": "default",
       },
