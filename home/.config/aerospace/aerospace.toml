@@ -8,7 +8,7 @@ after-startup-command = [
 ]
 
 [mode.main.binding]
-alt-enter = 'exec-and-forget wezterm start'
+#alt-enter = 'exec-and-forget wezterm start'
 
 # Monitor focusing
 alt-shift-slash = 'focus-monitor --wrap-around next'
