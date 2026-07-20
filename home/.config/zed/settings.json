@@ -11,11 +11,11 @@
     "allow_data_collection": "no",
     "mode": "subtle",
     "provider": "ollama",
-    "ollama": {
-      "prompt_format": "zeta2_1",
-      "model": "hf.co/mradermacher/zeta-2.1-i1-GGUF:Q4_K_M",
-      "api_url": "http://localhost:11434"
-    }
+    // "ollama": {
+    //   "prompt_format": "zeta2_1",
+    //   "model": "hf.co/mradermacher/zeta-2.1-i1-GGUF:Q4_K_M",
+    //   "api_url": "http://localhost:11434"
+    // }
   },
   "cli_default_open_behavior": "existing_window",
   "outline_panel": {
@@ -28,14 +28,20 @@
     "allowed": false,
   },
   "context_servers": {
-    // "mcp-server-context7": {
-    //   "enabled": true,
-    //   "remote": false,
-    //   "settings": {}
-    // }
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {}
+    }
   },
   "agent_servers": {
     "claude-acp": {
+      "default_config_options": {
+        "fast": false,
+        "effort": "high",
+        "model": "opus[1m]",
+        "mode": "default"
+      },
       "type": "registry"
     },
     "claude-acp-local": {
@@ -46,21 +52,26 @@
       ]
     },
     "cursor": {
+      "default_config_options": {
+        "mode": "agent",
+        "context": "1m",
+        "model": "claude-opus-4-8"
+      },
       "type": "registry",
     },
   },
   "agent": {
-    "thinking_display": "preview",
+    "thinking_display": "auto",
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
       "provider": "claude-acp",
-      "model": "claude-opus-4-6",
+      "model": "claude-opus-4-8",
     },
     "inline_alternatives": [
       {
         "provider": "anthropic",
-        "model": "claude-opus-4-6"
+        "model": "claude-opus-4-8"
       }
     ]
   },
@@ -112,7 +123,10 @@
   // },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
-  "file_scan_inclusions": [".env", ".env.*"],
+  "file_scan_inclusions": [
+    ".env",
+    ".env.*"
+  ],
   "format_on_save": "on",
   "icon_theme": "Catppuccin Frappé",
   "indent_guides": {
@@ -147,7 +161,15 @@
         ],
         "experimental": {
           "classRegex": [
-            "[cls|className]\\s\\:\\=\\s\"([^\"]*)"
+            "[cls|className]\\s\\:\\=\\s\"([^\"]*)",
+            [
+              "cn\\(((?:[^()]|\\([^()]*\\))*)\\)",
+              "[\"'`]([^\"'`]*).*?[\"'`]"
+            ],
+            [
+              "cva\\(([\\s\\S]*?)\\)(;|\\n)",
+              "[\"'`]([^\"'`]*).*?[\"'`]"
+            ]
           ],
         },
       },
@@ -187,9 +209,10 @@
   },
   "restore_on_file_reopen": true,
   "restore_on_startup": "last_session",
+  "seed_search_query_from_cursor": "never",
+  "selection_highlight": true,
   "show_whitespaces": "boundary",
   "soft_wrap": "none",
-  "selection_highlight": true,
   "tabs": {
     "close_position": "right",
     "show_diagnostics": "errors",
@@ -242,4 +265,7 @@
   "ui_font_weight": 500,
   "use_autoclose": true,
   "when_closing_with_no_tabs": "keep_window_open",
+  "wrap_guides": [
+    120
+  ],
 }
