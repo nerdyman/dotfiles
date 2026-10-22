@@ -2,6 +2,19 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+--- Loads a module relative to the config directory, returning nil when the file
+--- is absent. `require` is unusable here because it maps dots in a module name
+--- to path separators.
+local function require_optional(relative_path)
+  local path = wezterm.config_dir .. '/' .. relative_path
+
+  if #wezterm.glob(path) == 0 then
+    return nil
+  end
+
+  return dofile(path)
+end
+
 -- Meta
 config.automatically_reload_config = true
 
@@ -225,6 +238,13 @@ config.keys = {
     action = act.ActivateCommandPalette,
   },
 }
+
+-- Startup
+local startup = require_optional 'scripts/startup.local.lua'
+
+if startup then
+  startup.setup()
+end
 
 return config
 
