@@ -7,10 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_buffer_font_size": 14,
+  "agent_ui_font_size": 17,
+  "diff_view_style": "split",
   "edit_predictions": {
     "allow_data_collection": "no",
     "mode": "subtle",
-    "provider": "ollama",
+    "provider": "copilot",
+    // "provider": "ollama",
     // "ollama": {
     //   "prompt_format": "zeta2_1",
     //   "model": "hf.co/mradermacher/zeta-2.1-i1-GGUF:Q4_K_M",
@@ -35,27 +39,25 @@
     }
   },
   "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
     "claude-acp": {
       "default_config_options": {
         "fast": false,
         "effort": "high",
-        "model": "opus[1m]",
+        "model": "opus",
         "mode": "default"
       },
       "type": "registry"
     },
-    "claude-acp-local": {
-      "type": "custom",
-      "command": "node",
-      "args": [
-        "/Users/me/Documents/projects/nerdyman/claude-agent-acp/dist/index.js"
-      ]
-    },
     "cursor": {
       "default_config_options": {
+        "effort": "high",
+        "thinking": "false",
         "mode": "agent",
         "context": "1m",
-        "model": "claude-opus-4-8"
+        "model": "claude-opus-5-5"
       },
       "type": "registry",
     },
@@ -64,6 +66,7 @@
     "thinking_display": "auto",
     "default_profile": "ask",
     "dock": "left",
+    "limit_content_width": false,
     "default_model": {
       "provider": "claude-acp",
       "model": "claude-opus-4-8",
@@ -123,6 +126,9 @@
   // },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
+  "file_finder": {
+    "modal_max_width": "medium"
+  },
   "file_scan_inclusions": [
     ".env",
     ".env.*"
@@ -147,11 +153,6 @@
   },
   "linked_edits": true,
   "lsp": {
-    "biome": {
-      "settings": {
-        "require_config_file": true,
-      },
-    },
     "tailwindcss-language-server": {
       "settings": {
         "classFunctions": [
@@ -190,6 +191,9 @@
     },
   },
   "lsp_document_colors": "inlay",
+  "markdown_preview": {
+    "limit_content_width": false
+  },
   "preferred_line_length": 110,
   "preview_tabs": {
     "enable_keep_preview_on_code_navigation": false,
@@ -202,7 +206,7 @@
     "default_width": 280,
     "dock": "right",
     "file_icons": true,
-    "folder_icons": false,
+    "folder_indicator": "icon",
     "git_status": true,
     "indent_size": 8,
     "show_diagnostics": "errors",
