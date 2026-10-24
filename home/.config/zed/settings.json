@@ -7,12 +7,45 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "mode": "build",
+        "model": "vercel/deepseek/deepseek-v4-pro"
+      },
+      "favorite_config_option_values": {
+        "model": [
+          "vercel/openai/gpt-5-codex",
+          "vercel/anthropic/claude-opus-5",
+          "vercel/anthropic/claude-sonnet-5",
+          "vercel/deepseek/deepseek-v4-pro"
+        ]
+      },
+      "type": "registry"
+    },
+    "cursor": {
+      "default_config_options": {
+        "mode": "agent",
+        "model": "claude-sonnet-5"
+      },
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
   "agent": {
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5",
+      "provider": "opencode",
+      "model": "vercel/deepseek/deepseek-v4-pro",
     },
   },
   "base_keymap": "VSCode",
@@ -23,6 +56,7 @@
     "custom": 2.15,
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "current_line_highlight": "all",
@@ -42,11 +76,15 @@
     },
   },
   "edit_predictions": {
+    "provider": "copilot",
     "mode": "eager",
   },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
-  "file_scan_inclusions": [".env", ".env.*"],
+  "file_scan_inclusions": [
+    ".env",
+    ".env.*"
+  ],
   "format_on_save": "on",
   "icon_theme": "Catppuccin Frappé",
   "indent_guides": {
@@ -58,7 +96,11 @@
   },
   "languages": {
     "TypeScript": {
-      "language_servers": ["tsgo", "vtsls", "tailwindcss-language-server"],
+      "language_servers": [
+        "tsgo",
+        "vtsls",
+        "tailwindcss-language-server"
+      ],
     },
   },
   "linked_edits": true,
@@ -70,21 +112,38 @@
     },
     "tailwindcss-language-server": {
       "settings": {
-        "classFunctions": ["cva", "cx", "cn"],
+        "classFunctions": [
+          "cva",
+          "cx",
+          "cn"
+        ],
         "experimental": {
-          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"],
+          "classRegex": [
+            "[cls|className]\\s\\:\\=\\s\"([^\"]*)"
+          ],
         },
       },
     },
     "vtsls": {
       "settings": {
-        "javascript": { "tsserver": { "maxTsServerMemory": 10240 } },
-        "typescript": { "tsserver": { "maxTsServerMemory": 10240 } },
+        "javascript": {
+          "tsserver": {
+            "maxTsServerMemory": 10240,
+          },
+        },
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 10240,
+          },
+        },
       },
     },
   },
   "lsp_document_colors": "inlay",
   "preferred_line_length": 110,
+  "prettier": {
+    "allowed": false,
+  },
   "preview_tabs": {
     "enable_keep_preview_on_code_navigation": false,
     "enable_preview_from_file_finder": false,
@@ -128,7 +187,13 @@
         // Default directories to search for virtual environments, relative
         // to the current working directory. We recommend overriding this
         // in your project's settings, rather than globally.
-        "directories": [".env", ".env.local", "env", ".venv", "venv"],
+        "directories": [
+          ".env",
+          ".env.local",
+          "env",
+          ".venv",
+          "venv"
+        ],
         // Can also be `csh`, `fish`, and `nushell`
         "activate_script": "default",
       },
