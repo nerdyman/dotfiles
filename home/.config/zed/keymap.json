@@ -1,18 +1,20 @@
 [
-  // Disable cmd+w to prevent app from closing.
   {
+    "context": "Workspace",
     "bindings": {
-      "cmd-w": null,
-      "cmd-shift-w": null,
+      "cmd-w": "pane::CloseActiveItem",
+      "cmd-shift-w": null
     },
+    "unbind": {
+      "ctrl-w": "workspace::CloseActiveDock"
+    }
   },
   {
     "context": "Editor",
     "bindings": {
-      "shift-cmd-a": "workspace::AddFolderToProject",
+      "cmd-shift-a": "workspace::AddFolderToProject",
       // https://github.com/zed-industries/zed/discussions/14195
       // "shift-cmd-w": "workspace::RemoveFolderFromProject",
-      "cmd-w": "pane::CloseActiveItem",
       "cmd-shift-f": "project_search::SearchInNew",
       "cmd-shift-r": "pane::RevealInProjectPanel",
       "shift-alt-a": "agent::ToggleFocus",
@@ -41,4 +43,17 @@
       "cmd-w": "pane::CloseActiveItem",
     },
   },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-l": "language_selector::Toggle",
+      "alt-shift-cmd-o": ["task::Spawn", { "task_name": "Open file in current workspace" }]
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k m": "language_selector::Toggle"
+    }
+  }
 ]

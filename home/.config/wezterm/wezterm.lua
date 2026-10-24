@@ -2,6 +2,19 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+--- Loads a module relative to the config directory, returning nil when the file
+--- is absent. `require` is unusable here because it maps dots in a module name
+--- to path separators.
+local function require_optional(relative_path)
+  local path = wezterm.config_dir .. '/' .. relative_path
+
+  if #wezterm.glob(path) == 0 then
+    return nil
+  end
+
+  return dofile(path)
+end
+
 -- Meta
 config.automatically_reload_config = true
 
@@ -140,6 +153,23 @@ config.keys = {
     mods = "OPT",
     action = act{ SendString = "\x1bf" }
   },
+  -- Make cmd w close the current pane
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
+  -- Make cmd shift w split the current pane horizontally and close the original pane
+  {
+    key = 'w',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action_callback(function(window, pane)
+      -- split off the current pane, creating a fresh sibling
+      window:perform_action(act.SplitHorizontal { domain = 'CurrentPaneDomain' }, pane)
+      -- close the ORIGINAL pane (targeted), so the new pane expands to fill it
+      window:perform_action(act.CloseCurrentPane { confirm = false }, pane)
+    end),
+  },
   -- Set tab title
   {
     key = 'E',
@@ -208,6 +238,13 @@ config.keys = {
     action = act.ActivateCommandPalette,
   },
 }
+
+-- Startup
+local startup = require_optional 'scripts/startup.local.lua'
+
+if startup then
+  startup.setup()
+end
 
 return config
 

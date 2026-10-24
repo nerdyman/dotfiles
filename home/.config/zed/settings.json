@@ -7,13 +7,48 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_buffer_font_size": 14,
+  "agent_ui_font_size": 17,
+  "diff_view_style": "split",
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "mode": "subtle",
+    "provider": "copilot"
+  },
+  "cli_default_open_behavior": "existing_window",
   "outline_panel": {
     "dock": "left"
   },
   "git_panel": {
     "dock": "left"
   },
+  "prettier": {
+    "allowed": false,
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {}
+    }
+  },
   "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    },
+    "cursor": {
+      "default_config_options": {
+        "effort": "high",
+        "thinking": "false",
+        "mode": "agent",
+        "context": "1m",
+        "model": "claude-opus-5-5"
+      },
+      "type": "registry",
+    },
     "opencode": {
       "default_config_options": {
         "mode": "build",
@@ -28,25 +63,23 @@
         ]
       },
       "type": "registry"
-    },
-    "cursor": {
-      "default_config_options": {
-        "mode": "agent",
-        "model": "claude-sonnet-5"
-      },
-      "type": "registry"
-    },
-    "claude-acp": {
-      "type": "registry",
-    },
+    }
   },
   "agent": {
+    "thinking_display": "auto",
     "default_profile": "ask",
     "dock": "left",
+    "limit_content_width": false,
     "default_model": {
-      "provider": "opencode",
-      "model": "vercel/deepseek/deepseek-v4-pro",
+      "provider": "claude-acp",
+      "model": "claude-opus-4-8"
     },
+    "inline_alternatives": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-8"
+      }
+    ]
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Hasklig",
@@ -75,12 +108,11 @@
       "max_severity": null,
     },
   },
-  "edit_predictions": {
-    "provider": "copilot",
-    "mode": "eager",
-  },
   "ensure_final_newline_on_save": true,
   "extend_comment_on_newline": false,
+  "file_finder": {
+    "modal_max_width": "medium"
+  },
   "file_scan_inclusions": [
     ".env",
     ".env.*"
@@ -105,11 +137,6 @@
   },
   "linked_edits": true,
   "lsp": {
-    "biome": {
-      "settings": {
-        "require_config_file": true,
-      },
-    },
     "tailwindcss-language-server": {
       "settings": {
         "classFunctions": [
@@ -119,7 +146,15 @@
         ],
         "experimental": {
           "classRegex": [
-            "[cls|className]\\s\\:\\=\\s\"([^\"]*)"
+            "[cls|className]\\s\\:\\=\\s\"([^\"]*)",
+            [
+              "cn\\(((?:[^()]|\\([^()]*\\))*)\\)",
+              "[\"'`]([^\"'`]*).*?[\"'`]"
+            ],
+            [
+              "cva\\(([\\s\\S]*?)\\)(;|\\n)",
+              "[\"'`]([^\"'`]*).*?[\"'`]"
+            ]
           ],
         },
       },
@@ -128,18 +163,21 @@
       "settings": {
         "javascript": {
           "tsserver": {
-            "maxTsServerMemory": 10240,
-          },
+            "maxTsServerMemory": 10240
+          }
         },
         "typescript": {
           "tsserver": {
-            "maxTsServerMemory": 10240,
-          },
+            "maxTsServerMemory": 10240
+          }
         },
       },
     },
   },
   "lsp_document_colors": "inlay",
+  "markdown_preview": {
+    "limit_content_width": false
+  },
   "preferred_line_length": 110,
   "prettier": {
     "allowed": false,
@@ -155,16 +193,17 @@
     "default_width": 280,
     "dock": "right",
     "file_icons": true,
-    "folder_icons": false,
+    "folder_indicator": "icon",
     "git_status": true,
     "indent_size": 8,
     "show_diagnostics": "errors",
   },
   "restore_on_file_reopen": true,
   "restore_on_startup": "last_session",
-  "show_whitespaces": "boundary",
-  "soft_wrap": "editor_width",
+  "seed_search_query_from_cursor": "never",
   "selection_highlight": true,
+  "show_whitespaces": "boundary",
+  "soft_wrap": "none",
   "tabs": {
     "close_position": "right",
     "show_diagnostics": "errors",
@@ -217,4 +256,7 @@
   "ui_font_weight": 500,
   "use_autoclose": true,
   "when_closing_with_no_tabs": "keep_window_open",
+  "wrap_guides": [
+    120
+  ],
 }
