@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 ## custom variables to determine which settings to use (defaults presume we're using homebrew on Linux)
 __ZSH="$HOME/.oh-my-zsh/"
@@ -157,3 +156,6 @@ eval "$(starship init zsh)"
 # fnm
 export PATH=/home/me/.fnm:$PATH
 eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
+
+# opencode
+export PATH=/Users/me/.opencode/bin:$PATH
