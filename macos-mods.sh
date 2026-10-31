@@ -14,6 +14,11 @@ sudo scutil --set HostName "$MOD_HOSTNAME"
 
 # Reset to defaults using `defaults delete -g <FEATURE>`
 
+# desktop
+# disable hiding windows when deskstop is clicked
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+killall WindowManager
+
 # dock
 # position
 defaults write com.apple.dock "orientation" -string "bottom"
