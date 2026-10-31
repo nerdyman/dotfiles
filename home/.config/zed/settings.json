@@ -66,10 +66,11 @@
     }
   },
   "agent": {
-    "thinking_display": "auto",
+    "thinking_display": "preview",
     "default_profile": "ask",
     "dock": "left",
-    "limit_content_width": false,
+    "limit_content_width": true,
+    "max_content_width": 900,
     "default_model": {
       "provider": "claude-acp",
       "model": "claude-opus-4-8"
