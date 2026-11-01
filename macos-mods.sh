@@ -8,6 +8,8 @@ FALLBACK_HOSTNAME=$(hostname)
 MOD_HOSTNAME=$FALLBACK_HOSTNAME
 SKIP_PRIVACY=0
 SKIP_KEYBINDINGS_DICT=0
+SKIP_KEYBOARD_LAYOUTS=0
+SCRIPT_DIR="${0:A:h}"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -21,6 +23,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --skip-keybindings-dict)
             SKIP_KEYBINDINGS_DICT=1
+            shift
+            ;;
+        --skip-keyboard-layouts)
+            SKIP_KEYBOARD_LAYOUTS=1
             shift
             ;;
         *)
@@ -173,9 +179,17 @@ defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
 if (( SKIP_KEYBINDINGS_DICT )); then
     echo 'Skipping keybindings dict'
 else
-    SCRIPT_DIR="${0:A:h}"
     mkdir -p "$HOME/Library/KeyBindings"
     cp "$SCRIPT_DIR/home/Library/KeyBindings/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+fi
+
+# keyboard layouts
+# apply UK keyboard layouts
+if (( SKIP_KEYBOARD_LAYOUTS )); then
+    echo 'Skipping keyboard layouts (--skip-keyboard-layouts)'
+else
+    mkdir -p "$HOME/Library/Keyboard Layouts"
+    cp -f "$SCRIPT_DIR/home/Library/Keyboard Layouts/"*.keylayout "$SCRIPT_DIR/home/Library/Keyboard Layouts/"*.icns "$HOME/Library/Keyboard Layouts/"
 fi
 
 # Early out before privacy.sexy

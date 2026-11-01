@@ -10,7 +10,7 @@ Configs and scripts for macOS and Linux.
 
 ## macOS & Linux
 
-- [Git](./home/.gitconfig)
+- Git
   - [.gitconfig](./home/.gitconfig)
   - Delta [↗](https://github.com/dandavison/delta)
 - [Starship](./home/.config/starship)
@@ -32,10 +32,9 @@ Configs and scripts for macOS and Linux.
 ## macOS
 
 - [AeroSpace](./home/.config/aerospace/aerospace.toml)
-- [Keybindings](./home/Library/KeyBindings)
 - [macOS mods](./macos-mods.sh) configures macOS how I like it
-- [Actual working UK keyboard layouts](./Library/Keyboard%20Layouts) taken from [http://liyang.hu/osx-british.xhtml](http://liyang.hu/osx-british.xhtml)
-- [Keyboard dict for home/end, start/end key bindings](./home/Library/Dictionaries/Keyboard.dict)
+- [Keyboard dict for home/end, start/end key bindings](./home/Library/KeyBindings)
+- [Actual working UK keyboard layouts](./home/Library/Keyboard%20Layouts) taken from [http://liyang.hu/osx-british.xhtml](http://liyang.hu/osx-british.xhtml)
 
 ### Install Dependencies
 
@@ -53,6 +52,7 @@ bash install-deps.sh
 ./macos-mods.sh --hostname example      # Run everything and set a custom hostname
 ./macos-mods.sh --skip-privacy          # Run everything except for privacy.sexy commands
 ./macos-mods.sh --skip-keybindings-dict # Run everything except for the keybindings dict
+./macos-mods.sh --skip-keyboard-layouts # Run everything except for the keyboard layouts
 ```
 
 ## Linux
