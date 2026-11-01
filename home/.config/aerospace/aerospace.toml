@@ -1,17 +1,17 @@
 # Reference: https://github.com/i3/i3/blob/next/etc/config
-
+config-version = 2
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
-after-startup-command = [
-  'exec-and-forget borders'
-]
+after-startup-command = ['exec-and-forget borders']
 
 [mode.main.binding]
-#alt-enter = 'exec-and-forget wezterm start'
+alt-enter = 'exec-and-forget open "raycast://confetti"'
 
-# Monitor focusing
-alt-shift-slash = 'focus-monitor --wrap-around next'
+# Monitor focusing and window roving
+alt-backtick = 'workspace-back-and-forth' # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+alt-shift-backtick = 'focus-monitor --wrap-around next'
+alt-shift-tab = 'move-node-to-monitor --wrap-around --focus-follows-window next'
 
 # Window focusing
 alt-x = 'focus left  --boundaries workspace --boundaries-action wrap-around-the-workspace'
@@ -24,57 +24,55 @@ alt-shift-j = 'move left'
 alt-shift-k = 'move down'
 alt-shift-l = 'move up'
 alt-shift-semicolon = 'move right'
-alt-shift-comma = 'move-node-to-monitor --wrap-around --focus-follows-window next'
 
 alt-h = 'split horizontal'
 alt-v = 'split vertical'
 
 alt-f = 'fullscreen'
-
-alt-s = 'layout v_accordion'               # 'layout stacking' in i3
-alt-w = 'layout h_accordion'               # 'layout tabbed' in i3
+alt-s = 'layout v_accordion' # 'layout stacking' in i3
+alt-w = 'layout h_accordion' # 'layout tabbed' in i3
 alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
-
 alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-ctrl-alt-tab = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -48'
 alt-shift-equal = 'resize smart +48'
 
-# Not supported, because this command is redundant in AeroSpace mental model.
-# See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
-#alt-space = 'focus toggle_tiling_floating'
-
-# `focus parent`/`focus child` are not yet supported, and it's not clear whether they
-# should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
-# alt-a = 'focus parent'
-
-ctrl-1 = 'workspace web'
+ctrl-1 = 'workspace main'
 ctrl-2 = 'workspace code'
 ctrl-3 = 'workspace term'
 ctrl-4 = 'workspace chat'
-ctrl-5 = 'workspace ops'
-ctrl-6 = 'workspace ai'
-ctrl-7 = 'workspace 7'
+ctrl-5 = 'workspace infr'
+ctrl-6 = 'workspace sec1'
+ctrl-7 = 'workspace sec2'
 ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
-ctrl-0 = 'workspace 10'
+ctrl-0 = 'workspace temp'
 
-ctrl-shift-1 = 'move-node-to-workspace web'
+ctrl-shift-1 = 'move-node-to-workspace main'
 ctrl-shift-2 = 'move-node-to-workspace code'
 ctrl-shift-3 = 'move-node-to-workspace term'
 ctrl-shift-4 = 'move-node-to-workspace chat'
-ctrl-shift-5 = 'move-node-to-workspace ops'
-ctrl-shift-6 = 'move-node-to-workspace ai'
-ctrl-shift-7 = 'move-node-to-workspace 7'
+ctrl-shift-5 = 'move-node-to-workspace infr'
+ctrl-shift-6 = 'move-node-to-workspace sec1'
+ctrl-shift-7 = 'move-node-to-workspace sec2'
 ctrl-shift-8 = 'move-node-to-workspace 8'
 ctrl-shift-9 = 'move-node-to-workspace 9'
-ctrl-shift-0 = 'move-node-to-workspace 10'
+ctrl-shift-0 = 'move-node-to-workspace temp'
 
-alt-shift-c = 'reload-config'
+[workspace-to-monitor-force-assignment]
+main = 'main'
+code = 'main'
+term = 'main'
+chat = 'main'
+infr = 'main'
+sec1 = 'secondary'
+sec2 = 'secondary'
+"8" = 'main'
+"9" = 'main'
+temp = 'main'
+
+# alt-shift-c = 'reload-config'
 alt-shift-r = 'flatten-workspace-tree'
 alt-r = 'mode resize'
 
@@ -88,8 +86,8 @@ esc = 'mode main'
 
 [gaps]
 inner.horizontal = 3
-inner.vertical =   3
-outer.left =       4
-outer.bottom =     4
-outer.top =        4
-outer.right =      4
+inner.vertical = 3
+outer.left = 4
+outer.bottom = 4
+outer.top = 4
+outer.right = 4
