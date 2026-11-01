@@ -6,7 +6,11 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 after-startup-command = ['exec-and-forget borders']
 
 [mode.main.binding]
+
+# Raycast
 alt-enter = 'exec-and-forget open "raycast://confetti"'
+# Emoji ext doesn't seem to like being invoked without an alias already set so this defeats the purpose
+# cmd-shift-2 = 'exec-and-forget open "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"'
 
 # Monitor focusing and window roving
 alt-backtick = 'workspace-back-and-forth' # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
