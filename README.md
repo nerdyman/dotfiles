@@ -35,6 +35,7 @@ Configs and scripts for macOS and Linux.
 - [Keybindings](./home/Library/KeyBindings)
 - [macOS mods](./macos-mods.sh) configures macOS how I like it
 - [Actual working UK keyboard layouts](./Library/Keyboard%20Layouts) taken from [http://liyang.hu/osx-british.xhtml](http://liyang.hu/osx-british.xhtml)
+- [Keyboard dict for home/end, start/end key bindings](./home/Library/Dictionaries/Keyboard.dict)
 
 ### Install Dependencies
 
