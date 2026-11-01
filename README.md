@@ -46,19 +46,27 @@ Configs and scripts for macOS and Linux.
 - Uses [GNU coreutils↗](https://formulae.brew.sh/formula/coreutils)
 - [Actual working UK keyboard layouts](./Library/Keyboard%20Layouts) (taken from [http://liyang.hu/osx-british.xhtml](http://liyang.hu/osx-british.xhtml))
 
-## Linux
+### Install Dependencies
 
-- [Arch Linux Install Scripts](./archinstall/)
-- [Gnome mods](./gnome-mods.sh)
-
-## Install Dependencies
-
-[Homebrew](https://brew.sh/) is used to install dependencies. Run the following to install CLI tools
-on Linux and CLI tools and apps on macOS.
+[Homebrew](https://brew.sh/) is used to install dependencies, you should already have it installed.
 
 ```sh
 bash install-deps.sh
 ```
+
+### Applying Mods
+
+```sh
+./macos-mods.sh # Run everything
+./macos-mods.sh --hostname example      # Run everything and set a custom hostname
+./macos-mods.sh --skip-privacy          # Run everything except for privacy.sexy commands
+./macos-mods.sh --skip-keybindings-dict # Run everything except for the keybindings dict
+```
+
+## Linux
+
+- [Arch Linux Install Scripts](./archinstall/)
+- [Gnome mods](./gnome-mods.sh)
 
 ### Fonts
 

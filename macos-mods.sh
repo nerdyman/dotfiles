@@ -2,11 +2,32 @@
 
 setopt VERBOSE
 
-# @see https://daiderd.com/nix-darwin/manual/index.html
 # @see https://gist.github.com/romanhaa/9804183f242991007b316a59c4ba5e5a
 
 FALLBACK_HOSTNAME=$(hostname)
-MOD_HOSTNAME=${1:-$FALLBACK_HOSTNAME}
+MOD_HOSTNAME=$FALLBACK_HOSTNAME
+SKIP_PRIVACY=0
+SKIP_KEYBINDINGS_DICT=0
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --hostname)
+            MOD_HOSTNAME="$2"
+            shift 2
+            ;;
+        --skip-privacy)
+            SKIP_PRIVACY=1
+            shift
+            ;;
+        --skip-keybindings-dict)
+            SKIP_KEYBINDINGS_DICT=1
+            shift
+            ;;
+        *)
+            shift
+            ;;
+    esac
+done
 
 echo "Using hostname: $MOD_HOSTNAME"
 
@@ -18,6 +39,10 @@ sudo scutil --set HostName "$MOD_HOSTNAME"
 # disable hiding windows when deskstop is clicked
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 killall WindowManager
+
+# Prevent windows of the same application on different monitors from stealing focus from each other https://nikitabobko.github.io/AeroSpace/guide#a-note-on-displays-have-separate-spaces
+defaults write com.apple.spaces spans-displays -bool true
+killall SystemUIServer
 
 # dock
 # position
@@ -143,7 +168,23 @@ defaults write .GlobalPreferences com.apple.mouse.scaling -1
 # disable haptic feedback
 defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
 
-# https://privacy.sexy — v0.13.8 — Tue, 17 Jun 2025 10:42:19 GMT
+# keybindings
+# apply DefaultKeyBinding.dict (Home/End -> line start/end)
+if (( SKIP_KEYBINDINGS_DICT )); then
+    echo 'Skipping keybindings dict'
+else
+    SCRIPT_DIR="${0:A:h}"
+    mkdir -p "$HOME/Library/KeyBindings"
+    cp "$SCRIPT_DIR/home/Library/KeyBindings/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+fi
+
+# Early out before privacy.sexy
+if (( SKIP_PRIVACY )); then
+    echo 'Skipping privacy.sexy section (--skip-privacy)'
+    exit 0
+fi
+
+# https://privacy.sexy — v0.13.8 — Sun, 01 Nov 2026 14:33:59 GMT
 if [ "$EUID" -ne 0 ]; then
     script_path=$([[ "$0" = /* ]] && echo "$0" || echo "$PWD/${0#./}")
     sudo "$script_path" || (
@@ -154,107 +195,24 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 
-# Disable personalized advertisements and identifier tracking
-echo '--- Disable personalized advertisements and identifier tracking'
-defaults write com.apple.AdLib allowIdentifierForAdvertising -bool false
-defaults write com.apple.AdLib allowApplePersonalizedAdvertising -bool false
-defaults write com.apple.AdLib forceLimitAdTracking -bool true
+# ----------------------------------------------------------
+# ------------Disable remote management service-------------
+# ----------------------------------------------------------
+echo '--- Disable remote management service'
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop
 # ----------------------------------------------------------
 
 
 # ----------------------------------------------------------
-# ------------Disable Microsoft Office telemetry------------
+# -----------Remove Apple Remote Desktop Settings-----------
 # ----------------------------------------------------------
-echo '--- Disable Microsoft Office telemetry'
-defaults write com.microsoft.office DiagnosticDataTypePreference -string ZeroDiagnosticData
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# ---------------Disable guest account login----------------
-# ----------------------------------------------------------
-echo '--- Disable guest account login'
-sudo defaults write '/Library/Preferences/com.apple.loginwindow' 'GuestEnabled' -bool NO
-if ! command -v 'sysadminctl' &> /dev/null; then
-    echo 'Skipping because "sysadminctl" is not found.'
-else
-    sudo sysadminctl -guestAccount off
-fi
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# -----------Disable guest file sharing over SMB------------
-# ----------------------------------------------------------
-echo '--- Disable guest file sharing over SMB'
-sudo defaults write '/Library/Preferences/SystemConfiguration/com.apple.smb.server' 'AllowGuestAccess' -bool NO
-if ! command -v 'sysadminctl' &> /dev/null; then
-    echo 'Skipping because "sysadminctl" is not found.'
-else
-    sudo sysadminctl -smbGuestAccess off
-fi
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# -----------Disable guest file sharing over AFP------------
-# ----------------------------------------------------------
-echo '--- Disable guest file sharing over AFP'
-sudo defaults write '/Library/Preferences/com.apple.AppleFileServer' 'guestAccess' -bool NO
-if ! command -v 'sysadminctl' &> /dev/null; then
-    echo 'Skipping because "sysadminctl" is not found.'
-else
-    sudo sysadminctl -afpGuestAccess off
-fi
-sudo killall -HUP AppleFileServer
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# -------------Disable online spell correction--------------
-# ----------------------------------------------------------
-echo '--- Disable online spell correction'
-defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# ---------------Disable remote Apple events----------------
-# ----------------------------------------------------------
-echo '--- Disable remote Apple events'
-sudo systemsetup -setremoteappleevents off
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# --Disable automatic storage of documents in iCloud Drive--
-# ----------------------------------------------------------
-echo '--- Disable automatic storage of documents in iCloud Drive'
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# ---------------Disable AirDrop file sharing---------------
-# ----------------------------------------------------------
-echo '--- Disable AirDrop file sharing'
-defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# ----------------Disable Spotlight indexing----------------
-# ----------------------------------------------------------
-echo '--- Disable Spotlight indexing'
-sudo mdutil -i off -d /
-# ----------------------------------------------------------
-
-
-# ----------------------------------------------------------
-# ------Disable participation in Siri data collection-------
-# ----------------------------------------------------------
-echo '--- Disable participation in Siri data collection'
-defaults write com.apple.assistant.support 'Siri Data Sharing Opt-In Status' -int 2
+echo '--- Remove Apple Remote Desktop Settings'
+sudo rm -rf /var/db/RemoteManagement
+sudo defaults delete /Library/Preferences/com.apple.RemoteDesktop.plist
+defaults delete ~/Library/Preferences/com.apple.RemoteDesktop.plist
+sudo rm -rf /Library/Application\ Support/Apple/Remote\ Desktop/
+rm -r ~/Library/Application\ Support/Remote\ Desktop/
+rm -r ~/Library/Containers/com.apple.RemoteDesktop
 # ----------------------------------------------------------
 
 
@@ -312,4 +270,60 @@ defaults write com.apple.systemuiserver 'NSStatusItem Visible Siri' 0
 echo '--- Remove Siri from status menu'
 defaults write com.apple.Siri 'StatusMenuVisible' -bool false
 defaults write com.apple.Siri 'UserHasDeclinedEnable' -bool true
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# ------Disable participation in Siri data collection-------
+# ----------------------------------------------------------
+echo '--- Disable participation in Siri data collection'
+defaults write com.apple.assistant.support 'Siri Data Sharing Opt-In Status' -int 2
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# ---------------Disable remote Apple events----------------
+# ----------------------------------------------------------
+echo '--- Disable remote Apple events'
+sudo systemsetup -setremoteappleevents off
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# --Disable automatic storage of documents in iCloud Drive--
+# ----------------------------------------------------------
+echo '--- Disable automatic storage of documents in iCloud Drive'
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# ------Disable display of recent applications on Dock------
+# ----------------------------------------------------------
+echo '--- Disable display of recent applications on Dock'
+defaults write com.apple.dock show-recents -bool false
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# ---------------Disable AirDrop file sharing---------------
+# ----------------------------------------------------------
+echo '--- Disable AirDrop file sharing'
+defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# ----------------Disable Spotlight indexing----------------
+# ----------------------------------------------------------
+echo '--- Disable Spotlight indexing'
+sudo mdutil -i off -d /
+# ----------------------------------------------------------
+
+
+# Disable personalized advertisements and identifier tracking
+echo '--- Disable personalized advertisements and identifier tracking'
+defaults write com.apple.AdLib allowIdentifierForAdvertising -bool false
+defaults write com.apple.AdLib allowApplePersonalizedAdvertising -bool false
+defaults write com.apple.AdLib forceLimitAdTracking -bool true
 # ----------------------------------------------------------
