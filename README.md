@@ -47,7 +47,8 @@ bash install-deps.sh
 ### Applying Mods
 
 ```sh
-./macos-mods.sh # Run everything
+# Flags can be combined, e.g. `./macos-mods.sh --skip-privacy --skip-keybindings-dict`
+./macos-mods.sh                         # Run everything
 ./macos-mods.sh --hostname example      # Run everything and set a custom hostname
 ./macos-mods.sh --skip-privacy          # Run everything except for privacy.sexy commands
 ./macos-mods.sh --skip-keybindings-dict # Run everything except for the keybindings dict
