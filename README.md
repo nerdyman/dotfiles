@@ -58,7 +58,7 @@ bash install-deps.sh
 - [Arch Linux Install Scripts](./archinstall/)
 - [Gnome mods](./gnome-mods.sh)
 
-### Fonts
+## Fonts
 
 - [Hasklig Monospace↗](https://github.com/i-tu/Hasklig)
 - [Mona Sans↗](https://github.com/github/mona-sans)
