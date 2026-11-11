@@ -22,9 +22,6 @@
   "git_panel": {
     "dock": "left"
   },
-  "prettier": {
-    "allowed": false,
-  },
   "context_servers": {
     "mcp-server-context7": {
       "enabled": true,
@@ -37,6 +34,9 @@
       "type": "registry"
     },
     "claude-acp": {
+      "default_config_options": {
+        "model": "default"
+      },
       "type": "registry"
     },
     "cursor": {
@@ -53,14 +53,15 @@
       "default_config_options": {
         "effort": "high",
         "mode": "build",
-        "model": "vercel/deepseek/deepseek-v4-pro"
+        "model": "vercel/zai/glm-5.3"
       },
       "favorite_config_option_values": {
         "model": [
           "vercel/openai/gpt-5-codex",
           "vercel/anthropic/claude-opus-5",
           "vercel/anthropic/claude-sonnet-5",
-          "vercel/deepseek/deepseek-v4-pro"
+          "vercel/deepseek/deepseek-v4-pro",
+          "vercel/moonshotai/kimi-k3.1-pro"
         ]
       },
       "type": "registry"
@@ -139,6 +140,11 @@
   },
   "linked_edits": true,
   "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    },
     "tailwindcss-language-server": {
       "settings": {
         "classFunctions": [
