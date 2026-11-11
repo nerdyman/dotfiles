@@ -134,6 +134,11 @@ source $__ZSH_SYNTAX_HIGHLIGHTING
 [[ -f "${HOME}/.config/aliases.private" ]] && source "${HOME}/.config/aliases.private"
 [[ -f "${HOME}/.config/env.private" ]] && source "${HOME}/.config/env.private"
 
+# load hooks
+for hook in ~/.config/zsh/hooks/*.zsh(N); do
+  source "$hook"
+done
+
 ## zsh options
 #unsetopt SHARE_HISTORY
 #setopt NO_SHARE_HISTORY

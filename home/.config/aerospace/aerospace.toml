@@ -8,7 +8,7 @@ after-startup-command = ['exec-and-forget borders']
 [mode.main.binding]
 
 # Raycast
-alt-enter = 'exec-and-forget open "raycast://confetti"'
+alt-shift-enter = 'exec-and-forget open "raycast://confetti"'
 # Emoji ext doesn't seem to like being invoked without an alias already set so this defeats the purpose
 # cmd-shift-2 = 'exec-and-forget open "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"'
 

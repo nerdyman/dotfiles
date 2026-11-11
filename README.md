@@ -12,7 +12,13 @@ Configs and scripts for macOS and Linux.
 
 - Git
   - [.gitconfig](./home/.gitconfig)
+  - [Git scripts](./home/.config/git/scripts)
   - Delta [↗](https://github.com/dandavison/delta)
+- [Kitty](./home/.config/kitty)
+  - [kitty.conf](./home/.config/kitty/kitty.conf)
+  - [nerdyman kitty theme](./home/.config/kitty/themes/nerdyman.conf)
+  - [Kity GPU shaders](./home/.config/kitty/shaders)
+  - Kitty Kitten Search [↗](https://github.com/trygveaa/kitty-kitten-search)
 - [Starship](./home/.config/starship)
   - [starship.toml](./home/.config/starship/starship.toml)
 - [WezTerm](./home/.config/wezterm)
@@ -76,10 +82,6 @@ Not actively used.
 - [Karabiner](./home/.config/karabiner/karabiner.json)
 - [Gerbera UPnP server Docker config](./home/Documents/configs/gerbera/) for sharing remote folders with my TV
 - [i3wm (gaps)](./home/.config/i3)
-- [Kitty](./home/.config/kitty)
-  - [kitty.conf](./home/.config/kitty/kitty.conf)
-  - [nerdyman kitty theme](./home/.config/kitty/themes/nerdyman.conf)
-  - Kitty Kitten Search [↗](https://github.com/trygveaa/kitty-kitten-search)
 - [Visual Studio Code](./home/.config/Code)
   - [keybindings.json](./home/.config/Code/User/keybindings.json)
   - [settings.json](./home/.config/Code/User/settings.json)

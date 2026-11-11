@@ -35,7 +35,10 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-echo "Using hostname: $MOD_HOSTNAME"
+echo "Using hostname:        $MOD_HOSTNAME"
+echo "Skip keybindings dict: ${SKIP_KEYBINDINGS_DICT}"
+echo "Skip keyboard layouts: ${SKIP_KEYBOARD_LAYOUTS}"
+echo "Skip privacy settings: ${SKIP_PRIVACY}"
 
 sudo scutil --set HostName "$MOD_HOSTNAME"
 
