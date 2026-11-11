@@ -17,7 +17,7 @@ Configs and scripts for macOS and Linux.
 - [Kitty](./home/.config/kitty)
   - [kitty.conf](./home/.config/kitty/kitty.conf)
   - [nerdyman kitty theme](./home/.config/kitty/themes/nerdyman.conf)
-  - [Kity GPU shaders](./home/.config/kitty/shaders)
+  - [Kitty GPU shaders](./home/.config/kitty/shaders)
   - Kitty Kitten Search [↗](https://github.com/trygveaa/kitty-kitten-search)
 - [Starship](./home/.config/starship)
   - [starship.toml](./home/.config/starship/starship.toml)
