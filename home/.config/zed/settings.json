@@ -139,6 +139,17 @@
   },
   "linked_edits": true,
   "lsp": {
+    "dockerfile-language-server": {
+      "settings": {
+        "docker": {
+          "languageserver": {
+            "formatter": {
+              "ignoreMultilineInstructions": true
+            }
+          }
+        }
+      }
+    },
     "tailwindcss-language-server": {
       "settings": {
         "classFunctions": [

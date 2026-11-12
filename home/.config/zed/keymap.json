@@ -3,9 +3,19 @@
     "context": "Workspace",
     "bindings": {
       "cmd-w": "pane::CloseActiveItem",
-      "cmd-shift-w": null
+      "cmd-shift-w": null,
+      "ctrl-}": "multi_workspace::NextProject",
+      "ctrl-{": "multi_workspace::PreviousProject",
+      "ctrl-shift-l": "language_selector::Toggle",
+      // "ctrl-shift-]": "workspace::ActivateNextPane",
+      // "ctrl-shift-[": "workspace::ActivatePreviousPane",
+      "shift-alt-s": "workspace::ActivatePaneDown",
+      "shift-alt-w": "workspace::ActivatePaneUp",
+      "f1": "workspace::ToggleZoom",
+      "shift-alt-z": "workspace::ToggleZoom",
     },
     "unbind": {
+      "cmd-k m": "language_selector::Toggle",
       "ctrl-w": "workspace::CloseActiveDock"
     }
   },
@@ -31,29 +41,4 @@
       "ctrl-shift-v": "terminal::Paste",
     },
   },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-shift-]": "workspace::ActivateNextPane",
-      "ctrl-shift-[": "workspace::ActivatePreviousPane",
-      "shift-alt-s": "workspace::ActivatePaneDown",
-      "shift-alt-w": "workspace::ActivatePaneUp",
-      "f1": "workspace::ToggleZoom",
-      "shift-alt-z": "workspace::ToggleZoom",
-      "cmd-w": "pane::CloseActiveItem",
-    },
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-shift-l": "language_selector::Toggle",
-      "alt-shift-cmd-o": ["task::Spawn", { "task_name": "Open file in current workspace" }]
-    }
-  },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "cmd-k m": "language_selector::Toggle"
-    }
-  }
 ]
