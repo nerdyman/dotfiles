@@ -2,13 +2,14 @@
 #alias ls="grc --colour=auto ls --color=always"
 alias ls="eza --git --header --hyperlink --group-directories-first"
 alias l="ls -lah"
+alias ls-for-real="mdls -name kMDItemFSName"
 alias vim="nvim"
 alias batl="bat --style=plain"
 alias prettybatl="prettybat --style=plain"
 alias icat="kitten icat"
 alias yeet="rm -rf"
 
-# go to projects directory and allow autocompletions of files and folders
+# Makes dirs accessible at `~b/` and `~p/` with auto completions.
 hash -d b="${HOME}/.local/bin"
 hash -d p="${HOME}/Documents/projects"
 
@@ -17,4 +18,24 @@ function killport () {
   kill -9 $(lsof -ti:$1)
 }
 
-# vim: set filetype=sh :
+function llm-rm() (
+  base=/tmp/llms
+  mkdir -p "$base" && cd "$base" || exit 1
+  base=${base:A}
+  flags=() paths=() end=0
+  for a in "$@"; do
+    if (( ! end )) && [[ $a == -- ]]; then end=1
+    elif (( ! end )) && [[ $a == -* ]]; then flags+=("$a")
+    else paths+=("$a"); fi
+  done
+  (( $#paths )) || { echo "llm-rm: no paths given" >&2; exit 1 }
+  for p in "${paths[@]}"; do
+    full="${${p:h}:A}/${p:t}"
+    if [[ ${p:t} == (.|..) || $full != "$base"/?* ]]; then
+      echo "llm-rm: refusing '$p' (outside $base)" >&2; exit 1
+    fi
+  done
+  command rm "${flags[@]}" -- "${paths[@]}"
+)
+
+# vim: set filetype=zsh :
